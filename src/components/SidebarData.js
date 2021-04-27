@@ -30,8 +30,8 @@ export const SidebarData = [
 		cName: 'nav-text',
 	},
 	{
-		title: 'Notifications Settings',
-		path: '/configNotifications',
+		title: 'Notifications',
+		path: '/notifications',
 		icon: <AiIcons.AiTwotoneNotification />,
 		cName: 'nav-text',
 	},
