@@ -2,9 +2,9 @@ import React from 'react';
 
 const ListOkrCalendar = () => {
     return (
-        <div className="container-select-title-calendar">
-            <h4>Elige el OKR:</h4>
-            <select name="select">
+        <div id="container-select-title-calendar-home" className="container-select-title-calendar-home">
+            <h4 id="select-title-calendar-home">Elige el OKR:</h4>
+            <select name="select" id="select-calendar-home">
                 <option defaultValue="default">OKR's</option>
                 <option value="value1">Tener un físico sano y estable</option>
                 <option value="value2">Aumentar el número de empleados</option>

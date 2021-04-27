@@ -6,10 +6,10 @@ import Fondo from '../components/calendar/images/calendar.svg'
 
 const Calendar = () => {
     return (
-        <div className="container-calendar-components-home">
+        <div id="container-calendar-components-home" className="container-calendar-components-home">
             <TitleHomeCalendar />
             <ContentCalendarHome />
-            <img src={Fondo} alt="imagen-calendario"/>
+            <img id="imagen-home-calendario" src={Fondo} alt="imagen-calendario"/>
         </div>
     );
 }
