@@ -1,21 +1,8 @@
-import React,{useState} from "react";
-
+import React from "react";
 import "../../assets/styles/administration/Administration.scss";
-import { auth } from "../../functions/firebaseAuth";
 
+function Login({ signInWithGoogle }) {
 
-
-function Login({signInWithGoogle}) {
-  const [transformText,setTransformText]=useState(false);
-  function transformTextButton(){
-   if (auth.currentUser){
-     setTransformText(false);
-   }else{
-     setTransformText(true);
-   }
-   signInWithGoogle()
-
-  }
   return (
     <div className="container">
       <div className="container-paragraph">
@@ -35,17 +22,21 @@ function Login({signInWithGoogle}) {
 
       <div className="container-login">
         <div className="container-login-buttonGoogle">
-          <button data-testid="buttonSinginwithGoogle" onClick={transformTextButton}>
+          <button
+            data-testid="buttonSinginwithGoogle"
+            onClick={signInWithGoogle}
+          >
             <img
               src="https://img.icons8.com/fluent/50/000000/google-logo.png"
               alt="icon-google"
             />
-            {transformText? "Cargando ...":" Sign up with Google" }
+            Sign up with Google
           </button>
         </div>
 
         <div>
           <img
+            data-testid="staff-image"
             className="container-login__image"
             src="https://www.sofka.com.co/wp-content/uploads/2020/09/work-with-us-home.png"
             alt="sofka"

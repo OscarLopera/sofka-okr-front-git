@@ -1,12 +1,13 @@
 import firebase from "firebase/app"
 
 firebase.initializeApp({
-    apiKey: "AIzaSyC2TCHEMvMP7jub7XJfQKamtmvRbmFNUyc",
-    authDomain: "okr-sofka.firebaseapp.com",
-    projectId: "okr-sofka",
-    storageBucket: "okr-sofka.appspot.com",
-    messagingSenderId: "538452152880",
-    appId: "1:538452152880:web:0173f66ec37052a2bbd3f5",
+    apiKey: "AIzaSyAcTtjWrgyfKMFHh6f3fMv_2AcvgRJTTQc",
+    authDomain: "sofka-okr-front.firebaseapp.com",
+    projectId: "sofka-okr-front",
+    storageBucket: "sofka-okr-front.appspot.com",
+    messagingSenderId: "262545602532",
+    appId: "1:262545602532:web:e7d2407aad1b8e101839f1"
+  
 })
 
 export default firebase
