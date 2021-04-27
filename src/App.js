@@ -9,6 +9,8 @@ import Messages from './pages/Messages'
 import Notifications from './pages/Notifications'
 import ConfigNotifications from './pages/ConfigNotification'
 import SingIn from './pages/SingIn'
+import Okrs from './pages/Okrs'
+import OkrCreate from './pages/OkrCreate'
 
 import './assets/styles/planification/Planification.scss'
 
@@ -19,6 +21,8 @@ function App() {
 				<Navbar />
 				<Switch>
 					<Route path="/" exact component={Home} />
+					<Route path="/okrs" exact component={Okrs} />
+					<Route path="/okrCreate" exact component={OkrCreate} />
 					<Route path="/calendar" component={Calendar} />
 					<Route path="/support" component={Support} />
 					<Route path="/messages" component={Messages} />

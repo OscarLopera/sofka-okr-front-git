@@ -5,6 +5,12 @@ import * as GiIcons from 'react-icons/gi'
 import * as SiIcons from 'react-icons/si'
 
 export const SidebarData = [
+    {
+		title: 'My OKRs',
+		path: '/okrs',
+		icon: <AiIcons.AiFillHome />,
+		cName: 'nav-text',
+	},
 	{
 		title: 'Home',
 		path: '/',
