@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders childen when modal is open 1`] = `
+Array [
+  <header
+    className="headerNotificationWindows"
+    id="headerNotificationWindows"
+  />,
+  <div
+    className="bodyNotificationWindows"
+    id="bodyNotificationWindows"
+  >
+    <h1>
+      ¡Bienvenido 
+      Andres Caro
+      ! 
+    </h1>
+    <p>
+      "Estamos felices de tenerte como un nuevo integrante, esperamos que podamos aprender de tus aportes"
+    </p>
+  </div>,
+  <div
+    className="imageNotificationWindows"
+    id="imageNotificationWindows"
+  >
+    <img
+      alt="logo-sofka"
+      src="https://www.sofka.com.co/wp-content/uploads/2020/08/sofka-logo-gradient-white.png"
+    />
+  </div>,
+  <footer
+    className="footerNotificationWindows"
+    id="footerNotificationWindows"
+  />,
+]
+`;
