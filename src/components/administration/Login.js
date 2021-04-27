@@ -1,9 +1,21 @@
-import React from "react";
-import { signInWithGoogle } from "../../functions/firebaseAuth";
+import React,{useState} from "react";
 
 import "../../assets/styles/administration/Administration.scss";
+import { auth } from "../../functions/firebaseAuth";
 
-function Login() {
+
+
+function Login({signInWithGoogle}) {
+  const [transformText,setTransformText]=useState(false);
+  function transformTextButton(){
+   if (auth.currentUser){
+     setTransformText(false);
+   }else{
+     setTransformText(true);
+   }
+   signInWithGoogle()
+
+  }
   return (
     <div className="container">
       <div className="container-paragraph">
@@ -23,12 +35,12 @@ function Login() {
 
       <div className="container-login">
         <div className="container-login-buttonGoogle">
-          <button onClick={signInWithGoogle}>
+          <button data-testid="buttonSinginwithGoogle" onClick={transformTextButton}>
             <img
               src="https://img.icons8.com/fluent/50/000000/google-logo.png"
               alt="icon-google"
             />
-            Sign up with Google
+            {transformText? "Cargando ...":" Sign up with Google" }
           </button>
         </div>
 
