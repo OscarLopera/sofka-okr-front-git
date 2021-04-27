@@ -7,7 +7,10 @@ import Support from './pages/Support'
 import Calendar from './pages/Calendar'
 import Messages from './pages/Messages'
 import Notifications from './pages/Notifications'
+import ConfigNotifications from './pages/ConfigNotification'
 import SingIn from './pages/SingIn'
+
+import './assets/styles/planification/Planification.scss'
 
 function App() {
 	return (
@@ -20,6 +23,7 @@ function App() {
 					<Route path="/support" component={Support} />
 					<Route path="/messages" component={Messages} />
 					<Route path="/notifications" component={Notifications} />
+					<Route path="/configNotifications" component={ConfigNotifications} />
 					<Route path="/singin" component={SingIn} />
 				</Switch>
 			</Router>
