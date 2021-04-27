@@ -1,16 +1,31 @@
 import React from 'react'
-import * as AiIcons from "react-icons/ai";
+import {MdDashboard, MdSettings } from "react-icons/md";
+import { GoGraph } from "react-icons/go";
+import {BiSupport} from "react-icons/bi"
 import * as BsIcons from "react-icons/bs";
-import * as GiIcons from "react-icons/gi";
-import * as SiIcons from "react-icons/si";
+import * as RiIcons from "react-icons/ri";
 
 export const SidebarData = [
     {
-        title: 'Home',
+        title: 'Dashboard',
         path: '/',
-        icon: <AiIcons.AiFillHome />,
-        cName: 'nav-text'
-    },
+        icon: <GoGraph />,
+        iconClosed: <RiIcons.RiArrowDownSFill />,
+        iconOpened: <RiIcons.RiArrowUpSFill />,
+    
+        subNav: [
+          {
+            title: 'Todos',
+            path: '/allDashboard',
+            icon: <MdDashboard/>
+          },
+          {
+            title: 'Mis',
+            path: '/myDashboard',
+            icon: <MdDashboard />
+          }
+        ]
+      },
     {
         title: 'Calendar',
         path: '/calendar',
@@ -18,22 +33,24 @@ export const SidebarData = [
         cName: 'nav-text'
     },
     {
-        title: 'Support',
-        path: '/support',
-        icon: <GiIcons.GiHelp />,
-        cName: 'nav-text'
-    },
-    {
-        title: 'Notifications',
-        path: '/notifications',
-        icon: <AiIcons.AiTwotoneNotification/>,
-        cName: 'nav-text'
-    },
+        title: 'Administración',
+        path: '/administration',
+        icon: <MdSettings />,
     
-    {
-        title: 'Messages',
-        path: '/messages',
-        icon: <SiIcons.SiGooglemessages />,
-        cName: 'nav-text'
-    }
-]
+        iconClosed: <RiIcons.RiArrowDownSFill />,
+        iconOpened: <RiIcons.RiArrowUpSFill />,
+    
+        subNav: [
+          {
+            title: 'Configuración de notificaciones',
+            path: '/settings',
+            icon: <RiIcons.RiMailSettingsFill />
+          },
+          {
+            title: 'Soporte',
+            path: '/support',
+            icon: <BiSupport/>
+          }
+        ]
+      }
+];

@@ -8,12 +8,14 @@ import Calendar from './pages/Calendar'
 import Messages from './pages/Messages'
 import Notifications from './pages/Notifications'
 import SingIn from './pages/SingIn'
+import Sidebar from './components/Sidebar'
 
 function App() {
 	return (
 		<>
 			<Router>
 				<Navbar />
+				<Sidebar/>
 				<Switch>
 					<Route path="/" exact component={Home} />
 					<Route path="/calendar" component={Calendar} />
