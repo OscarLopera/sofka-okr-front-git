@@ -11,7 +11,7 @@ import SingIn from './pages/SingIn'
 
 function App() {
 	return (
-		<>
+		<div>
 			<Router>
 				<Navbar />
 				<Switch>
@@ -23,7 +23,7 @@ function App() {
 					<Route path="/singin" component={SingIn} />
 				</Switch>
 			</Router>
-		</>
+		</div>
 	)
 }
 
