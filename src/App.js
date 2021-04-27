@@ -11,6 +11,7 @@ import ConfigNotifications from './pages/ConfigNotification'
 import SingIn from './pages/SingIn'
 import Okrs from './pages/Okrs'
 import OkrCreate from './pages/OkrCreate'
+import KrCreate from './pages/KrCreate'
 
 import './assets/styles/planification/Planification.scss'
 
@@ -23,6 +24,7 @@ function App() {
 					<Route path="/" exact component={Home} />
 					<Route path="/okrs" exact component={Okrs} />
 					<Route path="/okrCreate" exact component={OkrCreate} />
+					<Route path="/krCreate" exact component={KrCreate} />
 					<Route path="/calendar" component={Calendar} />
 					<Route path="/support" component={Support} />
 					<Route path="/messages" component={Messages} />

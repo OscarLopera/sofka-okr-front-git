@@ -2,24 +2,19 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import '../assets/styles/planification/Planification.scss'
 
-const OkrCreate = () => {
+const KrCreate = () => {
 	return (
 		<section className="containerOkrCreate">
 			<div className="title">
-				<h3>Crear Objetivo</h3>
+				<h3>Crear KR</h3>
 			</div>
 
 			<div className="fieldOkrCreate">
 				<form className="row">
 					<div className="col">
 						<div className="fieldCol">
-							<label htmlFor="titleOKR">Titulo</label>
-							<input type="text" name="titleOKR" id="titleOKR" required />
-						</div>
-
-						<div className="fieldCol">
-							<label htmlFor="objectiveOKR">Objetivo</label>
-							<input type="text" name="objectiveOKR" id="objectiveOKR" required />
+							<label htmlFor="kr">KR</label>
+							<input type="text" name="kr" id="kr" required />
 						</div>
 
 						<div className="fieldColRespomsable">
@@ -37,17 +32,6 @@ const OkrCreate = () => {
 								<input type="text" name="emailOKR" id="emailOKR" required />
 							</div>
 						</div>
-					</div>
-
-					<div className="col">
-						<div className="fieldCol">
-							<label htmlFor="vertical">Verticales</label>
-							<select name="vertical" id="vertical" required>
-								<option value="1">Option 1</option>
-								<option value="2">Option 2</option>
-								<option value="3">Option 3</option>
-							</select>
-						</div>
 
 						<div className="fieldCol">
 							<label htmlFor="description">Descripción</label>
@@ -60,19 +44,37 @@ const OkrCreate = () => {
 							></textarea>
 						</div>
 					</div>
+
+					<div className="col">
+						<div className="fieldCol">
+							<label htmlFor="dateStart">Fecha Inicio</label>
+							<input type="date" name="dateStart" id="dateStart" />
+						</div>
+						<div className="fieldCol">
+							<label htmlFor="dateFinish">Fecha final</label>
+							<input type="date" name="dateFinish" id="dateFinish" />
+						</div>
+						<div className="fieldCol">
+							<label htmlFor="weight">Peso Porcentual</label>
+							<input type="number" name="weight" id="weight" min="1" max="100" />
+						</div>
+					</div>
 				</form>
 			</div>
 
 			<div className="containerButtons">
+				<Link to="/okrCreate">
+					<button>Anterior</button>
+				</Link>
 				<Link to="/okrs">
-					<button>Cancelar</button>
+					<button>Finalizar</button>
 				</Link>
 				<Link to="/krCreate">
-					<button>Siguiente</button>
+					<button>Agregar más KR</button>
 				</Link>
 			</div>
 		</section>
 	)
 }
 
-export default OkrCreate
+export default KrCreate
