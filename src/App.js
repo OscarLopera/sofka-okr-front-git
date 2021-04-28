@@ -8,6 +8,7 @@ import Calendar from './pages/Calendar'
 import Messages from './pages/Messages'
 import Notifications from './pages/Notifications'
 import SingIn from './pages/SingIn'
+import logout from './pages/SignOut'
 
 function App() {
 	return (
@@ -21,6 +22,7 @@ function App() {
 					<Route path="/messages" component={Messages} />
 					<Route path="/notifications" component={Notifications} />
 					<Route path="/singin" component={SingIn} />
+					<Route path="/singout" component={logout} />
 				</Switch>
 			</Router>
 		</>
