@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Home from './pages/Home'
+import Dashboard from './pages/Dashboard'
 import Support from './pages/Support'
 import Calendar from './pages/Calendar'
 import Messages from './pages/Messages'
@@ -20,15 +20,15 @@ function App() {
 			<Router>
 				<Navbar />
 				<Switch>
-					<Route path="/" exact component={Home} />
+					<Route path="/" exact component={SingIn} />
+					<Route path="/dashboard" component={Dashboard} />
+					<Route path="/calendar" component={Calendar} />
 					<Route path="/okrs" exact component={Okrs} />
 					<Route path="/okrCreate" exact component={OkrCreate} />
 					<Route path="/krCreate" exact component={KrCreate} />
-					<Route path="/calendar" component={Calendar} />
 					<Route path="/support" component={Support} />
 					<Route path="/messages" component={Messages} />
 					<Route path="/notifications" component={Notifications} />
-					<Route path="/singin" component={SingIn} />
 				</Switch>
 			</Router>
 		</>

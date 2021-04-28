@@ -1,14 +1,32 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import axios from 'axios'
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
 import '../assets/styles/planification/Planification.scss'
 
 import { environment } from '../environment/backendurl'
+import { v4 as uuidv4 } from 'uuid'
+
+import { auth } from '../functions/firebaseAuth'
 
 const OkrCreate = () => {
+	const userId = auth.currentUser.uid
+	const urlOkr = environment.apiOkrUrl
+
 	const onSubmit = (data) => {
-		console.log(data)
-		console.log(environment)
+		axios
+			.post(`${urlOkr}`, {
+				id: uuidv4(),
+				title: data.title,
+				personInChargeNameOkr: auth.currentUser.displayName,
+				personInChargeEmailOkr: auth.currentUser.email,
+				userId: userId,
+				descriptionOkr: data.descriptionOkr,
+				vertical: data.vertical,
+			})
+			.then((res) => {
+				console.log(res)
+			})
 	}
 
 	const { register, handleSubmit } = useForm()

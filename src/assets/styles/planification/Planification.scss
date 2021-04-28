@@ -288,6 +288,7 @@ section.containerOkrCreate {
 					transition: 0.1s ease-in-out;
 					display: flex;
 					justify-content: end;
+					padding: 5px;
 
 					&:focus {
 						border: 1px solid $orange-color;
@@ -328,6 +329,7 @@ section.containerOkrCreate {
 						border-radius: 4px;
 						font-size: 18px;
 						letter-spacing: 1px;
+						padding: 5px;
 						transition: 0.5s ease-in-out;
 
 						&:focus {
@@ -343,6 +345,7 @@ section.containerOkrCreate {
 		display: flex;
 		justify-content: center;
 		place-items: center;
+		margin-top: 40px;
 
 		& button {
 			position: relative;
