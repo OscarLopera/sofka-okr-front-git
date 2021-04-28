@@ -1,0 +1,392 @@
+@import '../Variables.scss';
+
+section.okr {
+	position: relative;
+	width: 90%;
+	background: #fff;
+	border-radius: 9px;
+	margin: auto;
+
+	& .title {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 30px;
+		margin: 60px 0;
+		font-weight: 400;
+
+		& h3 {
+			margin-right: 7px;
+		}
+
+		& i {
+			color: $orange-color;
+			cursor: pointer;
+		}
+	}
+
+	& .okr-item {
+		box-shadow: 1px 2px 4px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	& .headerOKR {
+		position: relative;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 40px;
+
+		& .titleOKR {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			& h3 {
+				color: #154367;
+				font-size: 30px;
+				margin-right: 30px;
+			}
+
+			& .icons {
+				font-size: 30px;
+				cursor: pointer;
+				color: $orange-color;
+
+				& i {
+					padding: 0 7px;
+				}
+			}
+		}
+
+		& span {
+			font-size: 30px;
+			cursor: pointer;
+			color: $orange-color;
+		}
+	}
+
+	& .contentOKR {
+		position: relative;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 40px;
+		flex-wrap: wrap;
+
+		& .kr {
+			width: 380px;
+			height: 180px;
+			border-radius: 5px;
+
+			& .headerKR {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 5px;
+				background: $orange-color;
+				border-radius: 5px;
+
+				& h3 {
+					align-self: start;
+					font-size: 20px;
+					margin-right: 30px;
+					color: #ffff;
+				}
+
+				& .icons {
+					font-size: 20px;
+					cursor: pointer;
+					color: #fff;
+
+					& i {
+						padding: 0 7px;
+					}
+				}
+			}
+
+			& .contentKR {
+				& .range {
+					height: 80px;
+					width: 380px;
+					background: #fff;
+					border-radius: 10px;
+					padding: 0 65px 0 45px;
+					box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+
+					& .sliderValue {
+						position: relative;
+						width: 100%;
+
+						& span {
+							position: absolute;
+							height: 45px;
+							width: 45px;
+							transform: translateX(-80%) scale(0);
+							font-weight: 500;
+							top: -40px;
+							line-height: 55px;
+							z-index: 2;
+							color: #fff;
+							transform-origin: bottom;
+							transition: transform 0.3s ease-in-out;
+							text-align: center;
+
+							&.show {
+								transform: translateX(-80%) scale(1);
+							}
+
+							&::after {
+								position: absolute;
+								content: '';
+								height: 100%;
+								width: 100%;
+								background: $orange-color;
+								border: 3px solid #fff;
+								z-index: -1;
+								left: 50%;
+								transform: translateX(-50%) rotate(45deg);
+								border-bottom-left-radius: 50%;
+								box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+								border-top-left-radius: 50%;
+								border-top-right-radius: 50%;
+							}
+						}
+					}
+
+					& .field {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						height: 100%;
+						position: relative;
+
+						& .value {
+							position: absolute;
+							font-size: 18px;
+							color: $orange-color;
+							font-weight: 600;
+
+							&.left {
+								left: -22px;
+							}
+
+							&.right {
+								right: -43px;
+							}
+						}
+					}
+
+					& input {
+						-webkit-appearance: none;
+						width: 100%;
+						height: 3px;
+						background: #ddd;
+						border-radius: 5px;
+						outline: none;
+						border: none;
+						z-index: 2222;
+
+						&::-webkit-slider-thumb {
+							-webkit-appearance: none;
+							width: 20px;
+							height: 20px;
+							background: red;
+							border-radius: 50%;
+							background: $orange-color;
+							border: 1px solid $orange-color;
+							cursor: pointer;
+						}
+
+						&::-moz-range-thumb {
+							-webkit-appearance: none;
+							width: 20px;
+							height: 20px;
+							background: red;
+							border-radius: 50%;
+							background: $orange-color;
+							border: 1px solid $orange-color;
+							cursor: pointer;
+						}
+
+						&::-moz-range-progress {
+							background: $orange-color;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+section.containerOkrCreate {
+	position: relative;
+	width: 90%;
+	height: 100%;
+	margin-top: 460px;
+	box-shadow: 1px 2px 4px 8px rgba(0, 0, 0, 0.1);
+	margin: auto;
+	padding: 30px;
+	margin-top: 60px;
+	margin-bottom: 60px;
+
+	& .title {
+		text-align: center;
+		padding: 20px;
+		font-size: 30px;
+		font-weight: 400;
+	}
+
+	& .fieldOkrCreate {
+		position: relative;
+		width: 100%;
+		padding: 40px;
+
+		.row {
+			width: 100%;
+			display: flex;
+			justify-content: space-around;
+			flex-wrap: wrap;
+		}
+
+		& .col {
+			& .fieldCol {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				margin: 20px 0;
+
+				& label {
+					font-size: 23px;
+					font-weight: 200;
+					width: 30%;
+				}
+
+				& input,
+				& textarea,
+				& select {
+					width: 100%;
+					height: 40px;
+					margin-left: 20px;
+					outline: none;
+					border: none;
+					border: 2px solid rgba(0, 0, 0, 0.1);
+					border-radius: 4px;
+					font-size: 18px;
+					letter-spacing: 1px;
+					transition: 0.1s ease-in-out;
+					display: flex;
+					justify-content: end;
+
+					&:focus {
+						border: 1px solid $orange-color;
+					}
+				}
+
+				& textarea {
+					resize: none;
+					height: 100px;
+				}
+			}
+
+			& .fieldColRespomsable {
+				& p {
+					text-align: center;
+					font-size: 23px;
+				}
+
+				& .fieldColRes {
+					display: flex;
+					justify-content: flex-start;
+					align-items: center;
+					margin: 20px 0;
+
+					& label {
+						font-size: 23px;
+						font-weight: 200;
+						width: 30%;
+					}
+
+					& input {
+						width: 100%;
+						height: 40px;
+						margin-left: 20px;
+						outline: none;
+						border: none;
+						border: 2px solid rgba(0, 0, 0, 0.1);
+						border-radius: 4px;
+						font-size: 18px;
+						letter-spacing: 1px;
+						transition: 0.5s ease-in-out;
+
+						&:focus {
+							border: 1px solid $orange-color;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	& .containerButtons {
+		display: flex;
+		justify-content: center;
+		place-items: center;
+
+		& button {
+			position: relative;
+			height: 65px;
+			width: 210px;
+			margin: 0 40px;
+			font-size: 23px;
+			font-weight: 500;
+			letter-spacing: 1px;
+			border-radius: 5px;
+			text-transform: uppercase;
+			border: 1px solid transparent;
+			outline: none;
+			cursor: pointer;
+			background: #fff;
+			overflow: hidden;
+			transition: 0.6s;
+			color: $orange-color;
+			border-color: $orange-color;
+
+			&:before,
+			&:after {
+				position: absolute;
+				content: '';
+				left: 0;
+				top: 0;
+				height: 100%;
+				filter: blur(30px);
+				opacity: 0.4;
+				transition: 0.6s;
+			}
+
+			&:before {
+				width: 60px;
+				background: rgba(255, 255, 255, 0.6);
+				transform: translateX(-130px) skewX(-45deg);
+			}
+
+			&:after {
+				width: 30px;
+				background: rgba(255, 255, 255, 0.6);
+				transform: translateX(-130px) skewX(-45deg);
+			}
+
+			&:hover:before,
+			&:hover:after {
+				opacity: 0.6;
+				transform: translateX(320px) skewX(-45deg);
+			}
+
+			&:hover {
+				color: #f2f2f2;
+				background: $orange-color;
+			}
+		}
+	}
+}
