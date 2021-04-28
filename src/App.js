@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Support from './pages/Support'
 import Calendar from './pages/Calendar'
-import Messages from './pages/Messages'
 import Notifications from './pages/Notifications'
 import SingIn from './pages/SingIn'
 import Sidebar from './components/Sidebar'
@@ -19,12 +18,11 @@ function App() {
 				<Switch>
 					<Route path="/" exact component={Home} />
 					<Route path="/calendar" component={Calendar} />
-					<Route path="/support" component={Support} />
-					<Route path="/messages" component={Messages} />
-					<Route path="/notifications" component={Notifications} />
-					<Route path="/singin" component={SingIn} />
+					<Route path="/support" component={Support} />					
+					<Route path="/notifications" component={Notifications} />	
 				</Switch>
-			</Router>
+			</Router>	
+					
 		</>
 	)
 }

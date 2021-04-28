@@ -7,8 +7,7 @@ import * as RiIcons from "react-icons/ri";
 
 export const SidebarData = [
     {
-        title: 'Dashboard',
-        path: '/',
+        title: 'Dashboard',        
         icon: <GoGraph />,
         iconClosed: <RiIcons.RiArrowDownSFill />,
         iconOpened: <RiIcons.RiArrowUpSFill />,
@@ -20,21 +19,20 @@ export const SidebarData = [
             icon: <MdDashboard/>
           },
           {
-            title: 'Mis',
-            path: '/myDashboard',
+            title: 'pepito Perez',
+            path: '/dashboardPersonal',
             icon: <MdDashboard />
           }
         ]
       },
     {
-        title: 'Calendar',
+        title: 'Calendario',
         path: '/calendar',
         icon: <BsIcons.BsFillCalendarFill />,
         cName: 'nav-text'
     },
     {
-        title: 'Administración',
-        path: '/administration',
+        title: 'Administración',     
         icon: <MdSettings />,
     
         iconClosed: <RiIcons.RiArrowDownSFill />,
@@ -43,7 +41,7 @@ export const SidebarData = [
         subNav: [
           {
             title: 'Configuración de notificaciones',
-            path: '/settings',
+            path: '/notifications',
             icon: <RiIcons.RiMailSettingsFill />
           },
           {
