@@ -4,8 +4,10 @@ import { GoGraph } from "react-icons/go";
 import {BiSupport} from "react-icons/bi"
 import * as BsIcons from "react-icons/bs";
 import * as RiIcons from "react-icons/ri";
+import { useAuthState } from "react-firebase-hooks/auth";
+import {auth} from '../../functions/firebaseAuth'
 
-export const SidebarData = [
+export const SidebarData = [  
     {
         title: 'Dashboard',        
         icon: <GoGraph />,
@@ -19,7 +21,7 @@ export const SidebarData = [
             icon: <MdDashboard/>
           },
           {
-            title: 'pepito Perez',
+            title: "pepito perez",
             path: '/mydashboard',
             icon: <MdDashboard />
           }

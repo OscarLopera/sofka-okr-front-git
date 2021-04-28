@@ -3,6 +3,8 @@ import './App.css'
 import { BrowserRouter as Router, Switch, Route as DefaultRoute,history} from 'react-router-dom'
 import Dashboard from './pages/Dashboard'
 import DashboardPersonal from './pages/DashboardPersonal'
+import MyOkrs from './pages/MyOkrs'
+import CreateOkr from './pages/CreateOkr'
 import Support from './pages/Support'
 import Calendar from './pages/Calendar'
 import Notifications from './pages/Notifications'
@@ -39,7 +41,9 @@ function App() {
 		<>
 			<Router> 						
 				<Switch>				
-					<Route path="/" exact component={SingIn} />							
+					<Route path="/" exact component={SingIn} />	
+					<Route path="/myokrs" layout={MainLayout} component={MyOkrs} />
+					<Route path="/crearOkrs" layout={MainLayout} component={CreateOkr} />
 					<Route path="/dashboard" layout={MainLayout} component={Dashboard} />	
 					<Route path="/mydashboard" layout={MainLayout} component={DashboardPersonal} />
 					<Route path="/calendar" layout={MainLayout} component={Calendar} />
