@@ -28,8 +28,8 @@ const Welcome = () => {
                 style={customStyles}>
                 <header className='headerNotificationWindows' id='headerNotificationWindows'></header>
                 <div className='bodyNotificationWindows' id='bodyNotificationWindows'>
-                    <h1>¡Bienvenido {nombre}! </h1>
-                    <p>"Estamos felices de tenerte como un nuevo integrante, esperamos que podamos aprender de tus aportes"</p>
+                    <h1 className='h1NotificationWindows' id='h1NotificationWindows'>¡Bienvenido {nombre}! </h1>
+                    <p className='pNotificationWindows' id='pNotificationWindows'>"Estamos felices de tenerte como un nuevo integrante, esperamos que podamos aprender de tus aportes"</p>
                 </div>
                 <div className='imageNotificationWindows' id='imageNotificationWindows'>
                     <img src="https://www.sofka.com.co/wp-content/uploads/2020/08/sofka-logo-gradient-white.png" alt="logo-sofka"></img>
@@ -43,3 +43,5 @@ const Welcome = () => {
 export default Welcome;
 
 //Todo No borrar llave para enviar correos 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
+
+//Todo No borrar llave para enviar correos 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

@@ -12,6 +12,7 @@ it('show content of modal', () => {
     const wrapper = shallow(<KrFinish onTest={spy}></KrFinish>)
     console.log(wrapper.debug())
     expect(spy.called)
+    wrapper.unmount();
 })
 
 it('renders react-modal', () => {

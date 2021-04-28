@@ -10,12 +10,18 @@ Array [
     className="bodyNotificationWindows"
     id="bodyNotificationWindows"
   >
-    <h1>
+    <h1
+      className="h1NotificationWindows"
+      id="h1NotificationWindows"
+    >
       ¡Bienvenido 
       Andres Caro
       ! 
     </h1>
-    <p>
+    <p
+      className="pNotificationWindows"
+      id="pNotificationWindows"
+    >
       "Estamos felices de tenerte como un nuevo integrante, esperamos que podamos aprender de tus aportes"
     </p>
   </div>,
