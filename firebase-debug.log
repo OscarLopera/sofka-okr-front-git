@@ -1,0 +1,94 @@
+[debug] [2021-04-28T05:12:14.936Z] ----------------------------------------------------------------------
+[debug] [2021-04-28T05:12:14.941Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-04-28T05:12:14.941Z] CLI Version:   9.10.0
+[debug] [2021-04-28T05:12:14.942Z] Platform:      win32
+[debug] [2021-04-28T05:12:14.942Z] Node Version:  v15.8.0
+[debug] [2021-04-28T05:12:14.943Z] Time:          Wed Apr 28 2021 00:12:14 GMT-0500 (hora estándar de Colombia)
+[debug] [2021-04-28T05:12:14.944Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-04-28T05:12:14.955Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-04-28T05:12:14.955Z] > authorizing via signed-in user (luipolanco1229@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\pc\Desktop\Sofka- U\Proyecto final F Y B\sofka-okr-front-git
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  .firebaserc already has a default project, using sofka-okr-front. 
+[debug] [2021-04-28T05:12:37.424Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front [none]
+[debug] [2021-04-28T05:12:37.885Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front 403
+[debug] [2021-04-28T05:12:37.886Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2021-04-28T05:12:37.888Z] HTTP Error: 403, The caller does not have permission
+[debug] [2021-04-28T05:12:38.117Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:38:12)
+    at Client.doRequest (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:238:23)
+    at processTicksAndRejections (node:internal/process/task_queues:94:5)
+    at async Client.request (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:96:20)
+    at async Object.getFirebaseProject (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:290:21)
+    at async Object.doSetup [as project] (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\features\project.js:77:27)
+    at async init (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\index.js:19:9)
+[error] 
+[error] Error: Failed to get Firebase project sofka-okr-front. Please make sure the project exists and your account has permission to access it.
+[debug] [2021-04-28T05:12:47.715Z] ----------------------------------------------------------------------
+[debug] [2021-04-28T05:12:47.719Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-04-28T05:12:47.719Z] CLI Version:   9.10.0
+[debug] [2021-04-28T05:12:47.719Z] Platform:      win32
+[debug] [2021-04-28T05:12:47.719Z] Node Version:  v15.8.0
+[debug] [2021-04-28T05:12:47.721Z] Time:          Wed Apr 28 2021 00:12:47 GMT-0500 (hora estándar de Colombia)
+[debug] [2021-04-28T05:12:47.721Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-04-28T05:12:47.732Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-04-28T05:12:47.732Z] > authorizing via signed-in user (luipolanco1229@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\pc\Desktop\Sofka- U\Proyecto final F Y B\sofka-okr-front-git
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  .firebaserc already has a default project, using sofka-okr-front. 
+[debug] [2021-04-28T05:13:01.337Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front [none]
+[debug] [2021-04-28T05:13:01.848Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front 403
+[debug] [2021-04-28T05:13:01.849Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2021-04-28T05:13:01.850Z] HTTP Error: 403, The caller does not have permission
+[debug] [2021-04-28T05:13:02.077Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:38:12)
+    at Client.doRequest (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:238:23)
+    at processTicksAndRejections (node:internal/process/task_queues:94:5)
+    at async Client.request (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:96:20)
+    at async Object.getFirebaseProject (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:290:21)
+    at async Object.doSetup [as project] (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\features\project.js:77:27)
+    at async init (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\index.js:19:9)
+[error] 
+[error] Error: Failed to get Firebase project sofka-okr-front. Please make sure the project exists and your account has permission to access it.
