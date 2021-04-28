@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import {auth} from '../../../functions/firebaseAuth';
+import { auth } from '../../../functions/firebaseAuth';
 import '../notificationsWindows.scss'
-import SingIn from '../../../pages/SingIn';
+
+const nameUser = auth;
 
 const Welcome = () => {
-    const [modalIsOpen, setModalIsOpen] = useState(false)
+    const [modalIsOpen, setModalIsOpen] = useState(true)
 
     const customStyles = {
         content: {
@@ -22,13 +23,12 @@ const Welcome = () => {
 
     return (
         <div id="root">
-            {SingIn(setModalIsOpen)}
             <Modal isOpen={modalIsOpen}
                 onRequestClose={() => setModalIsOpen(false)}
                 style={customStyles}>
                 <header className='headerNotificationWindows' id='headerNotificationWindows'></header>
                 <div className='bodyNotificationWindows' id='bodyNotificationWindows'>
-                    <h1 className='h1NotificationWindows' id='h1NotificationWindows'>¡Bienvenido {auth.currentUser.displayName}! </h1>
+                    <h1 className='h1NotificationWindows' id='h1NotificationWindows'>¡Bienvenido {nameUser.currentUser.displayName}! </h1>
                     <p className='pNotificationWindows' id='pNotificationWindows'>"Estamos felices de tenerte como un nuevo integrante, esperamos que podamos aprender de tus aportes"</p>
                 </div>
                 <div className='imageNotificationWindows' id='imageNotificationWindows'>
@@ -42,5 +42,6 @@ const Welcome = () => {
 
 export default Welcome;
 
+//Todo No borrar llave para enviar correos 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
 
-
+//Todo No borrar llave para enviar correos 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
