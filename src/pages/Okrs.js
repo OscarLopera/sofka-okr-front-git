@@ -1,8 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import { environment } from '../environment/backendurl'
 import { Link } from 'react-router-dom'
 import '../assets/styles/planification/Planification.scss'
 
 const Okrs = () => {
+
+	const [okr, setOkr] = useState([])
+
+	const urlOkr = environment.apiOkrUrl
+
+	const getAll = () => {
+		axios.get(urlOkr)
+			.then(res => {
+				console.log(res)
+				setOkr(res.data)
+			})
+	}
+
+	useEffect(() => { getAll() }, [])
+
+
 	return (
 		<section className="okr">
 			<div className="containerOKR">

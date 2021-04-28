@@ -17,7 +17,7 @@ const OkrCreate = () => {
 
 	const onSubmit = (data) => {
 		axios
-			.post(`${urlOkr}`, {
+			.post(`${urlOkr}/postOkr`, {
 				id: idOkr,
 				title: data.title,
 				personInChargeNameOkr: auth.currentUser.displayName,
