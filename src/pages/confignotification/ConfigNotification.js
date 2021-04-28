@@ -52,24 +52,6 @@ const ConfigNotification = () => {
 					<span>
 						<i class="far fa-edit"></i>
 					</span>
-					<p>Generar notificaciones cada vez que se edita el OKR</p>
-					<div className="active-options">
-						<div className="email">
-							<label className="switch">
-								<input type="checkbox" id = "mailEditOkr"/>
-								<span className="slider round"></span>
-							</label>
-						</div>
-						<label className="switch">
-							<input type="checkbox" id = "notiEditOkr"/>
-							<span className="slider round"></span>
-						</label>
-					</div>
-				</div>
-				<div className="option-item">
-					<span>
-						<i class="fas fa-file-medical"></i>
-					</span>
 					<p>Generar notificaciones cada vez que se cumpla un KR</p>
 					<div className="active-options">
 						<div className="email">
@@ -80,24 +62,6 @@ const ConfigNotification = () => {
 						</div>
 						<label className="switch">
 							<input type="checkbox" id = "notiFullOk" />
-							<span className="slider round"></span>
-						</label>
-					</div>
-				</div>
-				<div className="option-item">
-					<span>
-						<i class="far fa-trash-alt"></i>
-					</span>
-					<p>Generar notificaciones si se elimina el OKR</p>
-					<div className="active-options">
-						<div className="email">
-							<label className="switch">
-								<input type="checkbox" id = "mailDeleteOkr" />
-								<span className="slider round"></span>
-							</label>
-						</div>
-						<label className="switch">
-							<input type="checkbox" id = "notiDeleteOkr"/>
 							<span className="slider round"></span>
 						</label>
 					</div>
