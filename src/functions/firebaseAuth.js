@@ -7,6 +7,6 @@ export const auth = firebase.auth();
 
 //Funcion para iniciar sesion con Google
 export function signInWithGoogle() {
-  const provider = new firebase.auth.GoogleAuthProvider();
+  const provider = new firebase.auth.GoogleAuthProvider()
   auth.signInWithPopup(provider);
 }

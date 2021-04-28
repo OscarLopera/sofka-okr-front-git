@@ -1,9 +1,8 @@
 import React from "react";
-import { signInWithGoogle } from "../../functions/firebaseAuth";
-
 import "../../assets/styles/administration/Administration.scss";
 
-function Login() {
+function Login({ signInWithGoogle }) {
+
   return (
     <div className="container">
       <div className="container-paragraph">
@@ -23,7 +22,10 @@ function Login() {
 
       <div className="container-login">
         <div className="container-login-buttonGoogle">
-          <button onClick={signInWithGoogle}>
+          <button
+            data-testid="buttonSinginwithGoogle"
+            onClick={signInWithGoogle}
+          >
             <img
               src="https://img.icons8.com/fluent/50/000000/google-logo.png"
               alt="icon-google"
@@ -34,6 +36,7 @@ function Login() {
 
         <div>
           <img
+            data-testid="staff-image"
             className="container-login__image"
             src="https://www.sofka.com.co/wp-content/uploads/2020/09/work-with-us-home.png"
             alt="sofka"

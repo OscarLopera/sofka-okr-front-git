@@ -1,28 +1,55 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import './App.css'
-import Navbar from './components/Navbar'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Home from './pages/Home'
+import { BrowserRouter as Router, Switch, Route as DefaultRoute,history} from 'react-router-dom'
+import Dashboard from './pages/Dashboard'
+import DashboardPersonal from './pages/DashboardPersonal'
+import MyOkrs from './pages/MyOkrs'
+import CreateOkr from './pages/CreateOkr'
 import Support from './pages/Support'
 import Calendar from './pages/Calendar'
-import Messages from './pages/Messages'
 import Notifications from './pages/Notifications'
 import SingIn from './pages/SingIn'
-import logout from './pages/SignOut'
+import MainLayout from './components/structure/MainLayout'
+import Navbar from './components/structure/Navbar'
+
+
+const DefaultLayout = ({ children }) => (
+	<Fragment>	  
+	  {children}
+	</Fragment>
+  )
+
+const Route = ({
+	component: Component,
+	layout: Layout = DefaultLayout,
+	...rest
+  }) => {
+	return (
+	  <DefaultRoute
+		{...rest}
+		render={props => (
+		  <Layout>
+			<Component {...props} />
+		  </Layout>
+		)}
+	  />
+	)
+  }
 
 function App() {
 	return (
 		<>
-			<Router>
-				<Navbar />
-				<Switch>
-					<Route path="/" exact component={Home} />
-					<Route path="/calendar" component={Calendar} />
-					<Route path="/support" component={Support} />
-					<Route path="/messages" component={Messages} />
-					<Route path="/notifications" component={Notifications} />
-					<Route path="/singin" component={SingIn} />
-					<Route path="/singout" component={logout} />
+			<Router> 						
+				<Switch>				
+					<Route path="/" exact component={SingIn} />	
+					<Route path="/myokrs" layout={MainLayout} component={MyOkrs} />
+					<Route path="/crearOkrs" layout={MainLayout} component={CreateOkr} />
+					<Route path="/dashboard" layout={MainLayout} component={Dashboard} />	
+					<Route path="/mydashboard" layout={MainLayout} component={DashboardPersonal} />
+					<Route path="/calendar" layout={MainLayout} component={Calendar} />
+					<Route path="/support" layout={MainLayout} component={Support} />
+					<Route path="/notifications" layout={MainLayout} component={Notifications} />
+				   			
 				</Switch>
 			</Router>
 		</>
