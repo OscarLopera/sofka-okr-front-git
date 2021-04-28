@@ -1,94 +1,213 @@
-[debug] [2021-04-28T05:12:14.936Z] ----------------------------------------------------------------------
-[debug] [2021-04-28T05:12:14.941Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
-[debug] [2021-04-28T05:12:14.941Z] CLI Version:   9.10.0
-[debug] [2021-04-28T05:12:14.942Z] Platform:      win32
-[debug] [2021-04-28T05:12:14.942Z] Node Version:  v15.8.0
-[debug] [2021-04-28T05:12:14.943Z] Time:          Wed Apr 28 2021 00:12:14 GMT-0500 (hora estándar de Colombia)
-[debug] [2021-04-28T05:12:14.944Z] ----------------------------------------------------------------------
+[debug] [2021-04-27T23:29:00.327Z] ----------------------------------------------------------------------
+[debug] [2021-04-27T23:29:00.330Z] Command:       /usr/bin/node /usr/bin/firebase deploy
+[debug] [2021-04-27T23:29:00.330Z] CLI Version:   9.10.0
+[debug] [2021-04-27T23:29:00.330Z] Platform:      linux
+[debug] [2021-04-27T23:29:00.330Z] Node Version:  v12.18.3
+[debug] [2021-04-27T23:29:00.415Z] Time:          Tue Apr 27 2021 18:29:00 GMT-0500 (Colombia Standard Time)
+[debug] [2021-04-27T23:29:00.415Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2021-04-28T05:12:14.955Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2021-04-28T05:12:14.955Z] > authorizing via signed-in user (luipolanco1229@gmail.com)
-[info] 
-     ######## #### ########  ######## ########     ###     ######  ########
-     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
-     ######    ##  ########  ######   ########  #########  ######  ######
-     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
-     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+[debug] [2021-04-27T23:29:00.461Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2021-04-27T23:29:00.588Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-04-27T23:29:00.588Z] > authorizing via signed-in user (juanfelipejg@gmail.com)
+[debug] [2021-04-27T23:29:00.588Z] [iam] checking project sofka-okr-front for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-04-27T23:29:00.591Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-04-27T23:29:00.592Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-04-27T23:29:00.959Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Tue, 27 Apr 2021 23:29:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-27T23:29:01.068Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/sofka-okr-front:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-04-27T23:29:01.256Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2021-04-27T23:29:01.257Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2021-04-27T23:29:01.835Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 27 Apr 2021 23:29:01 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=425","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-27T23:29:01.836Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project sofka-okr-front:
 
-You're about to initialize a Firebase project in this directory:
-
-  C:\Users\pc\Desktop\Sofka- U\Proyecto final F Y B\sofka-okr-front-git
-
-Before we get started, keep in mind:
-
-  * You are initializing in an existing Firebase project directory
-
-[info] 
-=== Project Setup
-[info] 
-[info] First, let's associate this project directory with a Firebase project.
-[info] You can create multiple project aliases by running firebase use --add, 
-[info] but for now we'll just set up a default project.
-[info] 
-[info] i  .firebaserc already has a default project, using sofka-okr-front. 
-[debug] [2021-04-28T05:12:37.424Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front [none]
-[debug] [2021-04-28T05:12:37.885Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front 403
-[debug] [2021-04-28T05:12:37.886Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
-[debug] [2021-04-28T05:12:37.888Z] HTTP Error: 403, The caller does not have permission
-[debug] [2021-04-28T05:12:38.117Z] FirebaseError: HTTP Error: 403, The caller does not have permission
-    at module.exports (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:38:12)
-    at Client.doRequest (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:238:23)
-    at processTicksAndRejections (node:internal/process/task_queues:94:5)
-    at async Client.request (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:96:20)
-    at async Object.getFirebaseProject (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:290:21)
-    at async Object.doSetup [as project] (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\features\project.js:77:27)
-    at async init (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\index.js:19:9)
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2021-04-27T23:29:01.837Z] > refreshing access token with scopes: []
+[debug] [2021-04-27T23:29:01.838Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-04-27T23:29:02.047Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","date":"Tue, 27 Apr 2021 23:29:01 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-27T23:29:02.205Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front [none]
+[debug] [2021-04-27T23:29:02.712Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front 403
+[debug] [2021-04-27T23:29:02.713Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2021-04-27T23:29:02.713Z] HTTP Error: 403, The caller does not have permission
+[debug] [2021-04-27T23:29:02.925Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (/usr/lib/node_modules/firebase-tools/lib/responseToError.js:38:12)
+    at Client.doRequest (/usr/lib/node_modules/firebase-tools/lib/apiv2.js:238:23)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async Client.request (/usr/lib/node_modules/firebase-tools/lib/apiv2.js:96:20)
+    at async Object.getFirebaseProject (/usr/lib/node_modules/firebase-tools/lib/management/projects.js:290:21)
+    at async Object.getDefaultHostingSite (/usr/lib/node_modules/firebase-tools/lib/getDefaultHostingSite.js:8:21)
+    at async requireHostingSite (/usr/lib/node_modules/firebase-tools/lib/requireHostingSite.js:9:18)
+    at async Object.fn (/usr/lib/node_modules/firebase-tools/lib/commands/deploy.js:66:9)
+    at async /usr/lib/node_modules/firebase-tools/lib/command.js:169:17
 [error] 
 [error] Error: Failed to get Firebase project sofka-okr-front. Please make sure the project exists and your account has permission to access it.
-[debug] [2021-04-28T05:12:47.715Z] ----------------------------------------------------------------------
-[debug] [2021-04-28T05:12:47.719Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
-[debug] [2021-04-28T05:12:47.719Z] CLI Version:   9.10.0
-[debug] [2021-04-28T05:12:47.719Z] Platform:      win32
-[debug] [2021-04-28T05:12:47.719Z] Node Version:  v15.8.0
-[debug] [2021-04-28T05:12:47.721Z] Time:          Wed Apr 28 2021 00:12:47 GMT-0500 (hora estándar de Colombia)
-[debug] [2021-04-28T05:12:47.721Z] ----------------------------------------------------------------------
+[debug] [2021-04-27T23:33:16.854Z] ----------------------------------------------------------------------
+[debug] [2021-04-27T23:33:16.856Z] Command:       /usr/bin/node /usr/bin/firebase deploy
+[debug] [2021-04-27T23:33:16.856Z] CLI Version:   9.10.0
+[debug] [2021-04-27T23:33:16.856Z] Platform:      linux
+[debug] [2021-04-27T23:33:16.856Z] Node Version:  v12.18.3
+[debug] [2021-04-27T23:33:16.857Z] Time:          Tue Apr 27 2021 18:33:16 GMT-0500 (Colombia Standard Time)
+[debug] [2021-04-27T23:33:16.857Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2021-04-28T05:12:47.732Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2021-04-28T05:12:47.732Z] > authorizing via signed-in user (luipolanco1229@gmail.com)
-[info] 
-     ######## #### ########  ######## ########     ###     ######  ########
-     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
-     ######    ##  ########  ######   ########  #########  ######  ######
-     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
-     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+[debug] [2021-04-27T23:33:16.876Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-04-27T23:33:16.876Z] > authorizing via signed-in user (juanfelipejg@gmail.com)
+[debug] [2021-04-27T23:33:16.876Z] [iam] checking project sofka-okr-front for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-04-27T23:33:16.880Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-04-27T23:33:16.881Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-04-27T23:33:17.142Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Tue, 27 Apr 2021 23:33:16 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-27T23:33:17.514Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/sofka-okr-front:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-04-27T23:33:18.128Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 27 Apr 2021 23:33:17 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=387","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-27T23:33:18.129Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project sofka-okr-front:
 
-You're about to initialize a Firebase project in this directory:
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2021-04-27T23:33:18.130Z] > refreshing access token with scopes: []
+[debug] [2021-04-27T23:33:18.131Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-04-27T23:33:18.324Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","date":"Tue, 27 Apr 2021 23:33:18 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-27T23:33:18.944Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front [none]
+[debug] [2021-04-27T23:33:19.373Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front 403
+[debug] [2021-04-27T23:33:19.373Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2021-04-27T23:33:19.374Z] HTTP Error: 403, The caller does not have permission
+[debug] [2021-04-27T23:33:19.603Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (/usr/lib/node_modules/firebase-tools/lib/responseToError.js:38:12)
+    at Client.doRequest (/usr/lib/node_modules/firebase-tools/lib/apiv2.js:238:23)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async Client.request (/usr/lib/node_modules/firebase-tools/lib/apiv2.js:96:20)
+    at async Object.getFirebaseProject (/usr/lib/node_modules/firebase-tools/lib/management/projects.js:290:21)
+    at async Object.getDefaultHostingSite (/usr/lib/node_modules/firebase-tools/lib/getDefaultHostingSite.js:8:21)
+    at async requireHostingSite (/usr/lib/node_modules/firebase-tools/lib/requireHostingSite.js:9:18)
+    at async Object.fn (/usr/lib/node_modules/firebase-tools/lib/commands/deploy.js:66:9)
+    at async /usr/lib/node_modules/firebase-tools/lib/command.js:169:17
+[error] 
+[error] Error: Failed to get Firebase project sofka-okr-front. Please make sure the project exists and your account has permission to access it.
+[debug] [2021-04-27T23:34:26.735Z] ----------------------------------------------------------------------
+[debug] [2021-04-27T23:34:26.737Z] Command:       /usr/bin/node /usr/bin/firebase deploy
+[debug] [2021-04-27T23:34:26.737Z] CLI Version:   9.10.0
+[debug] [2021-04-27T23:34:26.737Z] Platform:      linux
+[debug] [2021-04-27T23:34:26.738Z] Node Version:  v12.18.3
+[debug] [2021-04-27T23:34:26.738Z] Time:          Tue Apr 27 2021 18:34:26 GMT-0500 (Colombia Standard Time)
+[debug] [2021-04-27T23:34:26.738Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-04-27T23:34:26.755Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-04-27T23:34:26.755Z] > authorizing via signed-in user (juanfelipejg@gmail.com)
+[debug] [2021-04-27T23:34:26.755Z] [iam] checking project sofka-okr-front for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-04-27T23:34:26.758Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-04-27T23:34:26.759Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-04-27T23:34:26.988Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Tue, 27 Apr 2021 23:34:26 GMT","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-27T23:34:27.407Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/sofka-okr-front:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-04-27T23:34:28.024Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 27 Apr 2021 23:34:27 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=423","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-27T23:34:28.025Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project sofka-okr-front:
 
-  C:\Users\pc\Desktop\Sofka- U\Proyecto final F Y B\sofka-okr-front-git
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2021-04-27T23:34:28.027Z] > refreshing access token with scopes: []
+[debug] [2021-04-27T23:34:28.027Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-04-27T23:34:28.226Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Tue, 27 Apr 2021 23:34:27 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-27T23:34:28.607Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front [none]
+[debug] [2021-04-27T23:34:29.067Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front 403
+[debug] [2021-04-27T23:34:29.067Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2021-04-27T23:34:29.068Z] HTTP Error: 403, The caller does not have permission
+[debug] [2021-04-27T23:34:29.259Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (/usr/lib/node_modules/firebase-tools/lib/responseToError.js:38:12)
+    at Client.doRequest (/usr/lib/node_modules/firebase-tools/lib/apiv2.js:238:23)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async Client.request (/usr/lib/node_modules/firebase-tools/lib/apiv2.js:96:20)
+    at async Object.getFirebaseProject (/usr/lib/node_modules/firebase-tools/lib/management/projects.js:290:21)
+    at async Object.getDefaultHostingSite (/usr/lib/node_modules/firebase-tools/lib/getDefaultHostingSite.js:8:21)
+    at async requireHostingSite (/usr/lib/node_modules/firebase-tools/lib/requireHostingSite.js:9:18)
+    at async Object.fn (/usr/lib/node_modules/firebase-tools/lib/commands/deploy.js:66:9)
+    at async /usr/lib/node_modules/firebase-tools/lib/command.js:169:17
+[error] 
+[error] Error: Failed to get Firebase project sofka-okr-front. Please make sure the project exists and your account has permission to access it.
+[debug] [2021-04-27T23:37:20.447Z] ----------------------------------------------------------------------
+[debug] [2021-04-27T23:37:20.449Z] Command:       /usr/bin/node /usr/bin/firebase deploy
+[debug] [2021-04-27T23:37:20.450Z] CLI Version:   9.10.0
+[debug] [2021-04-27T23:37:20.450Z] Platform:      linux
+[debug] [2021-04-27T23:37:20.450Z] Node Version:  v12.18.3
+[debug] [2021-04-27T23:37:20.451Z] Time:          Tue Apr 27 2021 18:37:20 GMT-0500 (Colombia Standard Time)
+[debug] [2021-04-27T23:37:20.451Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-04-27T23:37:20.469Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-04-27T23:37:20.469Z] > authorizing via signed-in user (juanfelipejg@gmail.com)
+[debug] [2021-04-27T23:37:20.469Z] [iam] checking project sofka-okr-front for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-04-27T23:37:20.474Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-04-27T23:37:20.474Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-04-27T23:37:20.745Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Tue, 27 Apr 2021 23:37:20 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-27T23:37:20.954Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/sofka-okr-front:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-04-27T23:37:21.543Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 27 Apr 2021 23:37:21 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=455","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-27T23:37:21.544Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project sofka-okr-front:
 
-Before we get started, keep in mind:
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2021-04-27T23:37:21.545Z] > refreshing access token with scopes: []
+[debug] [2021-04-27T23:37:21.545Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-04-27T23:37:21.756Z] <<< HTTP RESPONSE 200 {"date":"Tue, 27 Apr 2021 23:37:21 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-27T23:37:22.134Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front [none]
+[debug] [2021-04-27T23:37:22.468Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front 403
+[debug] [2021-04-27T23:37:22.468Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2021-04-27T23:37:22.469Z] HTTP Error: 403, The caller does not have permission
+[debug] [2021-04-27T23:37:22.704Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (/usr/lib/node_modules/firebase-tools/lib/responseToError.js:38:12)
+    at Client.doRequest (/usr/lib/node_modules/firebase-tools/lib/apiv2.js:238:23)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async Client.request (/usr/lib/node_modules/firebase-tools/lib/apiv2.js:96:20)
+    at async Object.getFirebaseProject (/usr/lib/node_modules/firebase-tools/lib/management/projects.js:290:21)
+    at async Object.getDefaultHostingSite (/usr/lib/node_modules/firebase-tools/lib/getDefaultHostingSite.js:8:21)
+    at async requireHostingSite (/usr/lib/node_modules/firebase-tools/lib/requireHostingSite.js:9:18)
+    at async Object.fn (/usr/lib/node_modules/firebase-tools/lib/commands/deploy.js:66:9)
+    at async /usr/lib/node_modules/firebase-tools/lib/command.js:169:17
+[error] 
+[error] Error: Failed to get Firebase project sofka-okr-front. Please make sure the project exists and your account has permission to access it.
+[debug] [2021-04-27T23:43:20.208Z] ----------------------------------------------------------------------
+[debug] [2021-04-27T23:43:20.211Z] Command:       /usr/bin/node /usr/bin/firebase deploy
+[debug] [2021-04-27T23:43:20.211Z] CLI Version:   9.10.0
+[debug] [2021-04-27T23:43:20.211Z] Platform:      linux
+[debug] [2021-04-27T23:43:20.211Z] Node Version:  v12.18.3
+[debug] [2021-04-27T23:43:20.212Z] Time:          Tue Apr 27 2021 18:43:20 GMT-0500 (Colombia Standard Time)
+[debug] [2021-04-27T23:43:20.212Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-04-27T23:43:20.233Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-04-27T23:43:20.234Z] > authorizing via signed-in user (juanfelipejg@gmail.com)
+[debug] [2021-04-27T23:43:20.234Z] [iam] checking project sofka-okr-front for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-04-27T23:43:20.238Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-04-27T23:43:20.238Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-04-27T23:43:20.510Z] <<< HTTP RESPONSE 200 {"date":"Tue, 27 Apr 2021 23:43:20 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-27T23:43:21.185Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/sofka-okr-front:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-04-27T23:43:21.845Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 27 Apr 2021 23:43:21 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=452","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-27T23:43:21.846Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project sofka-okr-front:
 
-  * You are initializing in an existing Firebase project directory
-
-[info] 
-=== Project Setup
-[info] 
-[info] First, let's associate this project directory with a Firebase project.
-[info] You can create multiple project aliases by running firebase use --add, 
-[info] but for now we'll just set up a default project.
-[info] 
-[info] i  .firebaserc already has a default project, using sofka-okr-front. 
-[debug] [2021-04-28T05:13:01.337Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front [none]
-[debug] [2021-04-28T05:13:01.848Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front 403
-[debug] [2021-04-28T05:13:01.849Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
-[debug] [2021-04-28T05:13:01.850Z] HTTP Error: 403, The caller does not have permission
-[debug] [2021-04-28T05:13:02.077Z] FirebaseError: HTTP Error: 403, The caller does not have permission
-    at module.exports (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:38:12)
-    at Client.doRequest (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:238:23)
-    at processTicksAndRejections (node:internal/process/task_queues:94:5)
-    at async Client.request (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:96:20)
-    at async Object.getFirebaseProject (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:290:21)
-    at async Object.doSetup [as project] (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\features\project.js:77:27)
-    at async init (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\index.js:19:9)
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2021-04-27T23:43:21.847Z] > refreshing access token with scopes: []
+[debug] [2021-04-27T23:43:21.847Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-04-27T23:43:22.037Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Tue, 27 Apr 2021 23:43:21 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-27T23:43:23.540Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front [none]
+[debug] [2021-04-27T23:43:23.881Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front 403
+[debug] [2021-04-27T23:43:23.881Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sofka-okr-front {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2021-04-27T23:43:23.882Z] HTTP Error: 403, The caller does not have permission
+[debug] [2021-04-27T23:43:24.108Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (/usr/lib/node_modules/firebase-tools/lib/responseToError.js:38:12)
+    at Client.doRequest (/usr/lib/node_modules/firebase-tools/lib/apiv2.js:238:23)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async Client.request (/usr/lib/node_modules/firebase-tools/lib/apiv2.js:96:20)
+    at async Object.getFirebaseProject (/usr/lib/node_modules/firebase-tools/lib/management/projects.js:290:21)
+    at async Object.getDefaultHostingSite (/usr/lib/node_modules/firebase-tools/lib/getDefaultHostingSite.js:8:21)
+    at async requireHostingSite (/usr/lib/node_modules/firebase-tools/lib/requireHostingSite.js:9:18)
+    at async Object.fn (/usr/lib/node_modules/firebase-tools/lib/commands/deploy.js:66:9)
+    at async /usr/lib/node_modules/firebase-tools/lib/command.js:169:17
 [error] 
 [error] Error: Failed to get Firebase project sofka-okr-front. Please make sure the project exists and your account has permission to access it.
