@@ -10,6 +10,55 @@ import Bell from "./ModalBell";
 
 
 function Navbar() {
+
+    let state = {
+        data: [
+          {
+            id: 'd00d3614-101a-44ca-b6c2-0be075aeed3a',
+            name: 'Notification Proyect',
+            typeN: 'OKR',
+            detail: '30',
+            viewed:'true'
+          },
+          {
+            id: 'd00d3614-101a-44ca-b6c2-0be075aeed3b',
+            name: 'Notification Proyect',
+            typeN: 'OKR',
+            detail: '70',
+            viewed:'true'
+          },
+          {
+            id: 'd00d3614-101a-44ca-b6c2-0be075aeed3b',
+            name: 'Notification Proyect',
+            typeN: 'OKR',
+            detail: '100 Or Finished',
+            viewed:'true'
+          },
+          {
+            id: 'd00d3614-101a-44ca-b6c2-0be075aeed3a',
+            name: 'Notification Proyect',
+            typeN: 'KR',
+            detail: '30',
+            viewed:'true'
+          },
+          {
+            id: 'd00d3614-101a-44ca-b6c2-0be075aeed3b',
+            name: 'Notification Proyect',
+            typeN: 'KR',
+            detail: '70',
+            viewed:'true'
+          },
+          {
+            id: 'd00d3614-101a-44ca-b6c2-0be075aeed3b',
+            name: 'Notification Proyect ',
+            typeN: 'KR',
+            detail: '100',
+            viewed:'true'
+          },
+        ],
+      };
+
+
     const [sidebar, setSidebar] = useState(false)
 
     const showSidebar = () => setSidebar(!sidebar)
@@ -26,7 +75,7 @@ function Navbar() {
                         <h1>Sofka y SofkaU</h1>
 
                         <ul>
-                            <li><Bell/></li>
+                            <li><Bell state={state.data}/></li>
                             <li><Link to='/singin'>Sing In</Link></li>
                             <li><Link to='/'>Sing Out</Link></li>
                         </ul>

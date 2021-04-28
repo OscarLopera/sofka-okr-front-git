@@ -3,7 +3,7 @@ import { Modal} from '@material-ui/core';
 import "../assets/styles/notifications/ModalBell.scss";
 import bell from "./administration/img/notifications.svg";
 import bell2 from "./administration/img/notifications_active.svg";
-
+import NotificationsList from "./NotificationList"
 
 
 
@@ -23,7 +23,7 @@ function ModalBell(props) {
         <header id="header"><strong>Notificaciones</strong>
         <button className="button_cerrar" id="button_cerrar" onClick={()=>open_close_Modal()}>X</button>
         </header>
-        
+        <NotificationsList notifications={props.state} /> 
       </div>
     </div>
   ); 
