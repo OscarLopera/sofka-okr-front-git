@@ -5,12 +5,12 @@ import { auth } from "../functions/firebaseAuth";
 import { useHistory } from "react-router-dom";
 import {signInWithGoogle} from '../functions/firebaseAuth'
 
-function SignIn() {
+export function SignIn(setModalIsOpen) {
   const history = useHistory();
   const [user] = useAuthState(auth);
   return (
     <div className="App">
-      <section>{user ? history.push("/dashboard") : <Login signInWithGoogle={signInWithGoogle} />}</section>
+      <section onClick={() => setModalIsOpen(true)}>{user ? history.push("/dashboard") : <Login signInWithGoogle={signInWithGoogle} />}</section>
     </div>
   );
 }
