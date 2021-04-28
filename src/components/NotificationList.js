@@ -7,6 +7,11 @@ class NotificationsListItem extends React.Component {
 
   render() {
 
+    const message = 
+      (this.props.notif.detail==="30") ? this.props.notif.detail + "% Sigue Esforzandote":
+      (this.props.notif.detail==="70") ? this.props.notif.detail + "% Ya casi lo logras":
+      "Finalizado";
+
     return (
       <div className = "NotifsListItem" id = "NotifsListItem">
         <img
@@ -22,7 +27,7 @@ class NotificationsListItem extends React.Component {
             {this.props.notif.typeN}
           </strong>
           <br />
-          {this.props.notif.detail}
+          {message}
 
         </div>
     

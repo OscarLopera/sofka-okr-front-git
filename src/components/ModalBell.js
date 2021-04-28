@@ -17,7 +17,6 @@ function ModalBell(props) {
 
   const views = props.state.map(notif => notif.viewed)
   const view = views.toString().includes(false).toString();
-
   const notificationIcon = (view==="true")? bell2 : bell;
 
 
