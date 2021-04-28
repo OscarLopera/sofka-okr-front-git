@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { auth } from '../../../functions/firebaseAuth';
+import { useAuthState } from "react-firebase-hooks/auth";
 import '../notificationsWindows.scss'
 
-const nameUser = auth;
+const nameUser =  auth;
 
 const Welcome = () => {
     const [modalIsOpen, setModalIsOpen] = useState(true)
+
+    const [user] = useAuthState(auth);
 
     const customStyles = {
         content: {
@@ -41,7 +44,3 @@ const Welcome = () => {
 }
 
 export default Welcome;
-
-//Todo No borrar llave para enviar correos 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
-
-//Todo No borrar llave para enviar correos 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

@@ -10,7 +10,6 @@ configure({ adapter: new Adapter() });
 it('show content of modal', () => {
     const spy = sinon.spy();
     const wrapper = shallow(<KrFinish onTest={spy}></KrFinish>)
-    console.log(wrapper.debug())
     expect(spy.called)
     wrapper.unmount();
 })

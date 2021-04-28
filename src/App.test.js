@@ -9,8 +9,3 @@ it('renders without crashing', () => {
   ReactDOM.render(<App />, div);
 });
 
-test('renders learn react link', () => {
-  render(<App />);
-  expect(screen.getByText('Sofka y SofkaU')).toBeInTheDocument();
-});
-
