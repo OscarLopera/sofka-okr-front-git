@@ -5,6 +5,7 @@ import * as AiIcons from "react-icons/ai";
 import { SidebarData } from './SidebarData';
 import './Navbar.css';
 import { IconContext } from 'react-icons';
+import Bell from "./ModalBell";
 
 
 
@@ -23,7 +24,9 @@ function Navbar() {
                     </Link>
                     <div className='nav-menu-header'>
                         <h1>Sofka y SofkaU</h1>
+
                         <ul>
+                            <li><Bell/></li>
                             <li><Link to='/singin'>Sing In</Link></li>
                             <li><Link to='/'>Sing Out</Link></li>
                         </ul>
