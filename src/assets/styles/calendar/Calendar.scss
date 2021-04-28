@@ -61,17 +61,15 @@
 }
 
 .container-calendar-components-home{
-    position: relative;
     height: 88vh;
     width: 100%;
     overflow: hidden;
 
     & img{
-        width: 400px;
-        height: 400px;
+        width: 380px;
+        height: 380px;
         position: absolute;
-        transform: rotateZ(-15deg);
-        right: -20px;
-        bottom: -100px;
+        right: 0;
+        bottom: 0;
     }
 }
