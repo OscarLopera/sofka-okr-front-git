@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Modal} from '@material-ui/core';
 import "../assets/styles/notifications/ModalBell.scss";
 import bell from "./administration/img/notifications.svg";
-//import bell2 from "./administration/img/notifications_active.svg";
+import bell2 from "./administration/img/notifications_active.svg";
 import NotificationsList from "./NotificationList"
 
 
@@ -15,6 +15,10 @@ function ModalBell(props) {
     setModal(!modal);
   }
 
+  const views = props.state.map(notif => notif.viewed)
+  const view = views.toString().includes(false).toString();
+
+  const notificationIcon = (view==="true")? bell2 : bell;
 
 
   const body = (
@@ -32,7 +36,7 @@ function ModalBell(props) {
             <div className="App" id="App">
         
               <button className='button' id="button"  onClick={()=>open_close_Modal()}>
-                <img src={bell} alt="bell"/>
+                <img src={notificationIcon} alt="bell"/>
                 </button>
         
               <Modal open={modal} onClose={open_close_Modal}>

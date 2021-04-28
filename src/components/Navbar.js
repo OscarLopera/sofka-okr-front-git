@@ -18,7 +18,7 @@ function Navbar() {
             name: 'Notification Proyect',
             typeN: 'OKR',
             detail: '30',
-            viewed:'true'
+            viewed:'false'
           },
           {
             id: 'd00d3614-101a-44ca-b6c2-0be075aeed3b',
