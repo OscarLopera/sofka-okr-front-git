@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
 import '../assets/styles/planification/Planification.scss'
 
+import { environment } from '../environment/backendurl'
+
 const OkrCreate = () => {
+	const onSubmit = (data) => {
+		console.log(data)
+		console.log(environment)
+	}
+
+	const { register, handleSubmit } = useForm()
+
 	return (
 		<section className="containerOkrCreate">
 			<div className="title">
@@ -10,16 +20,16 @@ const OkrCreate = () => {
 			</div>
 
 			<div className="fieldOkrCreate">
-				<form className="row">
+				<form className="row" onSubmit={handleSubmit(onSubmit)}>
 					<div className="col">
 						<div className="fieldCol">
 							<label htmlFor="titleOKR">Titulo</label>
-							<input type="text" name="titleOKR" id="titleOKR" required />
+							<input {...register('title')} type="text" id="titleOKR" required />
 						</div>
 
 						<div className="fieldCol">
 							<label htmlFor="objectiveOKR">Objetivo</label>
-							<input type="text" name="objectiveOKR" id="objectiveOKR" required />
+							<input {...register('objective')} type="text" id="objectiveOKR" required />
 						</div>
 
 						<div className="fieldColRespomsable">
@@ -29,12 +39,12 @@ const OkrCreate = () => {
 
 							<div className="fieldColRes">
 								<label htmlFor="nameOKR">Nombre</label>
-								<input type="text" name="nameOKR" id="nameOKR" required />
+								<input {...register('responsible')} type="text" id="nameOKR" required />
 							</div>
 
 							<div className="fieldColRes">
 								<label htmlFor="emailOKR">Correo</label>
-								<input type="text" name="emailOKR" id="emailOKR" required />
+								<input {...register('mail')} type="text" id="emailOKR" required />
 							</div>
 						</div>
 					</div>
@@ -42,9 +52,9 @@ const OkrCreate = () => {
 					<div className="col">
 						<div className="fieldCol">
 							<label htmlFor="vertical">Verticales</label>
-							<select name="vertical" id="vertical" required>
-								<option value="1">Option 1</option>
-								<option value="2">Option 2</option>
+							<select {...register('vertical')} id="vertical" required>
+								<option value="Desarrollo">Option 1</option>
+								<option value="Calidad">Option 2</option>
 								<option value="3">Option 3</option>
 							</select>
 						</div>
@@ -52,7 +62,7 @@ const OkrCreate = () => {
 						<div className="fieldCol">
 							<label htmlFor="description">Descripción</label>
 							<textarea
-								name="description"
+								{...register('descriptionOkr')}
 								required
 								id="description"
 								cols="30"
@@ -60,16 +70,13 @@ const OkrCreate = () => {
 							></textarea>
 						</div>
 					</div>
+					<div className="containerButtons">
+						<Link to="/okrs">
+							<button>Cancelar</button>
+						</Link>
+						<button type="submit">Siguiente</button>
+					</div>
 				</form>
-			</div>
-
-			<div className="containerButtons">
-				<Link to="/okrs">
-					<button>Cancelar</button>
-				</Link>
-				<Link to="/krCreate">
-					<button>Siguiente</button>
-				</Link>
 			</div>
 		</section>
 	)
