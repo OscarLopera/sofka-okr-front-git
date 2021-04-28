@@ -1,10 +1,12 @@
 import React from 'react'
-import {auth} from '../functions/firebaseAuth'
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from '../functions/firebaseAuth'
 
 export default function Dashboard() {
+    const [user] = useAuthState(auth);
     return (
         <div className='home'>
-            <h1>Bienvenido a tu Dashboard {auth.currentUser.displayName} </h1>
+            <h1>{user ? auth.currentUser.displayName : ""}  </h1>
         </div>
     )
 }
