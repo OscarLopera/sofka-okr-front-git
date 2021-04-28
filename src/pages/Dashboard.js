@@ -6,7 +6,7 @@ export default function Dashboard() {
     return (
         <div className='home'>
 
-            <h1 className='dashboardTitle'>Dashboard de {auth.currentUser.displayName} </h1>
+            <h1 className='dashboardTitle'>Dashboard de {auth.currentUser.displayName}</h1>
            
 
             <div className='selectTag'>
@@ -28,8 +28,7 @@ export default function Dashboard() {
                     <div className='containerStatus'>   
                             <li className='status'>0 En proceso </li>
                             <li className='status'>0 Completadas </li>
-                            <hr className='hr'></hr>
-                           
+                            <hr className='hr'></hr> 
                     </div>
 
                     <div className='containerTableOkr' id='containerTableOkr'>
