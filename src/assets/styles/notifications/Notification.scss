@@ -43,6 +43,7 @@
 				color: $orange-color;
 				font-weight: 400;
 				font-size: 40px;
+				
 			}
 
 			& p {
@@ -52,7 +53,7 @@
 			& .active-options {
 				display: flex;
 				justify-content: flex-end;
-				align-items: center;
+				align-items: flex-start;
 
 				& .email {
 					margin-right: 30px;

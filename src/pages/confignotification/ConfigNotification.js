@@ -34,7 +34,9 @@ const ConfigNotification = () => {
 					<span>
 						<i class="fas fa-trophy"></i>
 					</span>
-					<p>Generar notificaciones cuando se cumple el OKR</p>
+					<div>
+					<p >Generar notificaciones cuando se cumple el OKR</p>
+					</div>
 					<div className="active-options">
 						<div className="email">
 							<label className="switch">
@@ -52,7 +54,7 @@ const ConfigNotification = () => {
 					<span>
 						<i class="far fa-edit"></i>
 					</span>
-					<p>Generar notificaciones cada vez que se cumpla un KR</p>
+					<p >Generar notificaciones cada vez que se cumpla un KR</p>
 					<div className="active-options">
 						<div className="email">
 							<label className="switch">
@@ -69,9 +71,9 @@ const ConfigNotification = () => {
 			</div>
 			<div className="titleNoti">
 				<span>
-				<button size="medium" variant="contained" color="primary" onClick={Swal} >Confirmar</button>
+				<Button size="medium" variant="contained" color="primary" onClick={Swal} >Confirmar</Button>
 				{"    "}
-				<button size="medium" variant="contained" color="secondary">Descartar Cambios</button>
+				<Button size="medium" variant="contained" color="secondary">Descartar Cambios</Button>
 				</span>
 			</div>
 		</div>
