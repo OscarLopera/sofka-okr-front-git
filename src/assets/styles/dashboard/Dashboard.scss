@@ -1,0 +1,86 @@
+.home{
+
+    background-color: #F8F2CB;
+}
+
+
+.dashboardTitle{
+    margin-top:5px;
+    padding:10px;
+    font-size:25px;
+    }
+
+
+    .main{
+        background-color: #ffffff;
+        margin: 1%;
+        width: 98%;
+        height: 885px;
+    }    
+
+    .hr{
+        width: 100%;
+    }
+    .status {
+        display: inline-flex;
+        list-style: none;
+        padding: 10px;
+        border: 0.5px solid rgb(102, 102, 102);
+        background-color: rgba(255, 255, 255, 0.466);
+      } 
+      .containerStatus{
+          padding:1%;
+      }
+    .selectTag{
+        
+        margin-left: 90%;
+    }
+    
+    .selectTagForm{
+        
+        background-color: #F0950E;
+        border: 1px solid #ffffff;
+        border-radius: 5px;
+        color: white;
+        padding:3%;
+    }
+    
+    .selectTagOptGroup{
+        
+        background-color: #ffffff;
+        border-radius: 5px;
+        color: rgb(0, 0, 0);
+    }
+    .tableOkr{
+      float: right;
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 30%;
+      border: 1px solid rgb(99, 93, 93);
+      
+    }
+    
+    
+    .tableHeadOkr{
+        background-color: rgba(240, 149, 14, 0.95);
+        color: #fff;
+        text-align: center;
+    }
+    
+    th, td {
+        text-align: left;
+        padding-left:3%;
+        padding-top:1%;
+        padding-bottom: 2%;
+      }
+    
+    .titleResultsKeys{
+        text-align:center;
+    }
+    
+    .titleOkr{
+        text-align:center
+    }
+    .editTitleOkr{
+        padding:2px;  
+    }
