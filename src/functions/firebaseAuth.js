@@ -10,7 +10,3 @@ export function signInWithGoogle() {
   const provider = new firebase.auth.GoogleAuthProvider()
   auth.signInWithPopup(provider);
 }
-
-
-
-
