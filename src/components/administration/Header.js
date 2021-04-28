@@ -1,4 +1,4 @@
-import Foto from "./img/logoOkr.png"
+import Foto from "../../assets/img/logo.png"
 
 function Header() {
     return <div className = "header-login">

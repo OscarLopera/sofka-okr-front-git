@@ -1,5 +1,5 @@
 import React from 'react'
-import "./Sidebar.css";
+import "../../assets/styles/structure/Sidebar.css"
 import SubMenu from './SubMenu'
 import {SidebarData} from './SidebarData'
 
@@ -9,7 +9,7 @@ const Sidebar = () => {
         <div className="container-button-sidebar">
         <button color='#F0950E' className="button-sidebar"
             component="a"
-            href="#"
+            href="/calendar"
             >Mis OKR</button> 
         </div>  
         <div>
