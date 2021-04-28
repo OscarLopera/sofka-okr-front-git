@@ -11,8 +11,8 @@ import ConfigNotifications from './pages/confignotification/ConfigNotification'
 import SingIn from './pages/SingIn'
 import Okrs from './pages/Okrs'
 import OkrCreate from './pages/OkrCreate'
-
 import './assets/styles/planification/Planification.scss'
+import './assets/styles/dashboard/Dashboard.scss'
 
 function App() {
 	return (
@@ -20,7 +20,7 @@ function App() {
 			<Router>
 				<Navbar />
 				<Switch>
-					<Route path="/" exact component={Dashboard} />
+					<Route path="/" exact component={SingIn} />
 					<Route path="/dashboard" component={Dashboard} />
 					<Route path="/okrs" exact component={Okrs} />
 					<Route path="/okrCreate" exact component={OkrCreate} />
@@ -36,5 +36,7 @@ function App() {
 	)
 }
 
+
 export default App
+
 
