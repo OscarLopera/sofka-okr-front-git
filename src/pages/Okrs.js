@@ -3,26 +3,6 @@ import { Link } from 'react-router-dom'
 import '../assets/styles/planification/Planification.scss'
 
 const Okrs = () => {
-	window.onload = function () {
-		const field = document.querySelectorAll('.field')
-
-		field.forEach(function (e) {
-			console.log(e)
-			e.addEventListener('click', () => {
-				const slideValue = e.parentNode.childNodes[1].childNodes[1]
-				const inputSlider = e.childNodes[3]
-
-				inputSlider.oninput = () => {
-					let value = inputSlider.value
-
-					slideValue.textContent = value
-					slideValue.style.left = value / 1 + '%'
-					slideValue.classList.add('show')
-				}
-			})
-		})
-	}
-
 	return (
 		<section className="okr">
 			<div className="containerOKR">
@@ -56,15 +36,18 @@ const Okrs = () => {
 								</div>
 							</div>
 							<div className="contentKR">
-								<div className="range">
-									<div className="sliderValue">
-										<span className="bb">100</span>
+								<p style={{ width: '80%' }} data-value="80">
+									avance
+								</p>
+								<progress max="100" value="80">
+									<div class="progress-bar">
+										<span style={{ width: '80%' }}>80%</span>
 									</div>
-									<div className="field">
-										<div className="value left">0</div>
-										<input type="range" min="10" max="100" value="0" steps="1" />
-										<div className="value right">100</div>
-									</div>
+								</progress>
+
+								<div className="update">
+									<input type="number" name="updateRange" id="updateRange" min="1" max="100" />
+									<button>Actualizar</button>
 								</div>
 							</div>
 						</div>
@@ -78,15 +61,18 @@ const Okrs = () => {
 								</div>
 							</div>
 							<div className="contentKR">
-								<div className="range">
-									<div className="sliderValue">
-										<span className="bb">100</span>
+								<p style={{ width: '80%' }} data-value="80">
+									avance
+								</p>
+								<progress max="100" value="80">
+									<div class="progress-bar">
+										<span style={{ width: '80%' }}>80%</span>
 									</div>
-									<div className="field">
-										<div className="value left">0</div>
-										<input type="range" min="10" max="100" value="0" steps="1" />
-										<div className="value right">100</div>
-									</div>
+								</progress>
+
+								<div className="update">
+									<input type="number" name="updateRange" id="updateRange" min="1" max="100" />
+									<button>Actualizar</button>
 								</div>
 							</div>
 						</div>
@@ -100,15 +86,18 @@ const Okrs = () => {
 								</div>
 							</div>
 							<div className="contentKR">
-								<div className="range">
-									<div className="sliderValue">
-										<span className="bb">100</span>
+								<p style={{ width: '80%' }} data-value="80">
+									avance
+								</p>
+								<progress max="100" value="80">
+									<div class="progress-bar">
+										<span style={{ width: '80%' }}>80%</span>
 									</div>
-									<div className="field">
-										<div className="value left">0</div>
-										<input type="range" min="10" max="100" value="0" steps="1" />
-										<div className="value right">100</div>
-									</div>
+								</progress>
+
+								<div className="update">
+									<input type="number" name="updateRange" id="updateRange" min="1" max="100" />
+									<button>Actualizar</button>
 								</div>
 							</div>
 						</div>
@@ -122,15 +111,18 @@ const Okrs = () => {
 								</div>
 							</div>
 							<div className="contentKR">
-								<div className="range">
-									<div className="sliderValue">
-										<span className="bb">100</span>
+								<p style={{ width: '80%' }} data-value="80">
+									avance
+								</p>
+								<progress max="100" value="80">
+									<div class="progress-bar">
+										<span style={{ width: '80%' }}>80%</span>
 									</div>
-									<div className="field">
-										<div className="value left">0</div>
-										<input type="range" min="10" max="100" value="0" steps="1" />
-										<div className="value right">100</div>
-									</div>
+								</progress>
+
+								<div className="update">
+									<input type="number" name="updateRange" id="updateRange" min="1" max="100" />
+									<button>Actualizar</button>
 								</div>
 							</div>
 						</div>
