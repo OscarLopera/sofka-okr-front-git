@@ -1,8 +1,52 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
+import { useForm } from 'react-hook-form'
 import '../assets/styles/planification/Planification.scss'
+import { environment } from '../environment/backendurl'
+import { v4 as uuidv4 } from 'uuid'
+import { saveToLocal, getFromLocal } from '../functions/localStorage'
 
-const KrCreate = () => {
+const KrCreate = (props) => {
+
+	const idOkr = getFromLocal('idOkr')
+	const urlKr = environment.apiKrUrl;
+
+	const resetForm = () => {
+		const keyResult = document.getElementById('kr')
+		const personInChargeNameKr = document.getElementById('nameOKR')
+		const personInChargeEmailKr = document.getElementById('emailOKR')
+		const startDate = document.getElementById('dateStart')
+		const finishDate = document.getElementById('dateFinish')
+		const percentageWeight = document.getElementById('weight')
+		const descriptionKr = document.getElementById('description')
+		const formArray = [keyResult, personInChargeNameKr, personInChargeEmailKr, startDate, finishDate, percentageWeight, descriptionKr]
+		for (const input of formArray) {
+			input.value = ''
+		}
+	}
+
+	const onSubmit = (data) => {
+		axios
+			.post(`${urlKr}`, {
+				id: uuidv4(),
+				okrId: idOkr,
+				keyResult: data.keyResult,
+				personInChargeNameKr: data.personInChargeNameKr,
+				personInChargeEmailKr: data.personInChargeEmailKr,
+				startDate: data.startDate,
+				finishDate: data.finishDate,
+				advanceKr: 0,
+				percentageWeight: data.percentageWeight,
+				descriptionKr: data.descriptionKr
+			})
+			.then((res) => {
+				console.log(res)
+			})
+	}
+
+	const { register, handleSubmit } = useForm()
+
 	return (
 		<section className="containerOkrCreate">
 			<div className="title">
@@ -10,11 +54,11 @@ const KrCreate = () => {
 			</div>
 
 			<div className="fieldOkrCreate">
-				<form className="row">
+				<form className="row" onSubmit={handleSubmit(onSubmit)}>
 					<div className="col">
 						<div className="fieldCol">
 							<label htmlFor="kr">KR</label>
-							<input type="text" name="kr" id="kr" required />
+							<input {...register('keyResult')} type="text" id="kr" required />
 						</div>
 
 						<div className="fieldColRespomsable">
@@ -24,20 +68,20 @@ const KrCreate = () => {
 
 							<div className="fieldColRes">
 								<label htmlFor="nameOKR">Nombre</label>
-								<input type="text" name="nameOKR" id="nameOKR" required />
+								<input {...register('personInChargeNameKr')} type="text" id="nameOKR" required />
 							</div>
 
 							<div className="fieldColRes">
 								<label htmlFor="emailOKR">Correo</label>
-								<input type="text" name="emailOKR" id="emailOKR" required />
+								<input {...register('personInChargeEmailKr')} type="text" id="emailOKR" required />
 							</div>
 						</div>
 
 						<div className="fieldCol">
 							<label htmlFor="description">Descripción</label>
 							<textarea
-								name="description"
 								required
+								{...register('descriptionKr')}
 								id="description"
 								cols="30"
 								rows="10"
@@ -48,31 +92,31 @@ const KrCreate = () => {
 					<div className="col">
 						<div className="fieldCol">
 							<label htmlFor="dateStart">Fecha Inicio</label>
-							<input type="date" name="dateStart" id="dateStart" />
+							<input  {...register('startDate')} type="date" id="dateStart" />
 						</div>
 						<div className="fieldCol">
 							<label htmlFor="dateFinish">Fecha final</label>
-							<input type="date" name="dateFinish" id="dateFinish" />
+							<input  {...register('finishDate')} type="date" id="dateFinish" />
 						</div>
 						<div className="fieldCol">
 							<label htmlFor="weight">Peso Porcentual</label>
-							<input type="number" name="weight" id="weight" min="1" max="100" />
+							<input {...register('percentageWeight')} type="number" id="weight" min="1" max="100" />
 						</div>
+					</div>
+					<div className="containerButtons">
+						<Link to="/okrCreate">
+							<button>Anterior</button>
+						</Link>
+						<button type="submit" >Finalizar</button>
+
+						<Link to="/krCreate">
+							<button>Agregar más KR</button>
+						</Link>
 					</div>
 				</form>
 			</div>
 
-			<div className="containerButtons">
-				<Link to="/okrCreate">
-					<button>Anterior</button>
-				</Link>
-				<Link to="/okrs">
-					<button>Finalizar</button>
-				</Link>
-				<Link to="/krCreate">
-					<button>Agregar más KR</button>
-				</Link>
-			</div>
+
 		</section>
 	)
 }

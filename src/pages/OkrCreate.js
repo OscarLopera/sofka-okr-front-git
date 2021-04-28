@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
 import '../assets/styles/planification/Planification.scss'
+import { saveToLocal } from '../functions/localStorage'
 
 import { environment } from '../environment/backendurl'
 import { v4 as uuidv4 } from 'uuid'
@@ -12,11 +13,12 @@ import { auth } from '../functions/firebaseAuth'
 const OkrCreate = () => {
 	const userId = auth.currentUser.uid
 	const urlOkr = environment.apiOkrUrl
+	const idOkr = uuidv4();
 
 	const onSubmit = (data) => {
 		axios
 			.post(`${urlOkr}`, {
-				id: uuidv4(),
+				id: idOkr,
 				title: data.title,
 				personInChargeNameOkr: auth.currentUser.displayName,
 				personInChargeEmailOkr: auth.currentUser.email,
@@ -25,7 +27,10 @@ const OkrCreate = () => {
 				vertical: data.vertical,
 			})
 			.then((res) => {
-				console.log(res)
+				if (res.status === 200) {
+					saveToLocal('idOkr', idOkr)
+					window.location.href = '/krCreate'
+				}
 			})
 	}
 
@@ -71,9 +76,10 @@ const OkrCreate = () => {
 						<div className="fieldCol">
 							<label htmlFor="vertical">Verticales</label>
 							<select {...register('vertical')} id="vertical" required>
-								<option value="Desarrollo">Option 1</option>
-								<option value="Calidad">Option 2</option>
-								<option value="3">Option 3</option>
+								<option value="Sofka Testing">Sofka testing</option>
+								<option value="Agile Services">Agile Services</option>
+								<option value="Arquitectura y Desarrollo">Arquitectura y Desarrollo</option>
+								<option value="Inteligencia Artifical">Inteligencia Artifical</option>
 							</select>
 						</div>
 
