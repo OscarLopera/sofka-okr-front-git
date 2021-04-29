@@ -18,7 +18,7 @@ const Sidebar = () => {
             >{buttonDifferent? "Crear OKR": "Mis OKR"}</button> </Link>      
         </div>         
         <div>
-        {SidebarData.map((item, index) => {
+        {SidebarData.map((item, index) => {              
               return <SubMenu item={item} key={index} />;
             })}   
         </div>     
