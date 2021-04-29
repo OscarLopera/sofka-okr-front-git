@@ -7,8 +7,6 @@ import KrFinish from '../components/notifications/krfinish/KrFinish'
 import '../assets/styles/planification/Planification.scss';
 
 
-import Krs from '../components/planification/Kr'
-
 const Okrs = () => {
 	const [okr, setOkr] = useState([])
 
