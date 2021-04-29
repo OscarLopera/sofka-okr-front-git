@@ -7,7 +7,12 @@ import Support from './pages/Support'
 import Calendar from './pages/Calendar'
 import Messages from './pages/Messages'
 import Notifications from './pages/Notifications'
+import ConfigNotifications from './pages/confignotification/ConfigNotification'
 import SingIn from './pages/SingIn'
+import Okrs from './pages/Okrs'
+import OkrCreate from './pages/OkrCreate'
+import './assets/styles/planification/Planification.scss'
+import './assets/styles/dashboard/Dashboard.scss'
 
 function App() {
 	return (
@@ -15,16 +20,23 @@ function App() {
 			<Router>
 				<Navbar />
 				<Switch>
-					<Route path="/" exact component={SingIn} />	
-					<Route path="/dashboard"  component={Dashboard} />				
+					<Route path="/" exact component={SingIn} />
+					<Route path="/dashboard" component={Dashboard} />
+					<Route path="/okrs" exact component={Okrs} />
+					<Route path="/okrCreate" exact component={OkrCreate} />
 					<Route path="/calendar" component={Calendar} />
 					<Route path="/support" component={Support} />
 					<Route path="/messages" component={Messages} />
-					<Route path="/notifications" component={Notifications} />					
+					<Route path="/notifications" component={Notifications} />
+					<Route path="/configNotifications" component={ConfigNotifications} />
+					<Route path="/singin" component={SingIn} />
 				</Switch>
 			</Router>
 		</>
 	)
 }
 
+
 export default App
+
+

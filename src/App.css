@@ -7,10 +7,11 @@
   font-family: 'Lato', sans-serif;
 }
 
-.home, .calendar, .support, .messages, .notifications, .singin{
+.calendar, .support, .messages, .notifications, .singin{
   display: flex;
   height: 90vh;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
 }
+

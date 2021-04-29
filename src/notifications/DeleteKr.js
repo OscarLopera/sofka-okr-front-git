@@ -12,11 +12,14 @@ swal({
   })
   .then((willDelete) => {
     if (willDelete) {
+      return true; 
       swal("Tu KR ha sido eliminado", {
-        icon: "success",
+        icon: "success"; 
+        
       });
     } else {
       swal("Tu KR está a salvo");
+      return false; 
     }
   });
 }
