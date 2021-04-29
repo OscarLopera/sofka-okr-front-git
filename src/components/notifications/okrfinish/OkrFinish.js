@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import '../notificationsWindows.scss'
+import '../../../assets/styles/notifications/notificationsWindows.scss';
+import { auth } from '../../../functions/firebaseAuth';
+import { useAuthState } from "react-firebase-hooks/auth";
+
+const nameUser =  auth;
 
 const OkrFinish = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false)
-    let nombre = "Andres Caro"
+
+    const [user] = useAuthState(auth);
     let nombreOkr = "Realizar Encuesta"
 
     const customStyles = {
@@ -28,9 +33,9 @@ const OkrFinish = () => {
                 style={customStyles}>
                 <header className='headerNotificationWindows' id='headerNotificationWindows'></header>
                 <div className='bodyNotificationWindows' id='bodyNotificationWindows'>
-                    <h1>¡ {nombre}! </h1>
-                    <h2>Terminaste el Okr {nombreOkr}</h2>
-                    <p>"Nuestra recompensa se encuentra en el esfuerzo y no en el
+                    <h1 className='h1NotificationWindows'>¡{user? nameUser.currentUser.displayName :""}! </h1>
+                    <h2 className='h1NotificationWindows'>Terminaste el Okr {nombreOkr}</h2>
+                    <p className='pNotificationWindows'>"Nuestra recompensa se encuentra en el esfuerzo y no en el
                     resultado, un esfuerzo total es una víctoria completa (Mahatma Gandhi)".</p>
                 </div>
                 <div className='imageNotificationWindows' id='imageNotificationWindows'>

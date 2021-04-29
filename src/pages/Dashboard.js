@@ -7,11 +7,10 @@ export default function Dashboard() {
     const [user] = useAuthState(auth);
     return (
         <div className='home'>
-
             <section>
-                {user ? <Welcome /> : ""}
+                { user ? <Welcome /> : ""}
             </section>
-            <h1 className='dashboardTitle'>Dashboard de {auth.currentUser.displayName}</h1>
+            <h1 className='dashboardTitle'>Dashboard de { user ? auth.currentUser.displayName : ""}</h1>
             <div className='selectTag'>
                 <form >
                     <select className='selectTagForm' name="okr" id="okrs">
@@ -42,13 +41,13 @@ export default function Dashboard() {
                                 <td ><h4>Resultados clave</h4> </td>
                             </tr>
                             <tr>
-                                <td> <h5>Responsable: {auth.currentUser.displayName}</h5> </td>
+                                <td> <h5>Responsable: { user ?auth.currentUser.displayName: ""}</h5> </td>
                             </tr>
                             <tr>
                                 <td>Titulo KR: <h5>99%</h5></td>
                             </tr>
                             <tr>
-                                <td> <h5>Responsable: {auth.currentUser.displayName}</h5></td>
+                                <td> <h5>Responsable: { user ?auth.currentUser.displayName: ""}</h5></td>
                             </tr>
                             <tr>
                                 <td>Titulo KR: <h5>99%</h5></td>

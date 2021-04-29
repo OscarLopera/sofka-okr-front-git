@@ -1,6 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import '../assets/styles/planification/Planification.scss'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import OkrFinish from '../components/notifications/okrfinish/OkrFinish';
+import KrFinish from '../components/notifications/krfinish/KrFinish'
+import '../assets/styles/planification/Planification.scss';
 
 const Okrs = () => {
 	window.onload = function () {
@@ -25,6 +27,11 @@ const Okrs = () => {
 
 	return (
 		<section className="okr">
+
+		<OkrFinish/>
+
+		<KrFinish/>
+
 			<div className="containerOKR">
 				<div className="title">
 					<h3>Mis OKR's</h3>
