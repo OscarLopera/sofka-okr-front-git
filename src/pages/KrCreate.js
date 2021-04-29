@@ -8,27 +8,12 @@ import { v4 as uuidv4 } from 'uuid'
 import { saveToLocal, getFromLocal } from '../functions/localStorage'
 
 const KrCreate = (props) => {
-
 	const idOkr = getFromLocal('idOkr')
-	const urlKr = environment.apiKrUrl;
-
-	const resetForm = () => {
-		const keyResult = document.getElementById('kr')
-		const personInChargeNameKr = document.getElementById('nameOKR')
-		const personInChargeEmailKr = document.getElementById('emailOKR')
-		const startDate = document.getElementById('dateStart')
-		const finishDate = document.getElementById('dateFinish')
-		const percentageWeight = document.getElementById('weight')
-		const descriptionKr = document.getElementById('description')
-		const formArray = [keyResult, personInChargeNameKr, personInChargeEmailKr, startDate, finishDate, percentageWeight, descriptionKr]
-		for (const input of formArray) {
-			input.value = ''
-		}
-	}
+	const urlKr = environment.apiKrUrl
 
 	const onSubmit = (data) => {
 		axios
-			.post(`${urlKr}`, {
+			.post(`${urlKr}/postKr`, {
 				id: uuidv4(),
 				okrId: idOkr,
 				keyResult: data.keyResult,
@@ -38,10 +23,12 @@ const KrCreate = (props) => {
 				finishDate: data.finishDate,
 				advanceKr: 0,
 				percentageWeight: data.percentageWeight,
-				descriptionKr: data.descriptionKr
+				descriptionKr: data.descriptionKr,
 			})
 			.then((res) => {
-				console.log(res)
+				if (res.status === 201) {
+					window.location.href = '/okrs'
+				}
 			})
 	}
 
@@ -68,12 +55,22 @@ const KrCreate = (props) => {
 
 							<div className="fieldColRes">
 								<label htmlFor="nameOKR">Nombre</label>
-								<input {...register('personInChargeNameKr')} type="text" id="nameOKR" required />
+								<input
+									{...register('personInChargeNameKr')}
+									type="text"
+									id="nameOKR"
+									required
+								/>
 							</div>
 
 							<div className="fieldColRes">
 								<label htmlFor="emailOKR">Correo</label>
-								<input {...register('personInChargeEmailKr')} type="text" id="emailOKR" required />
+								<input
+									{...register('personInChargeEmailKr')}
+									type="text"
+									id="emailOKR"
+									required
+								/>
 							</div>
 						</div>
 
@@ -92,31 +89,31 @@ const KrCreate = (props) => {
 					<div className="col">
 						<div className="fieldCol">
 							<label htmlFor="dateStart">Fecha Inicio</label>
-							<input  {...register('startDate')} type="date" id="dateStart" />
+							<input {...register('startDate')} type="date" id="dateStart" />
 						</div>
 						<div className="fieldCol">
 							<label htmlFor="dateFinish">Fecha final</label>
-							<input  {...register('finishDate')} type="date" id="dateFinish" />
+							<input {...register('finishDate')} type="date" id="dateFinish" />
 						</div>
 						<div className="fieldCol">
 							<label htmlFor="weight">Peso Porcentual</label>
-							<input {...register('percentageWeight')} type="number" id="weight" min="1" max="100" />
+							<input
+								{...register('percentageWeight')}
+								type="number"
+								id="weight"
+								min="1"
+								max="100"
+							/>
 						</div>
 					</div>
 					<div className="containerButtons">
 						<Link to="/okrCreate">
 							<button>Anterior</button>
 						</Link>
-						<button type="submit" >Finalizar</button>
-
-						<Link to="/krCreate">
-							<button>Agregar más KR</button>
-						</Link>
+						<button type="submit">Finalizar</button>
 					</div>
 				</form>
 			</div>
-
-
 		</section>
 	)
 }

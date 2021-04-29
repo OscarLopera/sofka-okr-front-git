@@ -13,7 +13,7 @@ import { auth } from '../functions/firebaseAuth'
 const OkrCreate = () => {
 	const userId = auth.currentUser.uid
 	const urlOkr = environment.apiOkrUrl
-	const idOkr = uuidv4();
+	const idOkr = uuidv4()
 
 	const onSubmit = (data) => {
 		axios
@@ -27,10 +27,11 @@ const OkrCreate = () => {
 				vertical: data.vertical,
 			})
 			.then((res) => {
-				if (res.status === 200) {
+				if (res.status === 201) {
 					saveToLocal('idOkr', idOkr)
 					window.location.href = '/krCreate'
 				}
+				console.log(res.status)
 			})
 	}
 
