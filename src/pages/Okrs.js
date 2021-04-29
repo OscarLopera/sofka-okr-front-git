@@ -26,8 +26,11 @@ const Okrs = () => {
 		<section className="okr">
 
 		<OkrFinish/>
-
 		<KrFinish/>
+		<div>
+		<button>Aceptar Notificación</button>
+		</div>
+		<button>confirmar eliminación</button>
 
 			<div className="containerOKR">
 				<div className="title">
@@ -53,7 +56,7 @@ const Okrs = () => {
 							</div>
 
                             <div className="contentOKR">
-                                
+
                             </div>
 						</div>
 					))}

@@ -1,10 +1,10 @@
 import React from'react';
 import {screen, render, getByLabelText, fireEvent, getByDisplayValue, getByText} from "@testing-library/react";
-import Home from '../pages/Home';
+import Okrs from '../../../pages/Okrs';
 
 
 test("Button edit OKR", () =>{
-    render(<Home/>);
+    render(<Okrs/>);
     fireEvent.click(screen.getByTestId("edit-okr-notification")); 
     expect(screen.getByText('Editar OKR'))
 });
