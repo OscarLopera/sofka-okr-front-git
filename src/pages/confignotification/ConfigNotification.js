@@ -70,9 +70,9 @@ const ConfigNotification = () => {
 			</div>
 			<div className="titleNoti">
 				<span>
-				<Button size="medium" variant="contained" color="primary" onClick={Swal} >Confirmar</Button>
+				<Button size="medium" variant="contained" color="primary" onClick={Swal} id="buttonConfig1">Confirmar</Button>
 				{"    "}
-				<Button size="medium" variant="contained" color="secondary">Descartar Cambios</Button>
+				<Button size="medium" variant="contained" color="secondary"  id="buttonConfig2">Descartar Cambios</Button>
 				</span>
 			</div>
 		</div>

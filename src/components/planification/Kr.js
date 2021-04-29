@@ -22,7 +22,7 @@ const Kr = ({ kr }) => {
 
 				<div className="update">
 					<input type="number" name="updateRange" id="updateRange" min="1" max="100" />
-					<button>Actualizar</button>
+					<button id="buttonUpdateRange">Actualizar</button>
 				</div>
 			</div>
 		</div>

@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen, cleanup, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import Login from "../components/administration/Login";
-import SignIn from '../pages/SingIn';
+import SignIn from '../pages/administration/SingIn';
 
 const useAuthState = jest.fn(()=> {return {displayName: "jncwln"}});
 const useHistory = jest.fn();

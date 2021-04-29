@@ -22,7 +22,7 @@ const OkrFinish = () => {
 
     return (
         <div >
-            <button onClick={() => setModalIsOpen(true)}>Terminar Okr</button>
+            <button onClick={() => setModalIsOpen(true)} id="buttonNotificationOkr">Terminar Okr</button>
             <Modal isOpen={modalIsOpen}
                 onRequestClose={() => setModalIsOpen(false)}
                 style={customStyles}>

@@ -31,7 +31,7 @@ class NotificationsListItem extends React.Component {
 
         </div>
     
-      <button className = "button_close" id = "button_close">
+      <button className = "button_close" id = "button_closeNotification">
       <img
           className = "NotifsListItem__close" id = "NotifsListItem__close"
           src = {closeImg}

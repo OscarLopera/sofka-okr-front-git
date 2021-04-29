@@ -50,7 +50,7 @@ const KrCreate = (props) => {
 					<div className="col">
 						<div className="fieldCol">
 							<label htmlFor="kr">KR</label>
-							<input {...register('keyResult')} type="text" id="kr" required />
+							<input {...register('keyResult')} type="text" id="planificationKr" required />
 						</div>
 
 						<div className="fieldColRespomsable">
@@ -63,7 +63,7 @@ const KrCreate = (props) => {
 								<input
 									{...register('personInChargeNameKr')}
 									type="text"
-									id="nameOKR"
+									id="planificationNameOKR"
 									required
 								/>
 							</div>
@@ -73,7 +73,7 @@ const KrCreate = (props) => {
 								<input
 									{...register('personInChargeEmailKr')}
 									type="text"
-									id="emailOKR"
+									id="planificationEmailOKR"
 									required
 								/>
 							</div>
@@ -84,7 +84,7 @@ const KrCreate = (props) => {
 							<textarea
 								required
 								{...register('descriptionKr')}
-								id="description"
+								id="planificationDescription"
 								cols="30"
 								rows="10"
 							></textarea>
@@ -94,18 +94,18 @@ const KrCreate = (props) => {
 					<div className="col">
 						<div className="fieldCol">
 							<label htmlFor="dateStart">Fecha Inicio</label>
-							<input {...register('startDate')} type="date" id="dateStart" />
+							<input {...register('startDate')} type="date" id="planificationDateStart" />
 						</div>
 						<div className="fieldCol">
 							<label htmlFor="dateFinish">Fecha final</label>
-							<input {...register('finishDate')} type="date" id="dateFinish" />
+							<input {...register('finishDate')} type="date" id="planificationDateFinish" />
 						</div>
 						<div className="fieldCol">
 							<label htmlFor="weight">Peso Porcentual</label>
 							<input
 								{...register('percentageWeight')}
 								type="number"
-								id="weight"
+								id="planificationWeight"
 								min="1"
 								max="100"
 							/>

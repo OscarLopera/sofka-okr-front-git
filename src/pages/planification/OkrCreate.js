@@ -51,12 +51,12 @@ const OkrCreate = () => {
 					<div className="col">
 						<div className="fieldCol">
 							<label htmlFor="titleOKR">Titulo</label>
-							<input {...register('title')} type="text" id="titleOKR" required />
+							<input {...register('title')} type="text" id="planificationTitleOKR" required />
 						</div>
 
 						<div className="fieldCol">
 							<label htmlFor="objectiveOKR">Objetivo</label>
-							<input {...register('objective')} type="text" id="objectiveOKR" required />
+							<input {...register('objective')} type="text" id="planificationObjectiveOKR" required />
 						</div>
 
 						<div className="fieldColRespomsable">
@@ -66,12 +66,12 @@ const OkrCreate = () => {
 
 							<div className="fieldColRes">
 								<label htmlFor="nameOKR">Nombre</label>
-								<input {...register('responsible')} type="text" id="nameOKR" required />
+								<input {...register('responsible')} type="text" id="planificationNameOKR" required />
 							</div>
 
 							<div className="fieldColRes">
 								<label htmlFor="emailOKR">Correo</label>
-								<input {...register('mail')} type="text" id="emailOKR" required />
+								<input {...register('mail')} type="text" id="planificationEmailOKR" required />
 							</div>
 						</div>
 					</div>
@@ -92,7 +92,7 @@ const OkrCreate = () => {
 							<textarea
 								{...register('descriptionOkr')}
 								required
-								id="description"
+								id="planificationDescription"
 								cols="30"
 								rows="10"
 							></textarea>
@@ -100,9 +100,9 @@ const OkrCreate = () => {
 					</div>
 					<div className="containerButtons">
 						<Link to="/okrs">
-							<button>Cancelar</button>
+							<button id="planificationbuttonCancel">Cancelar</button>
 						</Link>
-						<button type="submit">Siguiente</button>
+						<button type="submit" id="planificationbuttonNext">Siguiente</button>
 					</div>
 				</form>
 			</div>

@@ -23,7 +23,7 @@ const KrFinish = () => {
 
     return (
         <div >
-            <button onClick={() => setModalIsOpen(true)}>Terminar Kr</button>
+            <button onClick={() => setModalIsOpen(true)} id='buttonNotificationKr'>Terminar Kr</button>
             <Modal isOpen={modalIsOpen}
                 onRequestClose={() => setModalIsOpen(false)}
                 style={customStyles}>
