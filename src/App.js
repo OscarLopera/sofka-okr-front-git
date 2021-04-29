@@ -1,55 +1,32 @@
-import React, {Fragment} from 'react'
-import './App.css'
-import { BrowserRouter as Router, Switch, Route as DefaultRoute,history} from 'react-router-dom'
-import Dashboard from './pages/Dashboard'
-import DashboardPersonal from './pages/DashboardPersonal'
-import MyOkrs from './pages/MyOkrs'
-import CreateOkr from './pages/CreateOkr'
-import Support from './pages/Support'
-import Calendar from './pages/Calendar'
-import Notifications from './pages/Notifications'
-import SingIn from './pages/SingIn'
-import MainLayout from './components/structure/MainLayout'
-import Navbar from './components/structure/Navbar'
-
-
-const DefaultLayout = ({ children }) => (
-	<Fragment>	  
-	  {children}
-	</Fragment>
-  )
-
-const Route = ({
-	component: Component,
-	layout: Layout = DefaultLayout,
-	...rest
-  }) => {
-	return (
-	  <DefaultRoute
-		{...rest}
-		render={props => (
-		  <Layout>
-			<Component {...props} />
-		  </Layout>
-		)}
-	  />
-	)
-  }
+import React from 'react';
+import './App.css';
+import './assets/styles/planification/Planification.scss';
+import './assets/styles/dashboard/Dashboard.scss';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import DashboardPersonal from './pages/dashboard/DashboardPersonal';
+import Dashboard from './pages/dashboard/Dashboard';
+import Support from './pages/administration/Support';
+import Calendar from './pages/calendar/Calendar';
+import ConfigNotifications from './pages/confignotification/ConfigNotification';
+import SingIn from './pages/administration/SingIn';
+import Okrs from './pages/planification/Okrs';
+import OkrCreate from './pages/planification/OkrCreate';
+import KrCreate from './pages/planification/KrCreate';
 
 function App() {
 	return (
 		<>
-			<Router> 						
-				<Switch>				
-					<Route path="/" exact component={SingIn} />	
-					<Route path="/myokrs" layout={MainLayout} component={MyOkrs} />
-					<Route path="/crearOkrs" layout={MainLayout} component={CreateOkr} />
-					<Route path="/dashboard" layout={MainLayout} component={Dashboard} />	
-					<Route path="/mydashboard" layout={MainLayout} component={DashboardPersonal} />
-					<Route path="/calendar" layout={MainLayout} component={Calendar} />
-					<Route path="/support" layout={MainLayout} component={Support} />
-					<Route path="/notifications" layout={MainLayout} component={Notifications} />
-				   			
+			<Router>
+				<Switch>
+					<Route path="/" exact component={SingIn} />
+					<Route path="/dashboard" component={Dashboard} />
+					<Route path="/calendar" component={Calendar} />
+					<Route path="/support" component={Support} />
+					<Route path="/configNotifications" component={ConfigNotifications} />
+					<Route path="/krCreate" exact component={KrCreate} />
+					<Route path="/mydashboard" component={DashboardPersonal} />
+					<Route path="/myokrs" component={Okrs} />
+					<Route path="/okrCreate" component={OkrCreate} />
 				</Switch>
 			</Router>
 		</>

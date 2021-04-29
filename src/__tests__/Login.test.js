@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen, cleanup, fireEvent} from "@testing-library/react";
+import { render, screen, cleanup, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import Login from "../components/administration/Login";
 
@@ -21,5 +21,4 @@ test("Validacion de accion login", () => {
 
   expect(signInWithGoogle).toBeCalled();
 });
-
 

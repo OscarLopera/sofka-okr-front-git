@@ -1,19 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+$colorNaranja: #F0950E;
+$letra: 'Lato', sans-serif;
+$blanco: #f5f5f5;
+
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: $letra;
   }
 
 .navbar{
-    background-color: #F0950E;
-    height: 70px;
+    background-color: $colorNaranja;
+    height: 75px;
     display: flex;
     justify-content: flex-start;
     align-items: center;   
 }
 
 .nav-menu-header{
-    color: #f5f5f5;
+    color: $blanco;
     display: flex;
     padding: 20px;
     justify-content: space-between;
@@ -29,7 +33,11 @@ body {
 
 .nav-menu-header li{
     list-style: none;
-    padding: 5px;    
+    padding: 10px;    
+}
+
+.nav-menu-header li:hover{
+    cursor: pointer;
 }
 
 .notifications-icon{
@@ -47,12 +55,12 @@ body {
 
 .nav-menu-header a{
     text-decoration: none;
-    color: #f5f5f5;
+    color: $blanco;
 }
 
 .image-nav {
-    width:50px;
-    height:50px;
+    width:45px;
+    height:45px;
     border-radius:50%;
     background-position: center;
     background-repeat: no-repeat;
@@ -60,6 +68,7 @@ body {
 }
 
 .photo-name-nav{
+    margin-top: 7px;
     align-items: center;
     display: flex;
     flex-direction: column;

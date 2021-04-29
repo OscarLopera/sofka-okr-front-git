@@ -1,0 +1,143 @@
+@import '../Variables.scss';
+
+.containerConfigNotification {
+	position: relative;
+	width: 80%;
+	height: 100%;
+	margin: auto;
+	margin-top: 40px;
+
+	& .titleNoti {
+		margin-top: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: $global-color;
+		font-size: 30px;
+
+		& h3 {
+			margin-right: 20px;
+		}
+
+		& .icon i:hover {
+			color: $orange-color;
+		}
+	}
+
+	& .optionsNotifications {
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin-top: 40px;
+		padding: 30px;
+		background: #fff;
+		border-radius: 9px;
+		box-shadow: 2px 2px 4px 8px rgba(0, 0, 0, 0.1);
+
+		& .option-icons-mail-notification{
+			display: flex;
+			justify-content: flex-end;
+			width: 100%;
+			font-size: 20px;
+			padding: 10px  0 10px 0;
+			color: $orange-color;
+
+			& .email{
+				margin-right: 25px;
+			}
+		}
+
+
+		& .option-item {
+			display: flex;
+			justify-content: space-between;
+			font-size: 18px;
+			width: 100%;
+
+			& span {
+				position: relative;
+				color: $orange-color;
+				font-weight: 400;
+				font-size: 35px;
+				top: -18px;
+			}
+
+			& p {
+				margin-left: 0;
+			}
+
+			& .active-options {
+				display: flex;
+				justify-content: flex-end;
+				align-items: flex-start;
+
+				& .email {
+					margin-right: 30px;
+				}
+
+				& .switch {
+					position: relative;
+					display: inline-block;
+					width: 57px;
+					height: 23px;
+
+					& input {
+						opacity: 0;
+						width: 0;
+						height: 0;
+					}
+
+					& .slider {
+						position: absolute;
+						cursor: pointer;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						background-color: #ccc;
+						-webkit-transition: 0.4s;
+						transition: 0.4s;
+
+						&:before {
+							position: absolute;
+							content: '';
+							height: 18px;
+							width: 18px;
+							left: 4px;
+							bottom: 3px;
+							background-color: white;
+							-webkit-transition: 0.4s;
+							transition: 0.4s;
+						}
+					}
+
+					& input:checked + .slider {
+						background-color: $orange-color;
+					}
+
+					& input:focus + .slider {
+						box-shadow: 0 0 1px $orange-color;
+					}
+
+					& input:checked + .slider:before {
+						-webkit-transform: translateX(14px);
+						-ms-transform: translateX(14px);
+						transform: translateX(14px);
+					}
+
+					& .slider.round {
+						border-radius: 34px;
+					}
+
+					& .slider.round:before {
+						border-radius: 50%;
+					}
+				}
+
+				& i {
+					font-size: 30px;
+				}
+			}
+		}
+	}
+}
