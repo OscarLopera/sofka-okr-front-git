@@ -8,6 +8,7 @@
 	margin-top: 40px;
 
 	& .titleNoti {
+		margin-top: 50px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -33,6 +34,20 @@
 		border-radius: 9px;
 		box-shadow: 2px 2px 4px 8px rgba(0, 0, 0, 0.1);
 
+		& .option-icons-mail-notification{
+			display: flex;
+			justify-content: flex-end;
+			width: 100%;
+			font-size: 20px;
+			padding: 10px  0 10px 0;
+			color: $orange-color;
+
+			& .email{
+				margin-right: 25px;
+			}
+		}
+
+
 		& .option-item {
 			display: flex;
 			justify-content: space-between;
@@ -40,10 +55,11 @@
 			width: 100%;
 
 			& span {
+				position: relative;
 				color: $orange-color;
 				font-weight: 400;
-				font-size: 40px;
-				
+				font-size: 35px;
+				top: -18px;
 			}
 
 			& p {

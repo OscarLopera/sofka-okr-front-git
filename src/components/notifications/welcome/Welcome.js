@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { auth } from '../../../functions/firebaseAuth';
-import { useAuthState } from "react-firebase-hooks/auth";
-import '../notificationsWindows.scss'
+import '../notificationsWindows.scss';
 
 const nameUser =  auth;
 
 const Welcome = () => {
     const [modalIsOpen, setModalIsOpen] = useState(true)
-
-    const [user] = useAuthState(auth);
 
     const customStyles = {
         content: {
@@ -31,7 +28,7 @@ const Welcome = () => {
                 style={customStyles}>
                 <header className='headerNotificationWindows' id='headerNotificationWindows'></header>
                 <div className='bodyNotificationWindows' id='bodyNotificationWindows'>
-                    <h1 className='h1NotificationWindows' id='h1NotificationWindows'>¡Bienvenido {nameUser.currentUser.displayName}! </h1>
+                    <h1 className='h1NotificationWindows' id='h1NotificationWindows'> ¡Bienvenido {nameUser.currentUser.displayName}! </h1>
                     <p className='pNotificationWindows' id='pNotificationWindows'>"Estamos felices de tenerte como un nuevo integrante, esperamos que podamos aprender de tus aportes"</p>
                 </div>
                 <div className='imageNotificationWindows' id='imageNotificationWindows'>

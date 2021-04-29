@@ -18,25 +18,23 @@ const ConfigNotification = () => {
 				</span>
 			</div>
 			<div className="optionsNotifications">
-				<div className="option-item">
-					<span></span>
-					<p></p>
-					<div className="active-options">
+				<div className="option-icons-mail-notification">
+					
 						<div className="email">
 							<span ><i style={{ fontSize: "40px" }} class="far fa-envelope"></i></span>
 						</div>
 						<div className="int">
 							<span><i style={{ fontSize: "40px" }} class="fas fa-desktop"></i></span>
 						</div>
-					</div>
+					
 				</div>
 				<div className="option-item">
 					<span>
 						<i class="fas fa-trophy"></i>
 					</span>
-					<div>
-					<p >Generar notificaciones cuando se cumple el OKR</p>
-					</div>
+
+					<p>Generar notificaciones cuando se cumple el OKR</p>
+
 					<div className="active-options">
 						<div className="email">
 							<label className="switch">
@@ -54,7 +52,9 @@ const ConfigNotification = () => {
 					<span>
 						<i class="far fa-edit"></i>
 					</span>
+
 					<p >Generar notificaciones cada vez que se cumpla un KR</p>
+					
 					<div className="active-options">
 						<div className="email">
 							<label className="switch">
