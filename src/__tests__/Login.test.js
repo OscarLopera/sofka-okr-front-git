@@ -3,9 +3,6 @@ import { render, screen, cleanup, fireEvent} from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import Login from "../components/administration/Login";
 
-
-
-
 afterEach(cleanup);
 
 test("prueba renderizacion de imagen", () => {

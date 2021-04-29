@@ -23,7 +23,7 @@ function Navbar() {
               </Link>
             </ul>
             <ul >
-              <li className="notifications-icon">
+              <li className="notifications-icon" data-testid="notifications-icon">
                 <Link to="#">               
                   <MdNotifications />              
                 </Link>
@@ -34,7 +34,7 @@ function Navbar() {
                   <span>{user?auth.currentUser.displayName:"no asignado"}</span>
                 </div>
               </li>
-              <li className="signout-icon">
+              <li className="signout-icon" data-testid="signout-icon">
                 <span onClick={SingOut}>
                   <MdInput />
                 </span>
