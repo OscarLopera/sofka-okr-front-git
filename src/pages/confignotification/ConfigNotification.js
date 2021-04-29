@@ -2,6 +2,7 @@ import React from 'react'
 import '../../assets/styles/notifications/Notification.scss'
 import Button from '@material-ui/core/Button';
 import swal from 'sweetalert';
+import Navbar from '../../components/structure/Navbar'
 
 
 const ConfigNotification = () => {
@@ -9,6 +10,8 @@ const ConfigNotification = () => {
         return (swal("Correcto", "La configuración ha sido guardada", "success"))
 	};
 	return (
+		<>
+		<Navbar />
 		<div className="containerConfigNotification">
 			<div className="titleNoti">
 				<h3>Configuración de Notificaciones</h3>
@@ -76,6 +79,7 @@ const ConfigNotification = () => {
 				</span>
 			</div>
 		</div>
+		</>
 	)
 }
 

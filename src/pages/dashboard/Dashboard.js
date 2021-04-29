@@ -16,7 +16,7 @@ export default function Dashboard() {
             <section>
                 {user ? <Welcome /> : ""}
             </section>
-            <h1 className='dashboardTitle'>Dashboard de {auth.currentUser.displayName}</h1>
+            <h1 className='dashboardTitle'>Dashboard de {user? auth.currentUser.displayName:""}</h1>
             <div className='selectTag'>
                 <form >
                     <select className='selectTagForm' name="okr" id="okrs">
