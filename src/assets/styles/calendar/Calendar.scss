@@ -1,8 +1,11 @@
 .container-title-calendar-home{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 60px;
     letter-spacing: 1.4px;
+    width: 72%;
+    margin: auto;
 
     & h2 {
         font-size: 30px;

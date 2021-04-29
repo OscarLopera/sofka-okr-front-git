@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { MdNotifications, MdInput } from "react-icons/md";
 import "../../assets/styles/structure/Navbar.css";
@@ -6,7 +6,9 @@ import { IconContext } from "react-icons";
 import Logo from "./Logo";
 import foto from "../../assets/fotoTemporal.jpg";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from '../../functions/firebaseAuth'
+import { auth } from '../../functions/firebaseAuth';
+import { SingOut } from '../../pages/SignOut'
+
 
 function Navbar() {
   const [user] = useAuthState(auth);
@@ -28,14 +30,14 @@ function Navbar() {
               </li>
               <li>
                 <div className="photo-name-nav">
-                  <img src={user ? auth.currentUser.photoURL : foto} className="image-nav" />
+                  <img src={user ? auth.currentUser.photoURL : foto} className="image-nav" alt="Avatar" />
                   <span>{user ? auth.currentUser.displayName : "no asignado"}</span>
                 </div>
               </li>
               <li className="signout-icon">
-                <Link to="#">
+                <span onClick={SingOut}>
                   <MdInput />
-                </Link>
+                </span>
               </li>
             </ul>
           </div>
