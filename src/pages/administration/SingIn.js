@@ -4,15 +4,14 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, signInWithGoogle } from "../../functions/firebaseAuth";
 import { useHistory } from "react-router-dom";
 import Header from '../../components/administration/Header';
-import { saveToLocal } from '../../functions/localStorage'
+import { environment} from '../../environment/backendurl'
 
 function SignIn() {
-  saveToLocal('modalOpen', true);
   const history = useHistory();
   const [user] = useAuthState(auth);
 
   const createUser = () => {
-    const HOST_API = "http://localhost:8080/api/users";
+    const HOST_API = environment.apiRegisterUser
 
     const user = {
       id: auth.currentUser.uid,

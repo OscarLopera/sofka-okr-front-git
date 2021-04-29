@@ -25,9 +25,3 @@ it('opens modal when button is clicked', () => {
     wrapper.find('button').simulate('click');
     expect(wrapper.find(Modal).prop('isOpen')).toBe(true);
 });
-
-it('renders childen when modal is open', () => {
-    const wrapper = shallow(<KrFinish>modal content</KrFinish>);
-    //expect(wrapper.find(Modal).prop('children')).toBe();
-    expect(wrapper.find(Modal).prop('children')).toMatchSnapshot();
-});

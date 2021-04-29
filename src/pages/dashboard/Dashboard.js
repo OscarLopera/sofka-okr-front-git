@@ -1,12 +1,14 @@
 import React from 'react'
-import Welcome from '../../components/notifications/welcome/Welcome'
-import { useAuthState } from "react-firebase-hooks/auth";
+import Welcome from '../../components/notifications/welcome/Welcome';
 import { auth } from "../../functions/firebaseAuth";
 import Navbar from '../../components/structure/Navbar';
 import Sidebar from '../../components/structure/Sidebar';
 
 export default function Dashboard() {
-    const [user] = useAuthState(auth);
+    const user = auth.currentUser;
+
+    if (!auth.currentUser) window.location.href="/";
+
     return (
         <div className='home'>
             <Navbar />
