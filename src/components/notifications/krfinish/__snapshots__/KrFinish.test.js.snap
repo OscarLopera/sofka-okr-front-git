@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders childen when modal is open 1`] = `
+Array [
+  <header
+    className="headerNotificationWindows"
+    id="headerNotificationWindows"
+  />,
+  <div
+    className="bodyNotificationWindows"
+    id="bodyNotificationWindows"
+  >
+    <h1>
+      ¡ 
+      Andres Caro
+      ! 
+    </h1>
+    <h2>
+       
+      Estudio de Encuesta
+    </h2>
+    <h3>
+      Terminaste el kr 
+      Realizar Encuesta a 100 personas
+    </h3>
+    <p>
+      "Nuestra recompensa se encuentra en el esfuerzo y no en el resultado, un esfuerzo total es una víctoria completa (Mahatma Gandhi)".
+    </p>
+  </div>,
+  <div
+    className="imageNotificationWindows"
+    id="imageNotificationWindows"
+  >
+    <img
+      alt="logo-sofka"
+      src="https://www.sofka.com.co/wp-content/uploads/2020/08/sofka-logo-gradient-white.png"
+    />
+  </div>,
+  <footer
+    className="footerNotificationWindows"
+    id="footerNotificationWindows"
+  />,
+]
+`;

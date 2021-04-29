@@ -6,7 +6,7 @@ body {
 
 .navbar{
     background-color: #F0950E;
-    height: 70px;
+    height: 75px;
     display: flex;
     justify-content: flex-start;
     align-items: center;   
@@ -29,7 +29,11 @@ body {
 
 .nav-menu-header li{
     list-style: none;
-    padding: 5px;    
+    padding: 10px;    
+}
+
+.nav-menu-header li:hover{
+    cursor: pointer;
 }
 
 .notifications-icon{
@@ -51,8 +55,8 @@ body {
 }
 
 .image-nav {
-    width:50px;
-    height:50px;
+    width:45px;
+    height:45px;
     border-radius:50%;
     background-position: center;
     background-repeat: no-repeat;
@@ -60,6 +64,7 @@ body {
 }
 
 .photo-name-nav{
+    margin-top: 7px;
     align-items: center;
     display: flex;
     flex-direction: column;
