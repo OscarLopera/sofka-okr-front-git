@@ -13,7 +13,7 @@ const Sidebar = () => {
         <nav className="sidebar">
             <div className="container-button-sidebar">
 
-                <Link to={buttonDifferent ? '/createokr' : '/myokrs'}>
+                <Link to={buttonDifferent ? '/okrCreate' : '/myokrs'}>
                     <button id = "button-crearokr-misokrs" color='#F0950E' className="button-sidebar"
                     >{buttonDifferent ? "Crear OKR" : "Mis OKR"}</button> </Link>
             </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import TitleHomeCalendar from '../../components/calendar/TitleHomeCalendar';
 import ContentCalendarHome from '../../components/calendar/ContentCalendarHome';
 import '../../assets/styles/calendar/Calendar.scss';
-import Fondo from '../../components/calendar/images/calendar.svg';
+import Fondo from '../../assets/img/calendar.svg';
 import NavBar from '../../components/structure/Navbar';
 import SideBar from '../../components/structure/Sidebar';
 
