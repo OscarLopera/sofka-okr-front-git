@@ -3,7 +3,7 @@ import dashboard from "../pages/Dashboard"
 
 describe('verification id people',() =>{
   test('verfivation id is not null', () =>{
-    expect(dashboard).toBeUndefined()
+    expect(dashboard).not.toBeNull()
   })
   test('id to be definided', () =>{
     expect(dashboard).toBeDefined()

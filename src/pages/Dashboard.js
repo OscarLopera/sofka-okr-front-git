@@ -1,7 +1,8 @@
 import React from 'react'
-import { auth } from '../functions/firebaseAuth'
-
-import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../functions/firebaseAuth";
+import Navbar from '../../components/structure/Navbar';
+import Sidebar from '../../components/structure/Sidebar';
+import Welcome from '../../components/notifications/welcome/Welcome';
 
 class Dashboard extends React.Component {
 
@@ -34,7 +35,7 @@ class Dashboard extends React.Component {
     {      
         return (
             <div className='home'>
-
+                
                 <h1 className='dashboardTitle'>Dashboard de {auth.currentUser.displayName}</h1>
 
                 <div className='selectTag'>
