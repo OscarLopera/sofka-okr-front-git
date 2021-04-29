@@ -210,6 +210,9 @@
     at async Object.fn (/usr/lib/node_modules/firebase-tools/lib/commands/deploy.js:66:9)
     at async /usr/lib/node_modules/firebase-tools/lib/command.js:169:17
 [error] 
+<<<<<<< HEAD
+[error] Error: Failed to get Firebase project sofka-okr-front. Please make sure the project exists and your account has permission to access it.
+=======
 [error] Error: Failed to get Firebase project sofka-okr-front. Please make sure the project exists and your account has permission to access it.
 [debug] [2021-04-28T18:01:35.001Z] ----------------------------------------------------------------------
 [debug] [2021-04-28T18:01:35.003Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Andres Caro\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
@@ -298,3 +301,4 @@
     at async C:\Users\Andres Caro\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:169:17
 [error] 
 [error] Error: Failed to get Firebase project sofka-okr-front. Please make sure the project exists and your account has permission to access it.
+>>>>>>> dc5bc0425ac0bf9baf2b460d550229face594026

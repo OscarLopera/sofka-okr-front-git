@@ -8,11 +8,13 @@ import Calendar from './pages/Calendar'
 import Messages from './pages/Messages'
 import Notifications from './pages/Notifications'
 import ConfigNotifications from './pages/confignotification/ConfigNotification'
+import './assets/styles/dashboard/Dashboard.scss'
 import SingIn from './pages/SingIn'
 import Okrs from './pages/Okrs'
 import OkrCreate from './pages/OkrCreate'
+import KrCreate from './pages/KrCreate'
+
 import './assets/styles/planification/Planification.scss'
-import './assets/styles/dashboard/Dashboard.scss'
 
 function App() {
 	return (
@@ -29,14 +31,12 @@ function App() {
 					<Route path="/messages" component={Messages} />
 					<Route path="/notifications" component={Notifications} />
 					<Route path="/configNotifications" component={ConfigNotifications} />
-					<Route path="/singin" component={SingIn} />
+					<Route path="/krCreate" exact component={KrCreate} />
+					
 				</Switch>
 			</Router>
 		</>
 	)
 }
 
-
 export default App
-
-

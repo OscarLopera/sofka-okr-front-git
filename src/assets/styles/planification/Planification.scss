@@ -26,7 +26,8 @@ section.okr {
 	}
 
 	& .okr-item {
-		box-shadow: 1px 2px 4px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: 1px 2px 4px 5px rgba(0, 0, 0, 0.1);
+		margin-bottom: 50px;
 	}
 
 	& .headerOKR {
@@ -76,9 +77,12 @@ section.okr {
 		flex-wrap: wrap;
 
 		& .kr {
-			width: 380px;
+			width: 480px;
 			height: 180px;
 			border-radius: 5px;
+			padding: 12px;
+			margin-bottom: 30px;
+			box-shadow: 1px 2px 4px 2px rgba(0, 0, 0, 0.1);
 
 			& .headerKR {
 				display: flex;
@@ -106,117 +110,123 @@ section.okr {
 				}
 			}
 
-			& .contentKR {
-				& .range {
-					height: 80px;
-					width: 380px;
-					background: #fff;
-					border-radius: 10px;
-					padding: 0 65px 0 45px;
-					box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+			& progress[value] {
+				appearance: none;
+				border: none;
+				width: 100%;
+				height: 20px;
+				background-color: whiteSmoke;
+				border-radius: 3px;
+				box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5) inset;
+				color: royalblue;
+				position: relative;
+				margin: 0 0 1.5em;
+			}
 
-					& .sliderValue {
-						position: relative;
-						width: 100%;
+			& progress[value]::-webkit-progress-bar {
+				background-color: whiteSmoke;
+				border-radius: 3px;
+				box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5) inset;
+			}
 
-						& span {
-							position: absolute;
-							height: 45px;
-							width: 45px;
-							transform: translateX(-80%) scale(0);
-							font-weight: 500;
-							top: -40px;
-							line-height: 55px;
-							z-index: 2;
-							color: #fff;
-							transform-origin: bottom;
-							transition: transform 0.3s ease-in-out;
-							text-align: center;
+			& progress[value]::-webkit-progress-value {
+				position: relative;
 
-							&.show {
-								transform: translateX(-80%) scale(1);
-							}
+				background-size: 35px 20px, 100% 100%, 100% 100%;
+				border-radius: 3px;
 
-							&::after {
-								position: absolute;
-								content: '';
-								height: 100%;
-								width: 100%;
-								background: $orange-color;
-								border: 3px solid #fff;
-								z-index: -1;
-								left: 50%;
-								transform: translateX(-50%) rotate(45deg);
-								border-bottom-left-radius: 50%;
-								box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-								border-top-left-radius: 50%;
-								border-top-right-radius: 50%;
-							}
-						}
-					}
+				animation: animate-stripes 5s linear infinite;
+			}
 
-					& .field {
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						height: 100%;
-						position: relative;
+			& progress[value]::-webkit-progress-value:after {
+				content: '';
+				position: absolute;
 
-						& .value {
-							position: absolute;
-							font-size: 18px;
-							color: $orange-color;
-							font-weight: 600;
+				width: 5px;
+				height: 5px;
+				top: 7px;
+				right: 7px;
 
-							&.left {
-								left: -22px;
-							}
+				background-color: white;
+				border-radius: 100%;
+			}
 
-							&.right {
-								right: -43px;
-							}
-						}
-					}
+			& progress[value]::-moz-progress-bar {
+				background-image: -moz-linear-gradient(
+						135deg,
+						transparent,
+						transparent 33%,
+						rgba(0, 0, 0, 0.1) 33%,
+						rgba(0, 0, 0, 0.1) 66%,
+						transparent 66%
+					),
+					-moz-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.2)),
+					-moz-linear-gradient(left, #09c, #f44);
 
-					& input {
-						-webkit-appearance: none;
-						width: 100%;
-						height: 3px;
-						background: #ddd;
-						border-radius: 5px;
-						outline: none;
-						border: none;
-						z-index: 2222;
+				background-size: 35px 20px, 100% 100%, 100% 100%;
+				border-radius: 3px;
+			}
 
-						&::-webkit-slider-thumb {
-							-webkit-appearance: none;
-							width: 20px;
-							height: 20px;
-							background: red;
-							border-radius: 50%;
-							background: $orange-color;
-							border: 1px solid $orange-color;
-							cursor: pointer;
-						}
+			& .progress-bar {
+				background-color: whiteSmoke;
+				border-radius: 3px;
+				box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5) inset;
+				width: 100%;
+				height: 20px;
 
-						&::-moz-range-thumb {
-							-webkit-appearance: none;
-							width: 20px;
-							height: 20px;
-							background: red;
-							border-radius: 50%;
-							background: $orange-color;
-							border: 1px solid $orange-color;
-							cursor: pointer;
-						}
+				& span {
+					background-color: royalblue;
+					border-radius: 3px;
+					display: block;
+					text-indent: -9999px;
+				}
+			}
 
-						&::-moz-range-progress {
-							background: $orange-color;
-						}
-					}
+			& p[data-value] {
+				position: relative;
+			}
+
+			& p[data-value]:after {
+				content: attr(data-value) '%';
+				position: absolute;
+				right: 0;
+			}
+
+			& progress::-webkit-progress-value {
+				background: $orange-color;
+			}
+
+			& .update {
+				position: relative;
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+
+				& input {
+					width: 50%;
+					outline: none;
+				}
+
+				& button {
+					background: none;
+					outline: none;
+					border: none;
+					background: $orange-color;
+					padding: 10px;
+					border-radius: 6px;
+					color: #fff;
+					width: 40%;
+					font-size: 18px;
+					cursor: pointer;
 				}
 			}
 		}
+	}
+}
+
+@keyframes animate-stripes {
+	100% {
+		background-position: -100px 0;
 	}
 }
 
@@ -278,6 +288,7 @@ section.containerOkrCreate {
 					transition: 0.1s ease-in-out;
 					display: flex;
 					justify-content: end;
+					padding: 5px;
 
 					&:focus {
 						border: 1px solid $orange-color;
@@ -318,6 +329,7 @@ section.containerOkrCreate {
 						border-radius: 4px;
 						font-size: 18px;
 						letter-spacing: 1px;
+						padding: 5px;
 						transition: 0.5s ease-in-out;
 
 						&:focus {
@@ -333,6 +345,7 @@ section.containerOkrCreate {
 		display: flex;
 		justify-content: center;
 		place-items: center;
+		margin-top: 40px;
 
 		& button {
 			position: relative;
