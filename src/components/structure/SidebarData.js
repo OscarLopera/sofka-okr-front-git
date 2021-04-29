@@ -42,7 +42,7 @@ export const SidebarData = [
     subNav: [
       {
         title: 'Configuración de notificaciones',
-        path: '/notifications',
+        path: '/configNotifications',
         icon: <RiIcons.RiMailSettingsFill />
       },
       {

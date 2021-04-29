@@ -1,8 +1,10 @@
 import React from 'react'
 import { auth } from "../../functions/firebaseAuth"
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const User = () => {
-    return <>{auth.currentUser.displayName}</>
+    const [user] = useAuthState(auth);
+    return <>{user? auth.currentUser.displayName:""}</>
     
 }
 

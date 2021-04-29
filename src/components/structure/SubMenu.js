@@ -23,11 +23,11 @@ const SubMenu = ({ item }) => {
           </div>
         </Link>
         {subnav &&
-          item.subNav.map((item, index) => {
+          item.subNav.map((item, index) => {            
             return (
               <Link className="DropdownLink-sidebar" id="DropdownLink-sidebar" to={item.path} key={index}>
                 {item.icon}
-                <span>{item.title}</span>
+                <span data-testid={index}>{item.title}</span>
               </Link>
             );
           })}
