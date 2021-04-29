@@ -5,56 +5,56 @@ import * as AiIcons from "react-icons/ai";
 import { SidebarData } from './SidebarData';
 import '../assets/styles/Navbar.scss'
 import { IconContext } from 'react-icons';
-import Bell from "./ModalBell";
+import Bell from "./notifications/modalbell/ModalBell";
 
 function Navbar() {
 
-    let state = {
+    const state = {
         data: [
-          {
-            id: 'd00d3614-101a-44ca-b6c2-0be075aeed3a',
-            name: 'Notification Proyect',
-            typeN: 'OKR',
-            detail: '30',
-            viewed:'false'
-          },
-          {
-            id: 'd00d3614-101a-44ca-b6c2-0be075aeed3b',
-            name: 'Notification Proyect',
-            typeN: 'OKR',
-            detail: '70',
-            viewed:'true'
-          },
-          {
-            id: 'd00d3614-101a-44ca-b6c2-0be075aeed3b',
-            name: 'Notification Proyect',
-            typeN: 'OKR',
-            detail: '100 Or Finished',
-            viewed:'true'
-          },
-          {
-            id: 'd00d3614-101a-44ca-b6c2-0be075aeed3a',
-            name: 'Notification Proyect',
-            typeN: 'KR',
-            detail: '30',
-            viewed:'true'
-          },
-          {
-            id: 'd00d3614-101a-44ca-b6c2-0be075aeed3b',
-            name: 'Notification Proyect',
-            typeN: 'KR',
-            detail: '70',
-            viewed:'true'
-          },
-          {
-            id: 'd00d3614-101a-44ca-b6c2-0be075aeed3b',
-            name: 'Notification Proyect ',
-            typeN: 'KR',
-            detail: '100',
-            viewed:'true'
-          },
+            {
+                id: 'd00d3614-101a-44ca-b6c2-0be075aeed3a',
+                name: 'Notification Proyect',
+                typeN: 'OKR',
+                detail: '30',
+                viewed: 'false'
+            },
+            {
+                id: 'd00d3614-101a-44ca-b6c2-0be075aeed3b',
+                name: 'Notification Proyect',
+                typeN: 'OKR',
+                detail: '70',
+                viewed: 'true'
+            },
+            {
+                id: 'd00d3614-101a-44ca-b6c2-0be075aeed3b',
+                name: 'Notification Proyect',
+                typeN: 'OKR',
+                detail: '100 Or Finished',
+                viewed: 'true'
+            },
+            {
+                id: 'd00d3614-101a-44ca-b6c2-0be075aeed3a',
+                name: 'Notification Proyect',
+                typeN: 'KR',
+                detail: '30',
+                viewed: 'true'
+            },
+            {
+                id: 'd00d3614-101a-44ca-b6c2-0be075aeed3b',
+                name: 'Notification Proyect',
+                typeN: 'KR',
+                detail: '70',
+                viewed: 'true'
+            },
+            {
+                id: 'd00d3614-101a-44ca-b6c2-0be075aeed3b',
+                name: 'Notification Proyect ',
+                typeN: 'KR',
+                detail: '100',
+                viewed: 'true'
+            },
         ],
-      };
+    };
 
 
     const [sidebar, setSidebar] = useState(false)
@@ -65,7 +65,7 @@ function Navbar() {
         <>
             <IconContext.Provider value={{ color: '#fff' }}>
                 <div className="navbar">
-                    
+
                     <Link to="#" className='menu-bars'>
                         <FaIcons.FaBars onClick={showSidebar} />
                     </Link>
@@ -73,7 +73,7 @@ function Navbar() {
                         <h1>Sofka y SofkaU</h1>
 
                         <ul>
-                            <li><Bell state={state.data}/></li>
+                            <li><Bell state={state.data} /></li>
                             <li><Link to='/singin'>Sing In</Link></li>
                             <li><Link to='/'>Sing Out</Link></li>
                         </ul>
