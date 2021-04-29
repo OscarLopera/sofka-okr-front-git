@@ -24,17 +24,14 @@ class Dashboard extends React.Component {
 
             this.setState({ titulosOkr: response[0], datoOkr: response[1] })
             this.setState({ datosTabla: response[1]["keyResults"] })
-            this.setState({porcentajeAvance : response[3]})
+            this.setState({porcentajeAvance : response[2]})
             console.log(this.state.porcentajeAvance)
         }
         );
-
     }
-
     render(  ) 
 
-    {
-        
+    {      
         return (
             <div className='home'>
 
@@ -61,6 +58,7 @@ class Dashboard extends React.Component {
 
                         <div className='containerTableOkr' id='containerTableOkr'>
 
+                        <h1 className='porcentaje'> {this.state.porcentajeAvance}%</h1>
                             <table className='tableOkr'>
                                 <tr className='tableHeadOkr'>
 
@@ -80,7 +78,6 @@ class Dashboard extends React.Component {
 
                                 {this.state.datosTabla.map(keyResult => (
                                     <>
-                                      
                                         <tr>
                                             <td> <h4>Responsable: {keyResult.personInChargeNameKr}  </h4> </td>
                                             
