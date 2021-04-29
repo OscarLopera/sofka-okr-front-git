@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { MdNotifications, MdInput } from "react-icons/md";
-import "../../assets/styles/structure/Navbar.css";
+import "../../assets/styles/structure/Navbar.scss";
 import { IconContext } from "react-icons";
 import Logo from "./Logo";
 import foto from "../../assets/fotoTemporal.jpg";
