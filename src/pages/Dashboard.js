@@ -1,10 +1,28 @@
 import React from 'react'
-
 import {auth} from '../functions/firebaseAuth'
 
-export default function Dashboard() {
-    return (
-        <div className='home'>
+class Dashboard extends React.Component{
+    
+        constructor(){
+            super();
+            this.state = {
+                titulosOkr : [] 
+            }
+        }
+
+        componentDidMount(){
+
+            fetch(`http://localhost:8080/dashboard/user-okrs/12`)
+            .then(response=>response.json())
+            .then(response=>{
+                console.log(response)
+                this.setState({titulosOkr: response})
+            })
+        }
+
+        render() {
+        return (
+            <div className='home'>
 
             <h1 className='dashboardTitle'>Dashboard de {auth.currentUser.displayName}</h1>
            
@@ -13,10 +31,7 @@ export default function Dashboard() {
                 <form >
                 <select className='selectTagForm' name="okr" id="okrs">
                 <optgroup className='selectTagOptGroup' label="Select OKR">
-
-                <option value="okr1" className='okrSelection'>Okr1</option>
-                <option value="okr2" className='okrSelection'>Okr2</option>
-
+                {this.state.titulosOkr.map(okr => (<option value="okr1" className='okrSelection'>{okr.title}</option>))}
                 </optgroup>
                 </select>
                 </form>
@@ -68,5 +83,8 @@ export default function Dashboard() {
               </div>   
         </div>
          </div>  
-    )
+        )
+    }
 }
+
+export default Dashboard
