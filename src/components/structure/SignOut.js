@@ -1,4 +1,4 @@
-import { auth } from '../functions/firebaseAuth';
+import { auth } from '../../functions/firebaseAuth';
 
 var timeout;
 window.onload = resetTimer;
@@ -18,4 +18,5 @@ export function resetTimer() {
 
 export function SingOut() {
     auth.signOut();
+    window.location.href = '/';
 }

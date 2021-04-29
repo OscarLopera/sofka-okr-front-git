@@ -7,6 +7,7 @@ import NavBar from '../../components/structure/Navbar';
 import SideBar from '../../components/structure/Sidebar';
 
 const Calendar = () => {
+
     return (
         <div id="container-calendar-components-home" className="container-calendar-components-home">
             <NavBar />

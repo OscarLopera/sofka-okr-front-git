@@ -14,10 +14,10 @@ const Sidebar = () => {
             <div className="container-button-sidebar">
 
                 <Link to={buttonDifferent ? '/createokr' : '/myokrs'}>
-                    <button color='#F0950E' className="button-sidebar"
+                    <button id = "button-crearokr-misokrs" color='#F0950E' className="button-sidebar"
                     >{buttonDifferent ? "Crear OKR" : "Mis OKR"}</button> </Link>
             </div>
-            <div>
+            <div id = "submenu-sidebar">
                 {SidebarData.map((item, index) => {
                     return <SubMenu item={item} key={index} />;
                 })}

@@ -7,7 +7,7 @@ import Logo from "./Logo";
 import foto from "../../assets/fotoTemporal.jpg";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from '../../functions/firebaseAuth';
-import { SingOut } from '../../pages/SignOut'
+import { SingOut } from './SignOut'
 
 
 function Navbar() {
@@ -15,27 +15,27 @@ function Navbar() {
   return (
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
-        <div className="navbar">
-          <div className="nav-menu-header">
-            <ul>
-              <Link>
+        <div id = "navbar" className="navbar">
+          <div id = "nav-menu-header" className="nav-menu-header">
+            <ul id = "list-logo">
+              <Link to="/dashboard">
                 <Logo />
               </Link>
             </ul>
-            <ul >
-              <li className="notifications-icon">
-                <Link to="#">
+            <ul id = "list-notifications">
+              <li id = "notifications-icon" className="notifications-icon">
+                <span id = "span-notificaciones-navbar">
                   <MdNotifications />
-                </Link>
+                </span>
               </li>
               <li>
-                <div className="photo-name-nav">
+                <div id= "photo-name-nav" className="photo-name-nav">
                   <img src={user ? auth.currentUser.photoURL : foto} className="image-nav" alt="Avatar" />
                   <span>{user ? auth.currentUser.displayName : "no asignado"}</span>
                 </div>
               </li>
               <li className="signout-icon">
-                <span onClick={SingOut}>
+                <span id = "span-logout-navbar" onClick={SingOut}>
                   <MdInput />
                 </span>
               </li>

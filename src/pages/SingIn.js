@@ -3,7 +3,7 @@ import Login from "../components/administration/Login";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../functions/firebaseAuth";
 import { useHistory } from "react-router-dom";
-import {signInWithGoogle} from '../functions/firebaseAuth'
+import { signInWithGoogle } from '../functions/firebaseAuth'
 import Header from '../components/administration/Header'
 
 function SignIn() {
@@ -40,7 +40,7 @@ function SignIn() {
   return (
     <div className="App">
       <section>
-        <Header/>
+        <Header />
         {user ? (history.push("/dashboard")) : (<Login signInWithGoogle={signInWithGoogle} />)}
       </section>
     </div>
