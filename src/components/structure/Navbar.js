@@ -6,7 +6,7 @@ import { IconContext } from "react-icons";
 import Logo from "./Logo";
 import foto from "../../assets/fotoTemporal.jpg";
 import { useAuthState } from "react-firebase-hooks/auth";
-import {auth} from '../../functions/firebaseAuth'
+import { auth } from '../../functions/firebaseAuth'
 
 function Navbar() {
   const [user] = useAuthState(auth);
@@ -22,14 +22,14 @@ function Navbar() {
             </ul>
             <ul >
               <li className="notifications-icon">
-                <Link to="#">               
-                  <MdNotifications />              
+                <Link to="#">
+                  <MdNotifications />
                 </Link>
               </li>
               <li>
                 <div className="photo-name-nav">
-                  <img src={user?auth.currentUser.photoURL:foto} className="image-nav" />
-                  <span>{user?auth.currentUser.displayName:"no asignado"}</span>
+                  <img src={user ? auth.currentUser.photoURL : foto} className="image-nav" />
+                  <span>{user ? auth.currentUser.displayName : "no asignado"}</span>
                 </div>
               </li>
               <li className="signout-icon">
