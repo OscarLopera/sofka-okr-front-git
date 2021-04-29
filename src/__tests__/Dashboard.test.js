@@ -1,5 +1,5 @@
 import React from "react";
-import dashboard from "../pages/Dashboard"
+import dashboard from "../pages/dashboard/Dashboard"
 
 describe('verification id people',() =>{
   test('verfivation id is not null', () =>{
