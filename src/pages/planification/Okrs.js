@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { environment } from '../environment/backendurl'
-import { Link } from 'react-router-dom'
-import Navbar from '../components/structure/Navbar'
-import Sidebar from '../components/structure/Sidebar'
-import '../assets/styles/planification/Planification.scss'
-
-import Krs from '../components/planification/Kr'
+import { environment } from '../../environment/backendurl'
+import Navbar from '../../components/structure/Navbar'
+import Sidebar from '../../components/structure/Sidebar'
+import '../../assets/styles/planification/Planification.scss'
 
 const Okrs = () => {
 	const [okr, setOkr] = useState([])
@@ -20,7 +17,8 @@ const Okrs = () => {
 	}
 
 	useEffect(() => {
-		getAllOkr()
+		getAllOkr();
+		// eslint-disable-next-line
 	}, [])
 
 	return (

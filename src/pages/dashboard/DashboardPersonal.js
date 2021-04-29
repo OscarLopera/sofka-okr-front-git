@@ -1,6 +1,6 @@
 import React from 'react';
-import Navbar from '../components/structure/Navbar';
-import Sidebar from '../components/structure/Sidebar';
+import Navbar from '../../components/structure/Navbar';
+import Sidebar from '../../components/structure/Sidebar';
 
 export default function DashboardPersonal() {
     return (

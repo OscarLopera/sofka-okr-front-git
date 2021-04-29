@@ -3,7 +3,7 @@ import { Modal } from '@material-ui/core';
 import "../../../assets/styles/notifications/ModalBell.scss";
 import bell from "../../administration/img/notifications.svg";
 import bell2 from "../../administration/img/notifications_active.svg";
-import NotificationsList from "../../NotificationList"
+import NotificationsList from "../NotificationList"
 
 
 

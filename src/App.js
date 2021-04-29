@@ -1,17 +1,17 @@
-import React from 'react'
-import './App.css'
-import './assets/styles/planification/Planification.scss'
-import './assets/styles/dashboard/Dashboard.scss'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Dashboard from './pages/Dashboard'
-import Support from './pages/Support'
-import Calendar from './pages/calendar/Calendar'
-import ConfigNotifications from './pages/confignotification/ConfigNotification'
-import SingIn from './pages/SingIn'
-import Okrs from './pages/Okrs'
-import OkrCreate from './pages/OkrCreate'
-import KrCreate from './pages/KrCreate'
-import DashboardPersonal from './pages/DashboardPersonal';
+import React from 'react';
+import './App.css';
+import './assets/styles/planification/Planification.scss';
+import './assets/styles/dashboard/Dashboard.scss';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import DashboardPersonal from './pages/dashboard/DashboardPersonal';
+import Dashboard from './pages/dashboard/Dashboard';
+import Support from './pages/administration/Support';
+import Calendar from './pages/calendar/Calendar';
+import ConfigNotifications from './pages/confignotification/ConfigNotification';
+import SingIn from './pages/administration/SingIn';
+import Okrs from './pages/planification/Okrs';
+import OkrCreate from './pages/planification/OkrCreate';
+import KrCreate from './pages/planification/KrCreate';
 
 function App() {
 	return (
@@ -24,9 +24,9 @@ function App() {
 					<Route path="/support" component={Support} />
 					<Route path="/configNotifications" component={ConfigNotifications} />
 					<Route path="/krCreate" exact component={KrCreate} />
-					<Route path="/mydashboard"  component={DashboardPersonal} />				
-					<Route path="/myokrs"  component={Okrs} />				
-					<Route path="/okrCreate"  component={OkrCreate} />	
+					<Route path="/mydashboard" component={DashboardPersonal} />
+					<Route path="/myokrs" component={Okrs} />
+					<Route path="/okrCreate" component={OkrCreate} />
 				</Switch>
 			</Router>
 		</>

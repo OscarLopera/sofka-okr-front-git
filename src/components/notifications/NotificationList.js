@@ -1,7 +1,7 @@
 import React from 'react';
-import '../assets/styles/notifications/NotificationList.scss';
-import image from './administration/img/orange.png';
-import closeImg from './administration/img/close.svg';
+import '../../assets/styles/notifications/NotificationList.scss'
+import image from '../administration/img/orange.png';
+import closeImg from '../administration/img/close.svg';
 
 class NotificationsListItem extends React.Component {
 
