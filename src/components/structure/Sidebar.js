@@ -9,7 +9,7 @@ const Sidebar = () => {
     let buttonDifferent = false;
     location.pathname === "/myokrs" ? buttonDifferent = true : buttonDifferent = false;
 
-    return (
+    return (        
         <nav className="sidebar">
             <div className="container-button-sidebar">
 
@@ -22,7 +22,7 @@ const Sidebar = () => {
                     return <SubMenu item={item} key={index} />;
                 })}
             </div>
-        </nav>
+        </nav>        
     )
 
 }
