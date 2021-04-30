@@ -4,17 +4,13 @@ import { environment } from "../../environment/backendurl";
 import Navbar from "../../components/structure/Navbar";
 import Sidebar from "../../components/structure/Sidebar";
 import "../../assets/styles/planification/Planification.scss";
-import { auth } from "../../functions/firebaseAuth";
-import { useAuthState } from "react-firebase-hooks/auth";
-import SignIn from "../administration/SingIn";
-
+import {auth} from '../../functions/firebaseAuth';
 const Okrs = () => {
   const [okr, setOkr] = useState([]);
-  const [user] = useAuthState(auth);
   const urlOkr = environment.apiOkrUrl;
 
   const getAllOkr = () => {
-    axios.get(urlOkr).then((res) => {
+    axios.get(urlOkr+"/"+auth.currentUser.uid).then((res) => {
       setOkr(res.data);
     });
   };
@@ -23,7 +19,6 @@ const Okrs = () => {
     getAllOkr();
     // eslint-disable-next-line
   }, []);
-  if (user) {
     return (
       <>
         <Navbar />
@@ -54,8 +49,6 @@ const Okrs = () => {
         </section>
       </>
     );
-  }
-  return <SignIn />;
 };
 
 export default Okrs;

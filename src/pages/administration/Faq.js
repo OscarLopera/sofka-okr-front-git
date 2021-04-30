@@ -2,15 +2,13 @@ import React from 'react';
 import "../../assets/styles/administration/faq.scss";
 import NavBar from '../../components/structure/Navbar';
 import SideBar from '../../components/structure/Sidebar';
-import Support from '../../pages/administration/Support'
-import {Link} from 'react-router-dom'; 
-
+import { Link } from 'react-router-dom';
 
 function faq() {
 	return (
 		<div>
-			<NavBar/>
-			<SideBar/>
+			<NavBar />
+			<SideBar />
 			<h1>Preguntas frecuentes </h1>
 
 			<div class="faqs-container">
@@ -19,7 +17,7 @@ function faq() {
 						¿Qué es un OKR?
 		</h3>
 					<p class="faq-text">
-						Sus siglas corresponden a Objective and Key Results. Sirve para trazar un objetivo con unos resultados clave para lograr un crecimiento.  
+						Sus siglas corresponden a Objective and Key Results. Sirve para trazar un objetivo con unos resultados clave para lograr un crecimiento.
 		</p>
 				</div>
 
@@ -37,8 +35,8 @@ function faq() {
 						¿Qué es un dashboard?
 		</h3>
 					<p class="faq-text">
-						Es una vista gráfica donde puedes ver el progreso que llevas con tus kr's y okr's, con  gráficas de líneas, porcentajes, números, gráficas circulares, etc. 
-		</p>		
+						Es una vista gráfica donde puedes ver el progreso que llevas con tus kr's y okr's, con  gráficas de líneas, porcentajes, números, gráficas circulares, etc.
+		</p>
 				</div>
 
 				<div class="faq active">
@@ -46,7 +44,7 @@ function faq() {
 						¿Por qué la sesión caduca a los dos minutos?
 		</h3>
 					<p class="faq-text">
-						Como Sofkianos estamos comprometidos con la seguridad de la información de cada proyecto que tratemos. Es por esto que para proteger la información de tus OKR's programamos ese tiempo de caducación. 
+						Como Sofkianos estamos comprometidos con la seguridad de la información de cada proyecto que tratemos. Es por esto que para proteger la información de tus OKR's programamos ese tiempo de caducación.
 		</p>
 				</div>
 
@@ -61,7 +59,7 @@ function faq() {
 				<div class="back-container">
 					<Link to="/support" >
 						<button className="back"><b>Volver</b></button>
-					</Link>	
+					</Link>
 				</div>
 			</div>
 

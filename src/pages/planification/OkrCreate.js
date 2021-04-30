@@ -7,16 +7,12 @@ import "../../assets/styles/planification/Planification.scss";
 import { saveToLocal } from "../../functions/localStorage";
 import { environment } from "../../environment/backendurl";
 import Navbar from "../../components/structure/Navbar";
-import Sidebar from "../../components/structure/Sidebar";
 import { auth } from "../../functions/firebaseAuth";
-import { useAuthState } from "react-firebase-hooks/auth";
-import SignIn from "../administration/SingIn";
 
 const OkrCreate = () => {
   const userId = auth.currentUser.uid;
   const urlOkr = environment.apiOkrUrl;
   const idOkr = uuidv4();
-  const [user] = useAuthState(auth);
 
   const onSubmit = (data) => {
     axios
@@ -39,7 +35,6 @@ const OkrCreate = () => {
   };
 
   const { register, handleSubmit } = useForm();
-  if (user) {
     return (
       <>
         <Navbar />
@@ -137,8 +132,6 @@ const OkrCreate = () => {
         </section>
       </>
     );
-  }
-  return <SignIn />;
 };
 
 export default OkrCreate;

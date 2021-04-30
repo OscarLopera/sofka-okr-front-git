@@ -3,17 +3,12 @@ import "../../assets/styles/notifications/Notification.scss";
 import Button from "@material-ui/core/Button";
 import swal from "sweetalert";
 import Navbar from "../../components/structure/Navbar";
-import { auth } from "../../functions/firebaseAuth";
-import { useAuthState } from "react-firebase-hooks/auth";
-import SignIn from "../administration/SingIn";
 
 const ConfigNotification = () => {
-  const [user] = useAuthState(auth);
   const Swal = () => {
     return swal("Correcto", "La configuración ha sido guardada", "success");
   };
 
-  if (user) {
     return (
       <>
         <Navbar />
@@ -103,8 +98,6 @@ const ConfigNotification = () => {
         </div>
       </>
     );
-  }
-  return <SignIn />;
 };
 
 export default ConfigNotification;
