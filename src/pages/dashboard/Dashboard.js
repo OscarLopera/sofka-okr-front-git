@@ -4,7 +4,6 @@ import Navbar from '../../components/structure/Navbar';
 import Sidebar from '../../components/structure/Sidebar';
 import Welcome from '../../components/notifications/welcome/Welcome';
 import BurnDownChart from './BurndownChart';
-import PieChart from './PieChart';
 
 class Dashboard extends React.Component {
   

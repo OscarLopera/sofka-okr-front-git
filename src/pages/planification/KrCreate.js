@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../assets/styles/planification/Planification.scss';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid'
 import axios from 'axios';
 import { environment } from '../../environment/backendurl';
@@ -11,6 +11,7 @@ import Sidebar from '../../components/structure/Sidebar'
 
 const KrCreate = (props) => {
 	const idOkr = getFromLocal('idOkr')
+	const history = useHistory()
 	const urlKr = environment.apiKrUrl
 
 	const onSubmit = (data) => {
@@ -29,12 +30,13 @@ const KrCreate = (props) => {
 			})
 			.then((res) => {
 				if (res.status === 201) {
-					window.location.href = '/myokrs'
+					history.push('/myokrs')
 				}
 			})
 	}
 
 	const { register, handleSubmit } = useForm()
+
 	return (
 		<>
 			<Navbar />
@@ -115,13 +117,12 @@ const KrCreate = (props) => {
 								<button>Anterior</button>
 							</Link>
 							<button type="submit">Finalizar</button>
+							<button onClick={() => window.location.reload()}>Agregar más Krs</button>
 						</div>
 					</form>
 				</div>
 			</section>
 		</>
-		
-
 	)
 }
 
