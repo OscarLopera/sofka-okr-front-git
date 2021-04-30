@@ -1,5 +1,5 @@
 import React from 'react'
-import { auth } from "../../functions/firebaseAuth";
+
 import Navbar from '../../components/structure/Navbar';
 import Sidebar from '../../components/structure/Sidebar';
 import Welcome from '../../components/notifications/welcome/Welcome';
