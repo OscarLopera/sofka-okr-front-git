@@ -4,6 +4,7 @@ import NavBar from './Navbar'
 import SideBar from './Sidebar'
 import foto from "../../assets/img/fotoTemporal.jpg";
 import '../../assets/styles/structure/Profile.css'
+import { Link } from 'react-router-dom';
 
 export function Profile (){
     const user = auth.currentUser;
@@ -19,7 +20,10 @@ export function Profile (){
                     <span>{user ? auth.currentUser.email : "No asignado"}</span>
                     <span>Super usuario</span>  
                 </div>
-                <a href='/dashboard'>Volver</a>
+                <Link to = "/dashboard">
+                <button className="buttonProfile" >Volver</button>
+                </Link>
+                
             </div>
         </div>
     );
