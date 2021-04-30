@@ -15,7 +15,7 @@ import KrCreate from './pages/planification/KrCreate';
 
 function App() {
 	return (
-		<>
+		<>		
 			<Router>
 				<Switch>
 					<Route path="/" exact component={SingIn} />
