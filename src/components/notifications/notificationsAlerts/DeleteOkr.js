@@ -13,10 +13,8 @@ const DeleteOkr = (idOkr) => {
   })
     .then((willDelete) => {
       if (willDelete) {
-
         const urlOkr = environment.apiOkrUrl
         axios.delete(`${urlOkr}/deleteOkr/${idOkr}`).then((res) => {
-          console.log(res)
           if (res.status === 200) {
             swal("Tu OKR ha sido eliminado", {
               icon: "success",

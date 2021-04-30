@@ -18,8 +18,8 @@ const DeleteOkr = (idKr) => {
         const urlKr = environment.apiKrUrl
 
         axios.delete(`${urlKr}/deleteKr/${idKr}`).then((res) => {
-          console.log(res)
           if (res.status === 200) {
+            window.location.reload()
             swal("Tu KR ha sido eliminado", {
               icon: "success",
             });

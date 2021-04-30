@@ -7,6 +7,7 @@ import Sidebar from '../../components/structure/Sidebar'
 import Kr from '../../components/planification/Kr';
 import '../../assets/styles/planification/Planification.scss'
 import DeleteOkr from '../../components/notifications/notificationsAlerts/DeleteOkr'
+import EmptyOkrs from '../../components/planification/emptyOkrs'
 
 const Okrs = () => {
 
@@ -37,6 +38,8 @@ const Okrs = () => {
 					<div className="title">
 						<h3>Mis OKR's</h3>
 					</div>
+					{okr.length === 0 &&
+						<EmptyOkrs></EmptyOkrs>}
 
 					{okr &&
 						okr.map((item) => (

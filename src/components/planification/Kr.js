@@ -19,8 +19,6 @@ const Kr = ({ okrId }) => {
 		// eslint-disable-next-line
 	}, [])
 
-
-	console.log(kr)
 	return (
 		<>
 			{kr &&
