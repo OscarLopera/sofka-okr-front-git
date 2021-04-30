@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom"
 import Navbar from '../../components/structure/Navbar'
 import Sidebar from '../../components/structure/Sidebar'
 import { v4 as uuidv4 } from 'uuid';
@@ -27,7 +28,7 @@ function CrearKr() {
         }
         axios.post("https://tranquil-island-91872.herokuapp.com/Krs/postKr", kr)
             .then(res => {
-                if(res.status===201){
+                if (res.status === 201) {
                     swal.fire({
                         title: "¡Se guardó el Kr con éxito!",
                         icon: "success",
@@ -85,7 +86,7 @@ function CrearKr() {
                 </div>
                 <div>
                     <h5>Descripcion</h5>
-                    <textarea required {...register("descriptionKr")} cols="20" rows="3"></textarea>
+                    <textarea maxlength="250" required {...register("descriptionKr")} cols="20" rows="3"></textarea>
                 </div>
                 <button type="submit">Guardar</button>
             </form>
