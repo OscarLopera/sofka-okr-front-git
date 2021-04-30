@@ -47,13 +47,13 @@ export default function Dashboard() {
                                 <td ><h4>Resultados clave</h4> </td>
                             </tr>
                             <tr>
-                                <td> <h5>Responsable: {auth.currentUser.displayName}</h5> </td>
+                                <td> <h5>Responsable: {user? auth.currentUser.displayName:""}</h5> </td>
                             </tr>
                             <tr>
                                 <td>Titulo KR: <h5>99%</h5></td>
                             </tr>
                             <tr>
-                                <td> <h5>Responsable: {auth.currentUser.displayName}</h5></td>
+                                <td> <h5>Responsable: {user? auth.currentUser.displayName:""}</h5></td>
                             </tr>
                             <tr>
                                 <td>Titulo KR: <h5>99%</h5></td>
