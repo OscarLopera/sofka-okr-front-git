@@ -21,7 +21,7 @@ export const SidebarData = [
       },
       {
         title: <User/>,
-        path: '/mydashboard',
+        path: '/dashboard',
         icon: <MdDashboard />
       }
     ]
