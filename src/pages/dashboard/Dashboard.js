@@ -3,6 +3,7 @@ import { auth } from "../../functions/firebaseAuth";
 import Navbar from '../../components/structure/Navbar';
 import Sidebar from '../../components/structure/Sidebar';
 import Welcome from '../../components/notifications/welcome/Welcome';
+import BurnDownChart from './BurndownChart';
 
 class Dashboard extends React.Component {
 
@@ -12,21 +13,27 @@ class Dashboard extends React.Component {
             titulosOkr: [],
             datoOkr: {},
             datosTabla: [],
-            porcentajeAvance: []
+            porcentajeAvance: [],
+            valuesBurndownChart: {},
+            valuesPieChart:{},
+            title:{}
         }
     }
     componentDidMount() {
         Promise.all([
-
             fetch(`http://localhost:8080/dashboard/user-okrs/12`).then(response => response.json()),
             fetch(`http://localhost:8080/dashboard/okrTable/6084801fb2ce1e4174af0245`).then(response => response.json()),
-            fetch(`http://localhost:8080/dashboard/okrAdvance/6084801fb2ce1e4174af0245`).then(response => response.json())
+            fetch(`http://localhost:8080/dashboard/okrAdvance/6084801fb2ce1e4174af0245`).then(response => response.json()),
+            fetch(`http://localhost:8080/dashboard/burndownchart/608b45489c9a431958f1837b`).then(response => response.json())
+
         ]).then(response => {
 
             this.setState({ titulosOkr: response[0], datoOkr: response[1] })
             this.setState({ datosTabla: response[1]["keyResults"] })
             this.setState({ porcentajeAvance: response[2] })
-            console.log(this.state.porcentajeAvance)
+            this.setState({ valuesBurndownChart : response[3] })
+            this.setState({title: response[1]["title"]})
+            console.log(this.state.valuesBurndownChart)
         }
         );
     }
@@ -55,14 +62,17 @@ class Dashboard extends React.Component {
 
                         <div className='statusContainer' id='status'>
                             <div className='containerStatus'>
-                                <li className='status'>0 En proceso </li>
-                                <li className='status'>0 Completadas </li>
+                            <h1 className='porcentaje'> {this.state.porcentajeAvance}%</h1>
                                 <hr className='hr'></hr>
                             </div>
+                            
+                            <div className='containerBurndownchart' id='containerBurndownchart'>
+                            
+                                <BurnDownChart className='burndownchart' id='burndownchart' title= {this.state.title} values={this.state.valuesBurndownChart}></BurnDownChart>
+                            </div>
+                         
 
                             <div className='containerTableOkr' id='containerTableOkr'>
-
-                                <h1 className='porcentaje'> {this.state.porcentajeAvance}%</h1>
                                 <table className='tableOkr'>
                                     <tr className='tableHeadOkr'>
 
