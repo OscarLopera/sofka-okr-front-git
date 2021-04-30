@@ -14,7 +14,7 @@ const Sidebar = () => {
             <div className="container-button-sidebar">
 
                 <Link to={buttonDifferent ? '/okrCreate' : '/myokrs'}>
-                    <button id = "button-crearokr-misokrs" color='#F0950E' className="button-sidebar"
+                    <button data-testid="button-okrs" id = "button-crearokr-misokrs" color='#F0950E' className="button-sidebar"
                     >{buttonDifferent ? "Crear OKR" : "Mis OKR"}</button> </Link>
             </div>
             <div id = "submenu-sidebar">

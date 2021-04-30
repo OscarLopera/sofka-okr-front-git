@@ -82,7 +82,7 @@ function Navbar() {
                 </div>
               </li>
               <li className="signout-icon">
-                <span id = "span-logout-navbar" onClick={SingOut}>
+                <span id = "span-logout-navbar" data-testid="icon-logout" onClick={SingOut}>
                   <MdInput />
                 </span>
               </li>
