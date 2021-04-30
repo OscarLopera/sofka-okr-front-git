@@ -7,7 +7,6 @@ import '../../assets/styles/planification/Planification.scss'
 import { saveToLocal } from '../../functions/localStorage'
 import { environment } from '../../environment/backendurl'
 import Navbar from '../../components/structure/Navbar'
-import Sidebar from '../../components/structure/Sidebar'
 import { auth } from '../../functions/firebaseAuth'
 
 const OkrCreate = () => {
@@ -39,8 +38,7 @@ const OkrCreate = () => {
 
 	return (
 		<>
-		<Navbar/>
-		<Sidebar/>
+		<Navbar/>	
 		<section className="containerOkrCreate">
 			<div className="title">
 				<h3>Crear Objetivo</h3>

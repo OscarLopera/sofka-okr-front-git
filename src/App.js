@@ -16,7 +16,7 @@ import faq from '../src/pages/administration/Faq';
 
 function App() {
 	return (
-		<>
+		<>		
 			<Router>
 				<Switch>
 					<Route path="/" exact component={SingIn} />

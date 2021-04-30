@@ -1,6 +1,6 @@
 import React from "react";
 import "../../assets/styles/administration/Support.css";
-import imgQuestions from "../../assets/img/administration/questions.PNG";
+import imgQuestions from "../../assets/img/administration/questions.PNG"
 import {Link} from "react-router-dom"
 import Navbar from "../../components/structure/Navbar"
 import Sidebar from "../../components/structure/Sidebar"
@@ -51,7 +51,7 @@ export default function Support() {
         </div>
         <Link className="link-support-question" to="/faq">
         <div className="card-frequent-questions" id="card-frequent-questions">
-        <img src={imgQuestions} className="image-frequent-questions" />
+        <img src={imgQuestions} alt= "imagen soporte" className="image-frequent-questions" />
         <span className="title-question-support">Preguntas frecuentes {'>'}</span>
         </div>
         </Link>
