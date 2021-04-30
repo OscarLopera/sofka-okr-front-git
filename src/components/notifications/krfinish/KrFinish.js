@@ -1,16 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
-import '../../../assets/styles/notifications/notificationsWindows.scss';
-import { auth } from '../../../functions/firebaseAuth';
-import { useAuthState } from "react-firebase-hooks/auth";
+import '../notificationsWindows.scss'
+import axios from 'axios'
 
-const nameUser =  auth;
+
+
+const HOST_API = "http://localhost:8080/notifications";
+
+
 const KrFinish = () => {
+    
     const [modalIsOpen, setModalIsOpen] = useState(false)
-    const [user] = useAuthState(auth);
-    let nombreOkr = "Estudio de Encuesta"
-    let nombrekr = "Realizar Encuesta a 100 personas"
+    const [request, setRequest] = useState({keyResult:"", name:""});
 
+    const completedkr = () => {
+        axios.get("http://localhost:8080/notifications/completedkr/jvsabvfbvfeh")
+        .then(rest=>{
+            setRequest({keyResult: rest.data[0], name: rest.data[1]})
+
+        })
+    }
+    
+    useEffect( () => {completedkr()}, [])
+    
     const customStyles = {
         content: {
             top: '20%',
@@ -26,16 +38,15 @@ const KrFinish = () => {
 
     return (
         <div >
-            <button onClick={() => setModalIsOpen(true)}>Terminar Kr</button>
+            <button onClick={() => setModalIsOpen(true)} id='buttonNotificationKr'>Terminar Kr</button>
             <Modal isOpen={modalIsOpen}
                 onRequestClose={() => setModalIsOpen(false)}
                 style={customStyles}>
                 <header className='headerNotificationWindows' id='headerNotificationWindows'></header>
                 <div className='bodyNotificationWindows' id='bodyNotificationWindows'>
-                    <h1 className='h1NotificationWindows'>¡{user? nameUser.currentUser.displayName :""}! </h1>
-                    <h2 className='h1NotificationWindows'> {nombreOkr}</h2>
-                    <h3 className='h1NotificationWindows'>Terminaste el kr {nombrekr}</h3>
-                    <p className='pNotificationWindows'>"Nuestra recompensa se encuentra en el esfuerzo y no en el
+                     <h1>¡{request.name}!</h1>
+                    <h3>Terminaste el kr {request.keyResult}</h3> 
+                    <p>"Nuestra recompensa se encuentra en el esfuerzo y no en el
                     resultado, un esfuerzo total es una víctoria completa (Mahatma Gandhi)".</p>
                 </div>
                 <div className='imageNotificationWindows' id='imageNotificationWindows'>

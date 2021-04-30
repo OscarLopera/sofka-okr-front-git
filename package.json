@@ -14,10 +14,16 @@
 		"@testing-library/user-event": "^12.8.3",
 		"axios": "^0.21.1",
 		"bootstrap": "^4.6.0",
+<<<<<<< HEAD
+=======
+		"emailjs-com": "^2.6.4",
+>>>>>>> 25757de47d76f61e4cc1b301444fb005cb63181d
 		"enzyme": "^3.11.0",
 		"enzyme-adapter-react-16": "^1.15.6",
 		"express": "^4.17.1",
 		"firebase": "^8.4.2",
+		"highcharts": "^9.0.1",
+		"highcharts-react-official": "^3.0.0",
 		"nodemon": "^2.0.7",
 		"react": "^17.0.2",
 		"react-bootstrap": "^1.5.2",
@@ -61,6 +67,7 @@
 	},
 	"devDependencies": {
 		"@babel/core": "^7.13.16",
+		"@wojtekmaj/enzyme-adapter-react-17": "^0.6.1",
 		"sass": "^1.32.12"
 	}
 }

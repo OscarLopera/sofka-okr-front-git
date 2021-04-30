@@ -1,38 +1,40 @@
-import React from 'react'
-import './App.css'
-import Navbar from './components/Navbar'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Dashboard from './pages/Dashboard'
-import Support from './pages/Support'
-import Calendar from './pages/Calendar'
-import Messages from './pages/Messages'
-import Notifications from './pages/Notifications'
-import ConfigNotifications from './pages/confignotification/ConfigNotification'
-import './assets/styles/dashboard/Dashboard.scss'
-import SingIn from './pages/SingIn'
-import Okrs from './pages/Okrs'
-import OkrCreate from './pages/OkrCreate'
-import KrCreate from './pages/KrCreate'
+import React from 'react';
+import './App.css';
+import './assets/styles/planification/Planification.scss';
+import './assets/styles/dashboard/Dashboard.scss';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import DashboardPersonal from './pages/dashboard/DashboardPersonal';
+import Dashboard from './pages/dashboard/Dashboard';
+import Support from './pages/administration/Support';
+import Calendar from './pages/calendar/Calendar';
+import Schedule from './pages/calendar/Schedule';
+import ConfigNotifications from './pages/confignotification/ConfigNotification';
+import SingIn from './pages/administration/SingIn';
+import Okrs from './pages/planification/Okrs';
+import OkrCreate from './pages/planification/OkrCreate';
+import KrCreate from './pages/planification/KrCreate';
+import { Profile } from './components/structure/Profile';
+import faq from '../src/pages/administration/Faq';
 
-import './assets/styles/planification/Planification.scss'
 
 function App() {
 	return (
-		<>
+		<>		
 			<Router>
-				<Navbar />
 				<Switch>
 					<Route path="/" exact component={SingIn} />
 					<Route path="/dashboard" component={Dashboard} />
-					<Route path="/okrs" exact component={Okrs} />
-					<Route path="/okrCreate" exact component={OkrCreate} />
 					<Route path="/calendar" component={Calendar} />
+					<Route path="/schedule" component={Schedule} />
 					<Route path="/support" component={Support} />
-					<Route path="/messages" component={Messages} />
-					<Route path="/notifications" component={Notifications} />
 					<Route path="/configNotifications" component={ConfigNotifications} />
 					<Route path="/krCreate" exact component={KrCreate} />
-					
+					<Route path="/mydashboard" component={DashboardPersonal} />
+					<Route path="/myokrs" component={Okrs} />
+					<Route path="/okrCreate" component={OkrCreate} />
+					<Route path="/profile" component={Profile} />
+					<Route path="/faq" component={faq} />
+
 				</Switch>
 			</Router>
 		</>
