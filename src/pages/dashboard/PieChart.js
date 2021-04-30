@@ -3,9 +3,9 @@ import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
 function PieChart(props) {
-
+    
     const { values } = props;
-
+    
     const options = {
         title: {
             text: `Progreso - ${values.title}`
@@ -24,7 +24,7 @@ function PieChart(props) {
         series: [{
             type: "pie",
             name: "Porcentaje",
-            data: values.data
+            data: values
         }],
         tooltip: {
             pointFormat: `{series.name}: <b>{point.percentage:.1f}%</b>`

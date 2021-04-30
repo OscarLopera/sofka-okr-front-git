@@ -4,6 +4,7 @@ import Navbar from '../../components/structure/Navbar';
 import Sidebar from '../../components/structure/Sidebar';
 import Welcome from '../../components/notifications/welcome/Welcome';
 import BurnDownChart from './BurndownChart';
+import PieChart from './PieChart';
 
 class Dashboard extends React.Component {
 
@@ -17,6 +18,7 @@ class Dashboard extends React.Component {
             valuesBurndownChart: {},
             valuesPieChart:{},
             title:{}
+        
         }
     }
     componentDidMount() {
@@ -24,7 +26,8 @@ class Dashboard extends React.Component {
             fetch(`http://localhost:8080/dashboard/user-okrs/12`).then(response => response.json()),
             fetch(`http://localhost:8080/dashboard/okrTable/6084801fb2ce1e4174af0245`).then(response => response.json()),
             fetch(`http://localhost:8080/dashboard/okrAdvance/6084801fb2ce1e4174af0245`).then(response => response.json()),
-            fetch(`http://localhost:8080/dashboard/burndownchart/608b45489c9a431958f1837b`).then(response => response.json())
+            fetch(`http://localhost:8080/dashboard/burndownchart/608b45489c9a431958f1837b`).then(response => response.json()),
+            fetch(`http://localhost:8080/dashboard/krsAdvance/608b45489c9a431958f1837b`).then(response => response.json()),
 
         ]).then(response => {
 
@@ -33,7 +36,8 @@ class Dashboard extends React.Component {
             this.setState({ porcentajeAvance: response[2] })
             this.setState({ valuesBurndownChart : response[3] })
             this.setState({title: response[1]["title"]})
-            console.log(this.state.valuesBurndownChart)
+            this.setState({valuesPieChart: response[4]})
+            console.log(this.state.valuesPieChart)
         }
         );
     }
@@ -105,6 +109,8 @@ class Dashboard extends React.Component {
                                     ))}
 
                                 </table>
+
+                               
                             </div>
                         </div>
                     </div>
