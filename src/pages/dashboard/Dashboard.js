@@ -1,67 +1,91 @@
-import React from 'react'
-import Welcome from '../../components/notifications/welcome/Welcome';
+import React from "react";
+import Welcome from "../../components/notifications/welcome/Welcome";
 import { auth } from "../../functions/firebaseAuth";
-import Navbar from '../../components/structure/Navbar';
-import Sidebar from '../../components/structure/Sidebar';
+import Navbar from "../../components/structure/Navbar";
+import Sidebar from "../../components/structure/Sidebar";
+import { useAuthState } from "react-firebase-hooks/auth";
+import SignIn from "../administration/SingIn";
 
 export default function Dashboard() {
-    const user = auth.currentUser;
+  const [user] = useAuthState(auth);
 
-    if (!auth.currentUser) window.location.href="/";
-
+  if (user) {
     return (
-        <div className='home'>
-            <Navbar />
-            <Sidebar />
-            <section>
-                {user ? <Welcome /> : ""}
-            </section>
-            <h1 className='dashboardTitle'>Dashboard de {user? auth.currentUser.displayName:""}</h1>
-            <div className='selectTag'>
-                <form >
-                    <select className='selectTagForm' name="okr" id="okrs">
-                        <optgroup className='selectTagOptGroup' label="Select OKR">
-                            <option value="okr1" className='okrSelection'>Okr1</option>
-                            <option value="okr2" className='okrSelection'>Okr2</option>
-                        </optgroup>
-                    </select>
-                </form>
-            </div>
-            <div className='main'>
-                <div className='statusContainer' id='status'>
-                    <div className='containerStatus'>
-                        <li className='status'>0 En proceso </li>
-                        <li className='status'>0 Completadas </li>
-                        <hr className='hr'></hr>
-                    </div>
-                    <div className='containerTableOkr' id='containerTableOkr'>
-                        <table className='tableOkr'>
-                            <tr className='tableHeadOkr'>
-                                <th><h3 className="titleOkr">Titulo</h3> <h5 className="editTitleOkr">Edit</h5></th>
-                            </tr>
-                            <tr>
-                                <td><h4>Objetivo:</h4> </td>
-                            </tr>
-                            <hr></hr>
-                            <tr>
-                                <td ><h4>Resultados clave</h4> </td>
-                            </tr>
-                            <tr>
-                                <td> <h5>Responsable: {auth.currentUser.displayName}</h5> </td>
-                            </tr>
-                            <tr>
-                                <td>Titulo KR: <h5>99%</h5></td>
-                            </tr>
-                            <tr>
-                                <td> <h5>Responsable: {auth.currentUser.displayName}</h5></td>
-                            </tr>
-                            <tr>
-                                <td>Titulo KR: <h5>99%</h5></td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
+      <div className="home">
+        <Navbar />
+        <Sidebar />
+        <section>{user ? <Welcome /> : ""}</section>
+        <h1 className="dashboardTitle">
+          Dashboard de {user ? auth.currentUser.displayName : ""}
+        </h1>
+        <div className="selectTag">
+          <form>
+            <select className="selectTagForm" name="okr" id="okrs">
+              <optgroup className="selectTagOptGroup" label="Select OKR">
+                <option value="okr1" className="okrSelection">
+                  Okr1
+                </option>
+                <option value="okr2" className="okrSelection">
+                  Okr2
+                </option>
+              </optgroup>
+            </select>
+          </form>
         </div>
-    )
+        <div className="main">
+          <div className="statusContainer" id="status">
+            <div className="containerStatus">
+              <li className="status">0 En proceso </li>
+              <li className="status">0 Completadas </li>
+              <hr className="hr"></hr>
+            </div>
+            <div className="containerTableOkr" id="containerTableOkr">
+              <table className="tableOkr">
+                <tr className="tableHeadOkr">
+                  <th>
+                    <h3 className="titleOkr">Titulo</h3>{" "}
+                    <h5 className="editTitleOkr">Edit</h5>
+                  </th>
+                </tr>
+                <tr>
+                  <td>
+                    <h4>Objetivo:</h4>{" "}
+                  </td>
+                </tr>
+                <hr></hr>
+                <tr>
+                  <td>
+                    <h4>Resultados clave</h4>{" "}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    {" "}
+                    <h5>Responsable: {auth.currentUser.displayName}</h5>{" "}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Titulo KR: <h5>99%</h5>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    {" "}
+                    <h5>Responsable: {auth.currentUser.displayName}</h5>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Titulo KR: <h5>99%</h5>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  return <SignIn />;
 }

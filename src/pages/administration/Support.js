@@ -1,16 +1,17 @@
 import React from "react";
-import "../../assets/styles/administration/Support.css";
+import "../../assets/styles/administration/Support.css"
 import imgQuestions from "../../assets/img/administration/questions.PNG";
 import {Link} from "react-router-dom"
-import Navbar from "../../components/structure/Navbar"
-import Sidebar from "../../components/structure/Sidebar"
+import { auth } from "../../functions/firebaseAuth";
+import { useAuthState } from "react-firebase-hooks/auth";
+import SignIn from "../administration/SingIn";
 
+const Support = () => {
 
-export default function Support() {
+  const [user] = useAuthState(auth);
+
+  if (user) {
   return (
-    <>
-    <Navbar />
-    <Sidebar />
     <div className="support-container">
       <div className="support-container-wrapper">
         <div className="card-support">
@@ -51,12 +52,16 @@ export default function Support() {
         </div>
         <Link className="link-support-question" to="#">
         <div className="card-frequent-questions" id="card-frequent-questions">
-        <img src={imgQuestions} className="image-frequent-questions" />
+        <img  className="image-frequent-questions" src={imgQuestions} alt = ""/>
         <span className="title-question-support">Preguntas frecuentes {'>'}</span>
         </div>
         </Link>
       </div>
     </div>
-    </>
   );
 }
+
+return <SignIn />
+}
+
+export default Support
