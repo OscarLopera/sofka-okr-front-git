@@ -5,9 +5,13 @@ import Sidebar from '../../components/structure/Sidebar';
 import Welcome from '../../components/notifications/welcome/Welcome';
 import BurnDownChart from './BurndownChart';
 import PieChart from './PieChart';
+import SignIn from '../administration/SingIn';
 
 class Dashboard extends React.Component {
 
+  
+
+  
     constructor() {
         super();
         this.state = {
@@ -41,7 +45,9 @@ class Dashboard extends React.Component {
         }
         );
     }
+    
     render() {
+      if (auth.currentUser) {
         return (
             <>
                 <Navbar />
@@ -118,6 +124,9 @@ class Dashboard extends React.Component {
             </>
         )
     }
+    return <SignIn />
+}
+
 }
 
 export default Dashboard

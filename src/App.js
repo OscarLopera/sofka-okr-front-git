@@ -13,10 +13,13 @@ import SingIn from './pages/administration/SingIn';
 import Okrs from './pages/planification/Okrs';
 import OkrCreate from './pages/planification/OkrCreate';
 import KrCreate from './pages/planification/KrCreate';
+import { Profile } from './components/structure/Profile';
+import faq from '../src/pages/administration/Faq';
+
 
 function App() {
 	return (
-		<>
+		<>		
 			<Router>
 				<Switch>
 					<Route path="/" exact component={SingIn} />
@@ -29,6 +32,9 @@ function App() {
 					<Route path="/mydashboard" component={DashboardPersonal} />
 					<Route path="/myokrs" component={Okrs} />
 					<Route path="/okrCreate" component={OkrCreate} />
+					<Route path="/profile" component={Profile} />
+					<Route path="/faq" component={faq} />
+
 				</Switch>
 			</Router>
 		</>

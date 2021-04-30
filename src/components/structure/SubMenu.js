@@ -9,7 +9,7 @@ const SubMenu = ({ item }) => {
   
     return (
       <>
-        <Link className="sidebarLink" id="sidebarLink" to={item.path} onClick={item.subNav && showSubnav}>
+        <Link className="sidebarLink" id="sidebarLink" data-testid={item.id} to={item.path} onClick={item.subNav && showSubnav}>
           <div>
             {item.icon}
             <span className="label-sidebar" id="label-sidebar" >{item.title}</span>
@@ -23,12 +23,12 @@ const SubMenu = ({ item }) => {
           </div>
         </Link>
         {subnav &&
-          item.subNav.map((item, index) => {
-            return (
-              <Link className="DropdownLink-sidebar" id="DropdownLink-sidebar" to={item.path} key={index}>
+          item.subNav.map((item, index) => {            
+            return (             
+              <Link className="DropdownLink-sidebar"  id="DropdownLink-sidebar" to={item.path} key={index}>
                 {item.icon}
-                <span>{item.title}</span>
-              </Link>
+                <span >{item.title}</span>
+              </Link>            
             );
           })}
       </>

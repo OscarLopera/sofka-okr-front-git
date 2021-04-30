@@ -11,16 +11,12 @@ function SignIn() {
   const [user] = useAuthState(auth);
 
   const createUser = () => {
-    const HOST_API = environment.apiRegisterUser
+    const HOST_API = environment.apiRegisterUser;
 
     const user = {
       id: auth.currentUser.uid,
       name: auth.currentUser.displayName,
       email: auth.currentUser.email,
-      mailCompletedOkr: true,
-      mailCompletedKr: true,
-      notificationCompletedKr: true,
-      notificationCompletedOkr: true,
     };
 
     fetch(HOST_API, {
@@ -34,7 +30,7 @@ function SignIn() {
       .then((response) => console.log("hola"));
   };
 
-  if (user) {
+  if (user) {    
     createUser();
   }
   return (

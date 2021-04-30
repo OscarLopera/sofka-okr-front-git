@@ -9,7 +9,8 @@ import User from "./User";
 export const SidebarData = [
   {
     title: 'Dashboard',
-    icon: <GoGraph />,
+    id:'dashboard-father',
+    icon: <GoGraph />,    
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
 
@@ -23,25 +24,28 @@ export const SidebarData = [
   },
   {
     title: 'Calendario',
+    id:'calendar',
     path: '/calendar',
     icon: <BsIcons.BsFillCalendarFill />,
     cName: 'nav-text'
   },
   {
     title: 'Administración',
-    icon: <MdSettings />,
-
+    id:'admin-father',
+    icon: <MdSettings />,    
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
 
     subNav: [
       {
         title: 'Configuración de notificaciones',
+        id:'admin-notifications',
         path: '/configNotifications',
         icon: <RiIcons.RiMailSettingsFill />
       },
       {
         title: 'Soporte',
+        id:'admin-support',
         path: '/support',
         icon: <BiSupport />
       }
