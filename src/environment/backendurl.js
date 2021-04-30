@@ -1,5 +1,5 @@
 export const environment = {
-	api:'http://localhost:8080',
+	api:'https://tranquil-island-91872.herokuapp.com',
 	apiOkrUrl: 'https://tranquil-island-91872.herokuapp.com/Okrs',
 	apiKrUrl: 'https://tranquil-island-91872.herokuapp.com/Krs',
 	apiRegisterUser: 'https://tranquil-island-91872.herokuapp.com/api/users',
