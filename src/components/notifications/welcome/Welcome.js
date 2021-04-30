@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { auth } from '../../../functions/firebaseAuth';
-import '../notificationsWindows.scss';
+import '../../../assets/styles/notifications/notificationsWindows.scss';
 import { useAuthState } from "react-firebase-hooks/auth";
 
 const nameUser =  auth;
@@ -30,7 +30,7 @@ const Welcome = () => {
                 <header className='headerNotificationWindows' id='headerNotificationWindows'></header>
                 <div className='bodyNotificationWindows' id='bodyNotificationWindows'>
                     <h1 className='h1NotificationWindows' id='h1NotificationWindows'> ¡Bienvenido {user? nameUser.currentUser.displayName :""}! </h1>
-                    <p className='pNotificationWindows' id='pNotificationWindows'>"Estamos felices de tenerte como un nuevo integrante, esperamos que podamos aprender de tus aportes"</p>
+                    <p className='pNotificationWindows' id='pNotificationWindows'>"Estamos felices de tenerte en nuesto Dashboard, esperamos que podamos aprender de tus aportes"</p>
                 </div>
                 <div className='imageNotificationWindows' id='imageNotificationWindows'>
                     <img src="https://www.sofka.com.co/wp-content/uploads/2020/08/sofka-logo-gradient-white.png" alt="logo-sofka"></img>

@@ -5,13 +5,8 @@ import {Link} from "react-router-dom"
 import Navbar from "../../components/structure/Navbar"
 import Sidebar from "../../components/structure/Sidebar"
 import emailjs from 'emailjs-com'
-import { auth } from "../../functions/firebaseAuth"
-import { useAuthState } from "react-firebase-hooks/auth";
-import SignIn from "../../pages/administration/SingIn"
-
 
 export default function Support() {
-  const [user] = useAuthState(auth);
   
   const [data, setData] = useState({
     module: 'dashboard',
@@ -37,7 +32,6 @@ const sendEmail = (event) => {
   event.target.reset();
 }
 
-if (user) {
   return (
     <>
     <Navbar />
@@ -91,8 +85,6 @@ if (user) {
     </div>
     </>
   );
-}
-return  <SignIn />
 }
 
 

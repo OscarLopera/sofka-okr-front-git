@@ -4,13 +4,8 @@ import Navbar from '../../components/structure/Navbar';
 import Sidebar from '../../components/structure/Sidebar';
 import Welcome from '../../components/notifications/welcome/Welcome';
 import BurnDownChart from './BurndownChart';
-import PieChart from './PieChart';
-import SignIn from '../administration/SingIn';
 
 class Dashboard extends React.Component {
-
-  
-
   
     constructor() {
         super();
@@ -47,7 +42,6 @@ class Dashboard extends React.Component {
     }
     
     render() {
-      if (auth.currentUser) {
         return (
             <>
                 <Navbar />
@@ -57,7 +51,6 @@ class Dashboard extends React.Component {
                         {auth.currentUser ? <Welcome /> : ""}
                     </section>
                     <h1 className='dashboardTitle'>Dashboard {auth.currentUser ? auth.currentUser.displayName : ""}</h1>
-
                     <div className='selectTag'>
                         <form >
                             <select className='selectTagForm' name="okr" id="okrs">
@@ -67,9 +60,7 @@ class Dashboard extends React.Component {
                             </select>
                         </form>
                     </div>
-
                     <div className='main'>
-
                         <div className='statusContainer' id='status'>
                             <div className='containerStatus'>
                             <h1 className='porcentaje'> {this.state.porcentajeAvance}%</h1>
@@ -81,50 +72,36 @@ class Dashboard extends React.Component {
                                 <BurnDownChart className='burndownchart' id='burndownchart' title= {this.state.title} values={this.state.valuesBurndownChart}></BurnDownChart>
                             </div>
                          
-
                             <div className='containerTableOkr' id='containerTableOkr'>
                                 <table className='tableOkr'>
                                     <tr className='tableHeadOkr'>
-
                                         <th><h3 className="titleOkr">{this.state.datoOkr.title}</h3> <h5 className="editTitleOkr">Edit</h5></th>
-
                                     </tr>
-
                                     <tr>
                                         <td><h4>Objetivo: {this.state.datoOkr.objective}</h4> </td>
                                     </tr>
-
                                     <hr></hr>
-
                                     <tr>
                                         <td><h3>Resultados clave</h3> </td>
                                     </tr>
-
                                     {this.state.datosTabla.map(keyResult => (
                                         <>
                                             <tr>
                                                 <td> <h4>Responsable: {keyResult.personInChargeNameKr}  </h4> </td>
-
                                             </tr>
-
                                             <tr>
                                                 <td><h5>{keyResult.keyResult} {keyResult.advanceKr}%</h5> </td>
                                             </tr>
                                             <hr></hr>
                                         </>
                                     ))}
-
                                 </table>
-
-                               
                             </div>
                         </div>
                     </div>
                 </div>
             </>
         )
-    }
-    return <SignIn />
 }
 
 }

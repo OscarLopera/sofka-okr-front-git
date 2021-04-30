@@ -1,21 +1,18 @@
 import React from 'react';
 import '../../assets/styles/planification/Planification.scss';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid'
 import axios from 'axios';
 import { environment } from '../../environment/backendurl';
 import { getFromLocal } from '../../functions/localStorage'
 import Navbar from '../../components/structure/Navbar'
 import Sidebar from '../../components/structure/Sidebar'
-import { auth } from "../../functions/firebaseAuth";
-import { useAuthState } from "react-firebase-hooks/auth";
-import SignIn from "../administration/SingIn";
 
 const KrCreate = (props) => {
 	const idOkr = getFromLocal('idOkr')
+	const history = useHistory()
 	const urlKr = environment.apiKrUrl
-	const [user] = useAuthState(auth);
 
 	const onSubmit = (data) => {
 		axios
@@ -33,23 +30,22 @@ const KrCreate = (props) => {
 			})
 			.then((res) => {
 				if (res.status === 201) {
-					window.location.href = '/okrs'
+					history.push('/myokrs')
 				}
 			})
 	}
 
 	const { register, handleSubmit } = useForm()
-	
-	if (user) {
-		return (
-			<>
-			<Navbar/>
-			<Sidebar/>
+
+	return (
+		<>
+			<Navbar />
+			<Sidebar />
 			<section className="containerOkrCreate">
 				<div className="title">
 					<h3>Crear KR</h3>
 				</div>
-	
+
 				<div className="fieldOkrCreate">
 					<form className="row" onSubmit={handleSubmit(onSubmit)}>
 						<div className="col">
@@ -57,12 +53,12 @@ const KrCreate = (props) => {
 								<label htmlFor="kr">KR</label>
 								<input {...register('keyResult')} type="text" id="planificationKr" required />
 							</div>
-	
+
 							<div className="fieldColRespomsable">
 								<div>
 									<p>Responsable</p>
 								</div>
-	
+
 								<div className="fieldColRes">
 									<label htmlFor="nameOKR">Nombre</label>
 									<input
@@ -72,7 +68,7 @@ const KrCreate = (props) => {
 										required
 									/>
 								</div>
-	
+
 								<div className="fieldColRes">
 									<label htmlFor="emailOKR">Correo</label>
 									<input
@@ -83,7 +79,7 @@ const KrCreate = (props) => {
 									/>
 								</div>
 							</div>
-	
+
 							<div className="fieldCol">
 								<label htmlFor="description">Descripción</label>
 								<textarea
@@ -95,7 +91,7 @@ const KrCreate = (props) => {
 								></textarea>
 							</div>
 						</div>
-	
+
 						<div className="col">
 							<div className="fieldCol">
 								<label htmlFor="dateStart">Fecha Inicio</label>
@@ -120,17 +116,16 @@ const KrCreate = (props) => {
 							<Link to="/okrCreate">
 								<button>Anterior</button>
 							</Link>
-							<button type="submit">Finalizar</button>
+							<Link to="/myokrs">
+								<button>Finalizar</button>
+							</Link>
+							<button onClick={() => window.location.reload()}>Agregar más Krs</button>
 						</div>
 					</form>
 				</div>
 			</section>
-			</>
-		)
-
-	}
-	return <SignIn />
-	
+		</>
+	)
 }
 
 export default KrCreate

@@ -5,14 +5,9 @@ import "../../assets/styles/calendar/Calendar.scss";
 import Fondo from "../../assets/img/calendar.svg";
 import NavBar from "../../components/structure/Navbar";
 import SideBar from "../../components/structure/Sidebar";
-import { auth } from "../../functions/firebaseAuth";
-import { useAuthState } from "react-firebase-hooks/auth";
-import SignIn from "../administration/SingIn";
 
 const Calendar = () => {
-  const [user] = useAuthState(auth);
 
-  if (user) {
     return (
       <div
         id="container-calendar-components-home"
@@ -30,8 +25,6 @@ const Calendar = () => {
         />
       </div>
     );
-  }
-  return <SignIn />;
 };
 
 export default Calendar;
