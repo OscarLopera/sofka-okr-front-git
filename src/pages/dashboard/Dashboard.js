@@ -9,6 +9,8 @@ class Dashboard extends React.Component {
   
     constructor() {
         super();
+        this.llamarOkr=this.llamarOkr.bind(this);
+
         this.state = {
             titulosOkr: [],
             datoOkr: {},
@@ -17,9 +19,33 @@ class Dashboard extends React.Component {
             valuesBurndownChart: {},
             valuesPieChart:{},
             title:{}
+
         
         }
     }
+    
+    llamarOkr(event){
+        event.preventDefault();
+       console.log(event.target.value);
+
+       Promise.all([
+        
+        fetch(`https://tranquil-island-91872.herokuapp.com/dashboard/okrTable/${event.target.value}`).then(response => response.json()),
+        fetch(`https://tranquil-island-91872.herokuapp.com/dashboard/okrAdvance/${event.target.value}`).then(response => response.json()),
+        fetch(`https://tranquil-island-91872.herokuapp.com/dashboard/burndownchart/${event.target.value}`).then(response => response.json()),
+       
+
+    ]).then(response => {
+  
+        this.setState({ datosTabla: response[0]["keyResults"] })
+        this.setState({ porcentajeAvance: response[1] })
+        this.setState({ valuesBurndownChart : response[2] })
+        this.setState({title: response[0]["title"]})
+      
+    }
+    );
+    }
+   
     componentDidMount() {
         Promise.all([
             fetch(`https://tranquil-island-91872.herokuapp.com/dashboard/user-okrs/12`).then(response => response.json()),
@@ -42,7 +68,10 @@ class Dashboard extends React.Component {
     }
     
     render() {
+       
+        
         return (
+            
             <>
                 <Navbar />
                 <Sidebar />
@@ -53,9 +82,9 @@ class Dashboard extends React.Component {
                     <h1 className='dashboardTitle'>Dashboard {auth.currentUser ? auth.currentUser.displayName : ""}</h1>
                     <div className='selectTag'>
                         <form >
-                            <select className='selectTagForm' name="okr" id="okrs">
-                                <optgroup className='selectTagOptGroup' label="Select OKR">
-                                    {this.state.titulosOkr.map(okr => (<option value="okr1" className='okrSelection'>{okr.title}</option>))}
+                            <select className='selectTagForm' name="okr" id="okrs"  onChange={this.llamarOkr}>
+                                <optgroup className='selectTagOptGroup' label="Select OKR" >
+                                    {this.state.titulosOkr.map(okr => (<option value={okr.id} className='okrSelection' >{okr.title}</option>))}
                                 </optgroup>
                             </select>
                         </form>
