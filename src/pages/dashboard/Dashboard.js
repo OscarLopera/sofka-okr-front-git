@@ -23,11 +23,11 @@ class Dashboard extends React.Component {
     }
     componentDidMount() {
         Promise.all([
-            fetch(`http://localhost:8080/dashboard/user-okrs/12`).then(response => response.json()),
-            fetch(`http://localhost:8080/dashboard/okrTable/6084801fb2ce1e4174af0245`).then(response => response.json()),
-            fetch(`http://localhost:8080/dashboard/okrAdvance/6084801fb2ce1e4174af0245`).then(response => response.json()),
-            fetch(`http://localhost:8080/dashboard/burndownchart/608b45489c9a431958f1837b`).then(response => response.json()),
-            fetch(`http://localhost:8080/dashboard/krsAdvance/608b45489c9a431958f1837b`).then(response => response.json()),
+            fetch(`https://tranquil-island-91872.herokuapp.com/dashboard/user-okrs/12`).then(response => response.json()),
+            fetch(`https://tranquil-island-91872.herokuapp.com/dashboard/okrTable/6084801fb2ce1e4174af0245`).then(response => response.json()),
+            fetch(`https://tranquil-island-91872.herokuapp.com/dashboard/okrAdvance/6084801fb2ce1e4174af0245`).then(response => response.json()),
+            fetch(`https://tranquil-island-91872.herokuapp.com/dashboard/burndownchart/6084801fb2ce1e4174af0245`).then(response => response.json()),
+           
 
         ]).then(response => {
 
