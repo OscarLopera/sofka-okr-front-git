@@ -10,6 +10,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from '../../functions/firebaseAuth';
 import { SingOut } from './SignOut';
 import Bell from "../notifications/modalbell/ModalBell";
+import {Profile} from './Profile'
 
 function Navbar() {
   const state = {
@@ -77,10 +78,12 @@ function Navbar() {
                 </span>
               </li>
               <li>
-                <div id= "photo-name-nav" className="photo-name-nav">
+                <Link to= "/profile">
+                <div id= "photo-name-nav" className="photo-name-nav" onClick={Profile}>
                   <img src={user ? auth.currentUser.photoURL : foto} className="image-nav" alt="Avatar" />
                   <span>{user ? auth.currentUser.displayName : "no asignado"}</span>
                 </div>
+                </Link>
               </li>
               <li className="signout-icon">
                 <span id = "span-logout-navbar" data-testid="icon-logout" onClick={SingOut}>
@@ -96,3 +99,4 @@ function Navbar() {
 }
 
 export default Navbar;
+
