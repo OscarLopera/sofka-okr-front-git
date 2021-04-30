@@ -1,0 +1,47 @@
+.container-okrs-form{
+    text-align: center;
+
+    & form{
+        margin-top: 70px;
+        margin-left: 250px;
+        width: 70%;
+        display: flex;
+        justify-content: space-around;
+
+        & .container-input{
+            padding: 30px;
+        }
+
+        & .select-form-okr{
+            padding: 30px;
+            margin-top: 15px;
+        }
+
+        & textarea{
+            padding: 30px;
+        }
+
+        & input{
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: wheat;
+            margin: 10px;
+        }
+
+        & button{
+            margin-top: 200px;
+            padding: 10px;
+            width: 150px;
+            height: 40px;
+            border-radius: 5px;
+            border: none;
+            background-color: #ff8b1e;
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+
+}

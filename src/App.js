@@ -10,8 +10,8 @@ import Schedule from './pages/calendar/Schedule';
 import ConfigNotifications from './pages/confignotification/ConfigNotification';
 import SingIn from './pages/administration/SingIn';
 import Okrs from './pages/planification/Okrs';
-import OkrCreate from './pages/planification/OkrCreate';
-import KrCreate from './pages/planification/KrCreate';
+import CrearOKR from './pages/planification/CrearOKR';
+import CrearKR from './pages/planification/CrearKR';
 import { Profile } from './components/structure/Profile';
 import faq from '../src/pages/administration/Faq';
 
@@ -27,9 +27,9 @@ function App() {
 					<Route path="/schedule" component={Schedule} />
 					<Route path="/support" component={Support} />
 					<Route path="/configNotifications" component={ConfigNotifications} />
-					<Route path="/krCreate" exact component={KrCreate} />
+					<Route path="/krCreate" exact component={CrearKR} />
 					<Route path="/myokrs" component={Okrs} />
-					<Route path="/okrCreate" component={OkrCreate} />
+					<Route path="/okrCreate" component={CrearOKR} />
 					<Route path="/profile" component={Profile} />
 					<Route path="/faq" component={faq} />
 				</Switch>
