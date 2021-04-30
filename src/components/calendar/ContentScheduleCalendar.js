@@ -65,7 +65,7 @@ function ContentScheduleCalendar() {
                         <h5>Hora final</h5>
                         <input required {...register("endTime")} type="time" />
                     </div>
-                    <button type="submit">Enviar</button>
+                    <button data-testid="btn-submit-form-create-event" type="submit">Enviar</button>
                 </div>
             </form>
         </div>
