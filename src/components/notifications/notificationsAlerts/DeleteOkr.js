@@ -19,6 +19,7 @@ const DeleteOkr = (idOkr) => {
             swal("Tu OKR ha sido eliminado", {
               icon: "success",
             });
+            window.location.reload();
           }
         })
       } else {

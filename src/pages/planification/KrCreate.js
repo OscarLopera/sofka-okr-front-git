@@ -116,7 +116,9 @@ const KrCreate = (props) => {
 							<Link to="/okrCreate">
 								<button>Anterior</button>
 							</Link>
-							<button type="submit">Finalizar</button>
+							<Link to="/myokrs">
+								<button>Finalizar</button>
+							</Link>
 							<button onClick={() => window.location.reload()}>Agregar más Krs</button>
 						</div>
 					</form>

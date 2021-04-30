@@ -99,7 +99,7 @@ const OkrCreate = () => {
 							</div>
 						</div>
 						<div className="containerButtons">
-							<Link to="/okrs">
+							<Link to="/myokrs">
 								<button id="planificationbuttonCancel">Cancelar</button>
 							</Link>
 							<button type="submit" id="planificationbuttonNext">Siguiente</button>
