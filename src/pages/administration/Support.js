@@ -1,18 +1,40 @@
-import React from "react";
-import "../../assets/styles/administration/Support.css"
+import React, {useState} from "react";
+import "../../assets/styles/administration/Support.css";
 import imgQuestions from "../../assets/img/administration/questions.PNG";
 import {Link} from "react-router-dom"
-import { auth } from "../../functions/firebaseAuth";
-import { useAuthState } from "react-firebase-hooks/auth";
-import SignIn from "../administration/SingIn";
 import Navbar from "../../components/structure/Navbar"
 import Sidebar from "../../components/structure/Sidebar"
+import emailjs from 'emailjs-com'
 
-const Support = () => {
 
+export default function Support() {
   const [user] = useAuthState(auth);
+  
+  const [data, setData] = useState({
+    module: 'dashboard',
+    description: 'no tengo ningún mensaje'
+})
 
-  if (user) {
+const handleInputChange = (event) => {  
+  setData({
+      ...data,
+      [event.target.name] : event.target.value
+  })
+}
+
+const sendEmail = (event) => {
+  event.preventDefault()
+  console.log('enviando datos...' + data.module + ' ' + data.description)
+  emailjs.sendForm('service_q6w5ep3', 'template_sjietpb', event.target, 'user_xNpTGdEXoR0HCjmJkOCiT')
+      .then((result) => {
+          alert("El mensaje fue enviado a nuestro equipo de soporte");
+      }, (error) => {
+          console.log(error.text);
+      });
+  event.target.reset();
+}
+
+if (user) {
   return (
     <>
     <Navbar />
@@ -21,14 +43,14 @@ const Support = () => {
       <div className="support-container-wrapper">
         <div className="card-support">
           <span className="title-support">¿Necesitas ayuda?</span>
-          <form >
+          <form onSubmit={sendEmail}>
             <div className="form-container">
             <div className="row-support-form">
               <div className="col-25-support">
                 <label className="label-support">Modulo relacionado</label>
               </div>
               <div className="col-75-support">
-                <select id="module-support" className="select-support-form">
+                <select id="module-support" name="module" className="select-support-form" onChange={handleInputChange} >
                   <option value="dashboard">Dashboard</option>
                   <option value="calendario">Calendario</option>
                   <option value="notificaciones">Notificaciones</option>
@@ -44,8 +66,9 @@ const Support = () => {
                 <textarea
                   id="textarea-description-support"
                   className="textarea-description-support"
-                  name="subject"
-                  placeholder="Escribe detalladamente el problema"                  
+                  name="description"
+                  placeholder="Escribe detalladamente el problema" 
+                  onChange={handleInputChange}                  
                 ></textarea>
               </div>
             </div>
@@ -55,28 +78,19 @@ const Support = () => {
             </div>
           </form>
         </div>
-        <Link className="link-support-question" to="/faq">
+        <Link className="link-support-question" to="#">
         <div className="card-frequent-questions" id="card-frequent-questions">
-        <img  className="image-frequent-questions" src={imgQuestions} alt = ""/>
+        <img src={imgQuestions} className="image-frequent-questions" />
         <span className="title-question-support">Preguntas frecuentes {'>'}</span>
         </div>
         </Link>
       </div>
     </div>
     </>
-  ); 
-  }
-  return  <SignIn />
+  );
+}
+return  <SignIn />
 }
 
 export default Support;
-
-
-
-
-
-
-
-
-
 
