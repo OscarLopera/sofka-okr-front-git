@@ -1,9 +1,7 @@
 import swal from 'sweetalert';
-import axios from 'axios';
-import { environment } from '../../../environment/backendurl'
 
 
-const DeleteOkr = (idKr) => {
+const DeleteOkr = () => {
   swal({
     title: "¿Estás seguro que quieres eliminar este KR",
     text: "Una vez lo elimines no podrás recuperarlo",
@@ -14,15 +12,7 @@ const DeleteOkr = (idKr) => {
   })
     .then((willDelete) => {
       if (willDelete) {
-        const urlKr = environment.apiKrUrl
-        axios.delete(`${urlKr}/deleteKr/${idKr}`).then((res) => {
-          if (res.status === 200) {
-            window.location.reload()
-            swal("Tu KR ha sido eliminado", {
-              icon: "success",
-            });
-          }
-        })
+        return true;
         swal("Tu KR ha sido eliminado", {
           icon: "success"
 
@@ -34,3 +24,5 @@ const DeleteOkr = (idKr) => {
     });
 }
 export default DeleteOkr;
+
+

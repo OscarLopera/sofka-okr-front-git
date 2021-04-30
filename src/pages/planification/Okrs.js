@@ -55,7 +55,7 @@ const Okrs = () => {
 								</div>
 								<div className="contentOKR">
 									<div>
-										<Kr okrId={item.id} />
+										<Kr key={item.id} okrId={item.id} />
 									</div>
 								</div>
 							</div>

@@ -36,7 +36,7 @@ const Kr = ({ okrId }) => {
 								avance
 							</p>
 							<progress max="100" value={item.advanceKr}>
-								<div class="progress-bar">
+								<div className="progress-bar">
 									<span style={{ width: item.advanceKr + '%' }}> {item.advanceKr} %a </span>
 								</div>
 							</progress>

@@ -19,6 +19,7 @@ const ListOkrCalendar = () => {
 
     useEffect(() => {
         getOkrsUser();
+        // eslint-disable-next-line
     }, [])
     return (
         <div id="container-select-title-calendar-home" className="container-select-title-calendar-home">
