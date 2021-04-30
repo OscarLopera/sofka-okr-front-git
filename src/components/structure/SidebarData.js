@@ -15,11 +15,6 @@ export const SidebarData = [
 
     subNav: [
       {
-        title: 'Todos',
-        path: '/dashboard',
-        icon: <MdDashboard />
-      },
-      {
         title: <User/>,
         path: '/dashboard',
         icon: <MdDashboard />
