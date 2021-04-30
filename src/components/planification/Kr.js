@@ -28,7 +28,6 @@ const Kr = ({ okrId }) => {
 							<h3>{item.keyResult}</h3>
 							<div className="icons">
 								<i className="fas fa-trash-alt" onClick={() => DeleteKr(item.id)}></i>
-								<i className="fas fa-edit"></i>
 							</div>
 						</div>
 						<div className="contentKR">
@@ -40,11 +39,12 @@ const Kr = ({ okrId }) => {
 									<span style={{ width: item.advanceKr + '%' }}> {item.advanceKr} %a </span>
 								</div>
 							</progress>
-
-							<div className="update">
-								<input type="number" name="updateRange" id="updateRange" min="1" max="100" placeholder="1 - 100" />
-								<button id="buttonUpdateRange">Actualizar</button>
-							</div>
+							<h3 style={{ "word-break": "break-word" }}>Descripción: {item.descriptionKr}</h3>
+							<hr />
+							<br />
+							<h3>Responsable: {item.personInChargeNameKr}</h3>
+							<h4>Fecha de inicio: {item.startDate}</h4>
+							<h4>Fecha de finalización: {item.finishDate}</h4>
 						</div>
 					</div>
 				))

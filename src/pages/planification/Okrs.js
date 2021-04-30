@@ -49,7 +49,6 @@ const Okrs = () => {
 										<h3>{item.title}</h3>
 										<div className="icons">
 											<i className="fas fa-trash-alt" onClick={() => DeleteOkr(item.id)}></i>
-											<i className="fas fa-edit"></i>
 										</div>
 									</div>
 								</div>
