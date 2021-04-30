@@ -36,7 +36,6 @@ function PieChart(props) {
         <div>
             <HighchartsReact data-testid="piechart" highcharts={Highcharts} options={options} />
         </div>
-
     )
 }
 
