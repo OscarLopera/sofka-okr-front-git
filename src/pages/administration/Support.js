@@ -5,6 +5,8 @@ import {Link} from "react-router-dom"
 import { auth } from "../../functions/firebaseAuth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import SignIn from "../administration/SingIn";
+import Navbar from "../../components/structure/Navbar"
+import Sidebar from "../../components/structure/Sidebar"
 
 const Support = () => {
 
@@ -12,6 +14,9 @@ const Support = () => {
 
   if (user) {
   return (
+    <>
+    <Navbar />
+    <Sidebar />
     <div className="support-container">
       <div className="support-container-wrapper">
         <div className="card-support">
@@ -46,11 +51,11 @@ const Support = () => {
             </div>
             </div>
             <div className="row-support-form">
-              <button type="submit" id="button-support-form" className="button-support-form"  value="Aceptar" />
+              <button type="submit" id="button-support-form" className="button-support-form" >Aceptar</button>
             </div>
           </form>
         </div>
-        <Link className="link-support-question" to="#">
+        <Link className="link-support-question" to="/faq">
         <div className="card-frequent-questions" id="card-frequent-questions">
         <img  className="image-frequent-questions" src={imgQuestions} alt = ""/>
         <span className="title-question-support">Preguntas frecuentes {'>'}</span>
@@ -58,10 +63,20 @@ const Support = () => {
         </Link>
       </div>
     </div>
-  );
+    </>
+  ); 
+  }
+  return  <SignIn />
 }
 
-return <SignIn />
-}
+export default Support;
 
-export default Support
+
+
+
+
+
+
+
+
+

@@ -61,7 +61,7 @@ export default function Dashboard() {
                 <tr>
                   <td>
                     {" "}
-                    <h5>Responsable: {auth.currentUser.displayName}</h5>{" "}
+                    <h5>Responsable: {user? auth.currentUser.displayName:""}</h5>{" "}
                   </td>
                 </tr>
                 <tr>
@@ -72,7 +72,7 @@ export default function Dashboard() {
                 <tr>
                   <td>
                     {" "}
-                    <h5>Responsable: {auth.currentUser.displayName}</h5>
+                    <h5>Responsable: {user? auth.currentUser.displayName:""}</h5>
                   </td>
                 </tr>
                 <tr>

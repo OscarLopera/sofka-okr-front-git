@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { MdInput } from "react-icons/md";
-import "../../assets/styles/structure/Navbar.css";
+import "../../assets/styles/structure/Navbar.scss";
+
 import { IconContext } from "react-icons";
 import Logo from "./Logo";
 import foto from "../../assets/img/fotoTemporal.jpg";
@@ -82,7 +83,7 @@ function Navbar() {
                 </div>
               </li>
               <li className="signout-icon">
-                <span id = "span-logout-navbar" onClick={SingOut}>
+                <span id = "span-logout-navbar" data-testid="icon-logout" onClick={SingOut}>
                   <MdInput />
                 </span>
               </li>

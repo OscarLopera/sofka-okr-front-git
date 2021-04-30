@@ -43,7 +43,6 @@ const OkrCreate = () => {
     return (
       <>
         <Navbar />
-        <Sidebar />
         <section className="containerOkrCreate">
           <div className="title">
             <h3>Crear Objetivo</h3>
