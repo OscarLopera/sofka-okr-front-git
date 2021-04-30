@@ -12,6 +12,7 @@ import SingIn from './pages/administration/SingIn';
 import Okrs from './pages/planification/Okrs';
 import OkrCreate from './pages/planification/OkrCreate';
 import KrCreate from './pages/planification/KrCreate';
+import faq from '../src/pages/administration/Faq';
 
 function App() {
 	return (
@@ -27,6 +28,7 @@ function App() {
 					<Route path="/mydashboard" component={DashboardPersonal} />
 					<Route path="/myokrs" component={Okrs} />
 					<Route path="/okrCreate" component={OkrCreate} />
+					<Route path="/faq" component={faq} />
 				</Switch>
 			</Router>
 		</>

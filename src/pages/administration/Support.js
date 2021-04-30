@@ -49,7 +49,7 @@ export default function Support() {
             </div>
           </form>
         </div>
-        <Link className="link-support-question" to="#">
+        <Link className="link-support-question" to="/faq">
         <div className="card-frequent-questions" id="card-frequent-questions">
         <img src={imgQuestions} className="image-frequent-questions" />
         <span className="title-question-support">Preguntas frecuentes {'>'}</span>
