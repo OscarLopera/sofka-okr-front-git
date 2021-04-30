@@ -6,6 +6,7 @@ import Navbar from '../../components/structure/Navbar'
 import Sidebar from '../../components/structure/Sidebar'
 import Kr from '../../components/planification/Kr';
 import '../../assets/styles/planification/Planification.scss'
+import DeleteOkr from '../../components/notifications/notificationsAlerts/DeleteOkr'
 
 const Okrs = () => {
 
@@ -44,7 +45,7 @@ const Okrs = () => {
 									<div className="titleOKR">
 										<h3>{item.title}</h3>
 										<div className="icons">
-											<i className="fas fa-trash-alt"></i>
+											<i className="fas fa-trash-alt" onClick={() => DeleteOkr(item.id)}></i>
 											<i className="fas fa-edit"></i>
 										</div>
 									</div>

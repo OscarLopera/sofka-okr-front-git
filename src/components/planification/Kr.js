@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { environment } from '../../environment/backendurl'
+import DeleteKr from '../notifications/notificationsAlerts/DeleteKr'
 
 const Kr = ({ okrId }) => {
 
@@ -28,7 +29,7 @@ const Kr = ({ okrId }) => {
 						<div className="headerKR">
 							<h3>{item.keyResult}</h3>
 							<div className="icons">
-								<i className="fas fa-trash-alt"></i>
+								<i className="fas fa-trash-alt" onClick={() => DeleteKr(item.id)}></i>
 								<i className="fas fa-edit"></i>
 							</div>
 						</div>
