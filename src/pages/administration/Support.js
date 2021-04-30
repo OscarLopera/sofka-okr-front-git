@@ -5,6 +5,9 @@ import {Link} from "react-router-dom"
 import Navbar from "../../components/structure/Navbar"
 import Sidebar from "../../components/structure/Sidebar"
 import emailjs from 'emailjs-com'
+import { auth } from "../../functions/firebaseAuth"
+import { useAuthState } from "react-firebase-hooks/auth";
+import SignIn from "../../pages/administration/SingIn"
 
 
 export default function Support() {
@@ -78,9 +81,9 @@ if (user) {
             </div>
           </form>
         </div>
-        <Link className="link-support-question" to="#">
+        <Link className="link-support-question" to="/faq">
         <div className="card-frequent-questions" id="card-frequent-questions">
-        <img src={imgQuestions} className="image-frequent-questions" />
+        <img src={imgQuestions} className="image-frequent-questions" alt = "" />
         <span className="title-question-support">Preguntas frecuentes {'>'}</span>
         </div>
         </Link>
@@ -92,5 +95,5 @@ if (user) {
 return  <SignIn />
 }
 
-export default Support;
+
 
