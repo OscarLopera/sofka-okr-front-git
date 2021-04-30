@@ -1,41 +1,19 @@
 import {React,useEffect,useState} from 'react'
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../../functions/firebaseAuth";
+
 import '../../assets/styles/notifications/Notification.scss'
 import Button from '@material-ui/core/Button';
 import swal from 'sweetalert';
 
+const ConfigNotificationView = ({config}) => {
 
-const ConfigNotification = () => {
-	const [user] = useAuthState(auth);
-	const [config,setConfig] = useState({});
-
-	
-
-	const getConfigNotification = () =>{
-
-	if(user){
-		fetch("http://localhost:8080/notifications/consultConfig/"+user.email,  {
-			method: "GET",
-			headers: {
-			  "Content-Type": "application/json",
-			},
-		  })
-			.then((response) => response.json())
-			.then((response) => {
-			  setConfig(response);
-			  {console.log(response) }
-			});}
-
-	};	
-	const  Swal = () => {
-		console.log(config)
+    const  Swal = () => {
+		console.log(config.mailCompletedOkr, config.notificationCompletedOkr, config.mailCompletedKr, config.notificationCompletedKr)
         return (
 			swal("Correcto", "La configuración ha sido guardada", "success")
 			)
 	};
 	useEffect (()=>{
-		getConfigNotification()
+
 	},[])
 	return (
 		<div className="containerConfigNotification">
@@ -66,12 +44,12 @@ const ConfigNotification = () => {
 					<div className="active-options">
 						<div className="email">
 							<label className="switch">
-								<input type="checkbox" id = "mailFullOkr" onClick = {()=>{setConfig({...config, mailCompletedOkr: !config.mailCompletedOkr })}} checked = {config.mailCompletedOkr}/>
+								<input type="checkbox" id = "mailFullOkr" onClick = {config.mailCompletedOkr = !config.mailCompletedOkr} checked = {config.mailCompletedOkr}/>
 								<span className="slider round"></span>
 							</label>
 						</div>
 						<label className="switch">
-							<input type="checkbox" id = "notiFullOkr" onClick = {()=>{setConfig({...config, notificationCompletedOkr: !config.notificationCompletedOkr })}} checked = {config.notificationCompletedOkr} />
+							<input type="checkbox" id = "notiFullOkr" onClick = {config.notificationCompletedOkr = !config.notificationCompletedOkr} checked = {config.notificationCompletedOkr} />
 							<span className="slider round"></span>
 						</label>
 					</div>
@@ -86,12 +64,12 @@ const ConfigNotification = () => {
 					<div className="active-options">
 						<div className="email">
 							<label className="switch">
-								<input type="checkbox" id = "mailFullKr" onClick = {()=>{setConfig({...config, mailCompletedKr: !config.mailCompletedKr })}} checked = {config.mailCompletedKr} />
+								<input type="checkbox" id = "mailFullKr" onClick = {config.mailCompletedKr = !config.mailCompletedKr} checked = {config.mailCompletedKr} />
 								<span className="slider round"></span>
 							</label>
 						</div>
 						<label className="switch">
-							<input type="checkbox" id = "notiFullKr" onClick = {()=>{setConfig({...config, notificationCompletedKr: !config.notificationCompletedKr })}} checked = {config.notificationCompletedKr} />
+							<input type="checkbox" id = "notiFullKr" onClick = {config.notificationCompletedKr = !config.notificationCompletedKr} checked = {config.notificationCompletedKr} />
 							<span className="slider round"></span>
 						</label>
 					</div>
@@ -104,6 +82,7 @@ const ConfigNotification = () => {
 			</div>
 		</div>
 	)
+
 }
 
-export default ConfigNotification
+export default ConfigNotificationView;

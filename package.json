@@ -11,13 +11,10 @@
 		"@sendgrid/mail": "^7.4.2",
 		"@testing-library/jest-dom": "^5.12.0",
 		"@testing-library/react": "^11.2.6",
-		"@testing-library/user-event": "^12.8.3",
+		"@testing-library/user-event": "^13.1.6",
 		"axios": "^0.21.1",
 		"bootstrap": "^4.6.0",
-<<<<<<< HEAD
-=======
 		"emailjs-com": "^2.6.4",
->>>>>>> 25757de47d76f61e4cc1b301444fb005cb63181d
 		"enzyme": "^3.11.0",
 		"enzyme-adapter-react-16": "^1.15.6",
 		"express": "^4.17.1",
