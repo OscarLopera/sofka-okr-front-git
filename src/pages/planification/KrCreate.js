@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../assets/styles/planification/Planification.scss';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid'
 import axios from 'axios';
 import { environment } from '../../environment/backendurl';
@@ -11,6 +11,7 @@ import Sidebar from '../../components/structure/Sidebar'
 
 const KrCreate = (props) => {
 	const idOkr = getFromLocal('idOkr')
+	const history = useHistory()
 	const urlKr = environment.apiKrUrl
 
 	const onSubmit = (data) => {
@@ -29,7 +30,7 @@ const KrCreate = (props) => {
 			})
 			.then((res) => {
 				if (res.status === 201) {
-					window.location.href = '/okrs'
+					history.push('/myokrs')
 				}
 			})
 	}
@@ -38,88 +39,89 @@ const KrCreate = (props) => {
 
 	return (
 		<>
-		<Navbar/>
-		<Sidebar/>
-		<section className="containerOkrCreate">
-			<div className="title">
-				<h3>Crear KR</h3>
-			</div>
+			<Navbar />
+			<Sidebar />
+			<section className="containerOkrCreate">
+				<div className="title">
+					<h3>Crear KR</h3>
+				</div>
 
-			<div className="fieldOkrCreate">
-				<form className="row" onSubmit={handleSubmit(onSubmit)}>
-					<div className="col">
-						<div className="fieldCol">
-							<label htmlFor="kr">KR</label>
-							<input {...register('keyResult')} type="text" id="planificationKr" required />
-						</div>
-
-						<div className="fieldColRespomsable">
-							<div>
-								<p>Responsable</p>
+				<div className="fieldOkrCreate">
+					<form className="row" onSubmit={handleSubmit(onSubmit)}>
+						<div className="col">
+							<div className="fieldCol">
+								<label htmlFor="kr">KR</label>
+								<input {...register('keyResult')} type="text" id="planificationKr" required />
 							</div>
 
-							<div className="fieldColRes">
-								<label htmlFor="nameOKR">Nombre</label>
-								<input
-									{...register('personInChargeNameKr')}
-									type="text"
-									id="planificationNameOKR"
+							<div className="fieldColRespomsable">
+								<div>
+									<p>Responsable</p>
+								</div>
+
+								<div className="fieldColRes">
+									<label htmlFor="nameOKR">Nombre</label>
+									<input
+										{...register('personInChargeNameKr')}
+										type="text"
+										id="planificationNameOKR"
+										required
+									/>
+								</div>
+
+								<div className="fieldColRes">
+									<label htmlFor="emailOKR">Correo</label>
+									<input
+										{...register('personInChargeEmailKr')}
+										type="text"
+										id="planificationEmailOKR"
+										required
+									/>
+								</div>
+							</div>
+
+							<div className="fieldCol">
+								<label htmlFor="description">Descripción</label>
+								<textarea
 									required
+									{...register('descriptionKr')}
+									id="planificationDescription"
+									cols="30"
+									rows="10"
+								></textarea>
+							</div>
+						</div>
+
+						<div className="col">
+							<div className="fieldCol">
+								<label htmlFor="dateStart">Fecha Inicio</label>
+								<input {...register('startDate')} type="date" id="planificationDateStart" />
+							</div>
+							<div className="fieldCol">
+								<label htmlFor="dateFinish">Fecha final</label>
+								<input {...register('finishDate')} type="date" id="planificationDateFinish" />
+							</div>
+							<div className="fieldCol">
+								<label htmlFor="weight">Peso Porcentual</label>
+								<input
+									{...register('percentageWeight')}
+									type="number"
+									id="planificationWeight"
+									min="1"
+									max="100"
 								/>
 							</div>
-
-							<div className="fieldColRes">
-								<label htmlFor="emailOKR">Correo</label>
-								<input
-									{...register('personInChargeEmailKr')}
-									type="text"
-									id="planificationEmailOKR"
-									required
-								/>
-							</div>
 						</div>
-
-						<div className="fieldCol">
-							<label htmlFor="description">Descripción</label>
-							<textarea
-								required
-								{...register('descriptionKr')}
-								id="planificationDescription"
-								cols="30"
-								rows="10"
-							></textarea>
+						<div className="containerButtons">
+							<Link to="/okrCreate">
+								<button>Anterior</button>
+							</Link>
+							<button type="submit">Finalizar</button>
+							<button onClick={() => window.location.reload()}>Agregar más Krs</button>
 						</div>
-					</div>
-
-					<div className="col">
-						<div className="fieldCol">
-							<label htmlFor="dateStart">Fecha Inicio</label>
-							<input {...register('startDate')} type="date" id="planificationDateStart" />
-						</div>
-						<div className="fieldCol">
-							<label htmlFor="dateFinish">Fecha final</label>
-							<input {...register('finishDate')} type="date" id="planificationDateFinish" />
-						</div>
-						<div className="fieldCol">
-							<label htmlFor="weight">Peso Porcentual</label>
-							<input
-								{...register('percentageWeight')}
-								type="number"
-								id="planificationWeight"
-								min="1"
-								max="100"
-							/>
-						</div>
-					</div>
-					<div className="containerButtons">
-						<Link to="/okrCreate">
-							<button>Anterior</button>
-						</Link>
-						<button type="submit">Finalizar</button>
-					</div>
-				</form>
-			</div>
-		</section>
+					</form>
+				</div>
+			</section>
 		</>
 	)
 }

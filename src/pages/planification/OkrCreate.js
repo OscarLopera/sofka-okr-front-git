@@ -39,74 +39,74 @@ const OkrCreate = () => {
 
 	return (
 		<>
-		<Navbar/>
-		<Sidebar/>
-		<section className="containerOkrCreate">
-			<div className="title">
-				<h3>Crear Objetivo</h3>
-			</div>
+			<Navbar />
+			<Sidebar />
+			<section className="containerOkrCreate">
+				<div className="title">
+					<h3>Crear Objetivo</h3>
+				</div>
 
-			<div className="fieldOkrCreate">
-				<form className="row" onSubmit={handleSubmit(onSubmit)}>
-					<div className="col">
-						<div className="fieldCol">
-							<label htmlFor="titleOKR">Titulo</label>
-							<input {...register('title')} type="text" id="planificationTitleOKR" required />
-						</div>
-
-						<div className="fieldCol">
-							<label htmlFor="objectiveOKR">Objetivo</label>
-							<input {...register('objective')} type="text" id="planificationObjectiveOKR" required />
-						</div>
-
-						<div className="fieldColRespomsable">
-							<div>
-								<p>Responsable</p>
+				<div className="fieldOkrCreate">
+					<form className="row" onSubmit={handleSubmit(onSubmit)}>
+						<div className="col">
+							<div className="fieldCol">
+								<label htmlFor="titleOKR">Titulo</label>
+								<input {...register('title')} type="text" id="planificationTitleOKR" required />
 							</div>
 
-							<div className="fieldColRes">
-								<label htmlFor="nameOKR">Nombre</label>
-								<input {...register('responsible')} type="text" id="planificationNameOKR" required />
+							<div className="fieldCol">
+								<label htmlFor="objectiveOKR">Objetivo</label>
+								<input {...register('objective')} type="text" id="planificationObjectiveOKR" required />
 							</div>
 
-							<div className="fieldColRes">
-								<label htmlFor="emailOKR">Correo</label>
-								<input {...register('mail')} type="text" id="planificationEmailOKR" required />
+							<div className="fieldColRespomsable">
+								<div>
+									<p>Responsable</p>
+								</div>
+
+								<div className="fieldColRes">
+									<label htmlFor="nameOKR">Nombre</label>
+									<input {...register('responsible')} type="text" id="planificationNameOKR" required />
+								</div>
+
+								<div className="fieldColRes">
+									<label htmlFor="emailOKR">Correo</label>
+									<input {...register('mail')} type="text" id="planificationEmailOKR" required />
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div className="col">
-						<div className="fieldCol">
-							<label htmlFor="vertical">Verticales</label>
-							<select {...register('vertical')} id="vertical" required>
-								<option value="Sofka Testing">Sofka testing</option>
-								<option value="Agile Services">Agile Services</option>
-								<option value="Arquitectura y Desarrollo">Arquitectura y Desarrollo</option>
-								<option value="Inteligencia Artifical">Inteligencia Artifical</option>
-							</select>
-						</div>
+						<div className="col">
+							<div className="fieldCol">
+								<label htmlFor="vertical">Verticales</label>
+								<select {...register('vertical')} id="vertical" required>
+									<option value="Sofka Testing">Sofka testing</option>
+									<option value="Agile Services">Agile Services</option>
+									<option value="Arquitectura y Desarrollo">Arquitectura y Desarrollo</option>
+									<option value="Inteligencia Artifical">Inteligencia Artifical</option>
+								</select>
+							</div>
 
-						<div className="fieldCol">
-							<label htmlFor="description">Descripción</label>
-							<textarea
-								{...register('descriptionOkr')}
-								required
-								id="planificationDescription"
-								cols="30"
-								rows="10"
-							></textarea>
+							<div className="fieldCol">
+								<label htmlFor="description">Descripción</label>
+								<textarea
+									{...register('descriptionOkr')}
+									required
+									id="planificationDescription"
+									cols="30"
+									rows="10"
+								></textarea>
+							</div>
 						</div>
-					</div>
-					<div className="containerButtons">
-						<Link to="/okrs">
-							<button id="planificationbuttonCancel">Cancelar</button>
-						</Link>
-						<button type="submit" id="planificationbuttonNext">Siguiente</button>
-					</div>
-				</form>
-			</div>
-		</section>
+						<div className="containerButtons">
+							<Link to="/okrs">
+								<button id="planificationbuttonCancel">Cancelar</button>
+							</Link>
+							<button type="submit" id="planificationbuttonNext">Siguiente</button>
+						</div>
+					</form>
+				</div>
+			</section>
 		</>
 	)
 }

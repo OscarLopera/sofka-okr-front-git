@@ -1,31 +1,57 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import { environment } from '../../environment/backendurl'
 
-const Kr = ({ kr }) => {
+const Kr = ({ okrId }) => {
+
+	const [kr, setKr] = useState([])
+	const urlKr = environment.apiKrUrl
+
+	const getKrsById = (okrId) => {
+		axios.get(`${urlKr}/${okrId}`).then((res) => {
+			setKr(res.data)
+		})
+	}
+
+	useEffect(() => {
+		getKrsById(okrId);
+		// eslint-disable-next-line
+	}, [])
+
+
+	console.log(kr)
 	return (
-		<div className="kr">
-			<div className="headerKR">
-				<h3>Title KR</h3>
-				<div className="icons">
-					<i className="fas fa-trash-alt"></i>
-					<i className="fas fa-edit"></i>
-				</div>
-			</div>
-			<div className="contentKR">
-				<p style={{ width: '80%' }} data-value="80">
-					avance
-				</p>
-				<progress max="100" value="80">
-					<div class="progress-bar">
-						<span style={{ width: '80%' }}>80%</span>
-					</div>
-				</progress>
+		<>
+			{kr &&
+				kr.map((item) => (
+					<div className="kr">
+						<div className="headerKR">
+							<h3>{item.keyResult}</h3>
+							<div className="icons">
+								<i className="fas fa-trash-alt"></i>
+								<i className="fas fa-edit"></i>
+							</div>
+						</div>
+						<div className="contentKR">
+							<p style={{ width: item.advanceKr + '%' }} data-value={item.advanceKr}>
+								avance
+							</p>
+							<progress max="100" value={item.advanceKr}>
+								<div class="progress-bar">
+									<span style={{ width: item.advanceKr + '%' }}> {item.advanceKr} %a </span>
+								</div>
+							</progress>
 
-				<div className="update">
-					<input type="number" name="updateRange" id="updateRange" min="1" max="100" />
-					<button id="buttonUpdateRange">Actualizar</button>
-				</div>
-			</div>
-		</div>
+							<div className="update">
+								<input type="number" name="updateRange" id="updateRange" min="1" max="100" placeholder="1 - 100" />
+								<button id="buttonUpdateRange">Actualizar</button>
+							</div>
+						</div>
+					</div>
+				))
+
+			}
+		</>
 	)
 }
 

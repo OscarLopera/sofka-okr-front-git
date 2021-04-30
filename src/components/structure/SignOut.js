@@ -10,9 +10,9 @@ export function logout() {
     window.location.href = '/';
 }
 export function resetTimer() {
-    if(auth.currentUser){
+    if (auth.currentUser) {
         clearTimeout(timeout);
-        timeout = setTimeout(logout, 120000) //2 minutos de inactividad, tiempo en ms
+        timeout = setTimeout(logout, 999999999) //2 minutos de inactividad, tiempo en ms
     }
 }
 
