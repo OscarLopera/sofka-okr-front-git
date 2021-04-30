@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { MdNotifications, MdInput } from "react-icons/md";
+import { MdInput } from "react-icons/md";
 import "../../assets/styles/structure/Navbar.scss";
 
 import { IconContext } from "react-icons";

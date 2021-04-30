@@ -7,7 +7,6 @@ import Navbar from "../components/structure/Navbar"
 import Login from "../components/administration/Login"
 import MyOkrs from "../pages/planification/Okrs"
 import Calendar from "../pages/calendar/Calendar"
-import { SingOut } from '../components/structure/SignOut';
 
 
 afterEach(cleanup);

@@ -1,12 +1,18 @@
 import React from "react";
-import "../../assets/styles/administration/Support.css";
-import imgQuestions from "../../assets/img/administration/questions.PNG"
+import "../../assets/styles/administration/Support.css"
+import imgQuestions from "../../assets/img/administration/questions.PNG";
 import {Link} from "react-router-dom"
+import { auth } from "../../functions/firebaseAuth";
+import { useAuthState } from "react-firebase-hooks/auth";
+import SignIn from "../administration/SingIn";
 import Navbar from "../../components/structure/Navbar"
 import Sidebar from "../../components/structure/Sidebar"
 
+const Support = () => {
 
-export default function Support() {
+  const [user] = useAuthState(auth);
+
+  if (user) {
   return (
     <>
     <Navbar />
@@ -45,18 +51,32 @@ export default function Support() {
             </div>
             </div>
             <div className="row-support-form">
-              <button type="submit" id="button-support-form" className="button-support-form"  value="Aceptar" />
+              <button type="submit" id="button-support-form" className="button-support-form" >Aceptar</button>
             </div>
           </form>
         </div>
-        <Link className="link-support-question" to="#">
+        <Link className="link-support-question" to="/faq">
         <div className="card-frequent-questions" id="card-frequent-questions">
-        <img src={imgQuestions} alt= "imagen soporte" className="image-frequent-questions" />
+        <img  className="image-frequent-questions" src={imgQuestions} alt = ""/>
         <span className="title-question-support">Preguntas frecuentes {'>'}</span>
         </div>
         </Link>
       </div>
     </div>
     </>
-  );
+  ); 
+  }
+  return  <SignIn />
 }
+
+export default Support;
+
+
+
+
+
+
+
+
+
+
